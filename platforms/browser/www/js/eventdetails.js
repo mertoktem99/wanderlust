@@ -63,10 +63,6 @@ getData = () => {
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
-            datashow.append(`<p> hiking: ${thisDoc.data().hiking} </p>`);
-            datashow.append(`<p> movie: ${thisDoc.data().movie} </p>`);
-            datashow.append(`<p> rock: ${thisDoc.data().rock} </p>`);
-            datashow.append(`<p> noodle: ${thisDoc.data().noodle} </p>`);
             hikingchoice = thisDoc.data().hiking;
             moviechoice = thisDoc.data().movie;
             rockchoice = thisDoc.data().rock;

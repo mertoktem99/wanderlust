@@ -39,26 +39,28 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <script src="js/homepage.js" defer></script>
+    <script src="js/preferences.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
     <title>Hello World</title>
 </head>
 
 <body>
     <div class="app">
-        <h1>Home</h1>
+        <h1>PhoneGap</h1>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
-
-            <div id="eventshow">
-
-            </div>
-            <article class="eventsuggestion">
-                <img href="#">
-                <h2>Event Name</h2>
-            </article>
-
+            <label for="hiking">Hiking</label>
+            <input id="hiking" name = "hiking" type="checkbox">
+            <label for="rock">Rock</label>
+            <input id="rock" name = "rock" type="checkbox">
+            <label for="movie">Movie</label>
+            <input id="movie" name = "movie" type="checkbox">
+            <label for="noodle">Noodle</label>
+            <input id="noodle" name = "noodle" type="checkbox">
+            
+            <button id="savePrefs">Save Preferences</button>
+            <button id="nextPage">Next Page</button>
 
             <button id="logoutbutton">Log Out</button>
             <p id="data"></p>

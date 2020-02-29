@@ -35,7 +35,7 @@ createUser = () => {
         var errorMessage = error.message;
         // ...
       }).then(() => {
-        window.location.replace("homepage.html");
+        window.location.replace("preferences1.html");
     });
 };
 
