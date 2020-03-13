@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../js/main.js" defer></script>
+    <script src="https://kit.fontawesome.com/ea3a7608ac.js" crossorigin="anonymous"></script>
+    <link href="../css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap" rel="stylesheet">
+
+
+    <script src="../js/connectFirebase.js" defer></script>
+    <script src="../js/homepage.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+
+    <title>Home Categories</title>
+</head>
+
+<body>
+
+    <!-- **************************************************************
+    *******************************************************************
+                            HEADER SECTION
+    *******************************************************************
+    *******************************************************************-->
+
+    <header class="app-header">
+        <div class="header-image">
+            <img src="../img/frontpage-01.png" alt="feature-image"> <!-- Photo by Alexander Popov on Unsplash -->
+            <h2>RECOMMENDATIONS OF THE DAY</h2>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Where to explore?">
+        </div>
+        <div class="home-menu-options">
+            <a class="filterOption">
+                <button>FILTER</button>
+            </a>
+            <a class="categoryOption">
+                <button>CATEGORIES</button>
+            </a>
+        </div>
+    </header>
+
+
+
+
+
+    <!-- **************************************************************
+    *******************************************************************
+                            FRONT PAGE
+    *******************************************************************
+    *******************************************************************-->
+
+    <!-- CATEGORIES -->
+
+    <main class="homepage">
+
+
+
+        <main class="main-content">
+
+            <div class="secondary-nav">
+
+                <ul>
+                    <li class="travel-outdoors">
+                        <a>
+                            <img src="../icons/Icon-19.png" alt="Icon-23">
+                            <p>
+                                Travel & Outdoor
+                            </p>
+                        </a>
+                    </li>
+                    <li class="film-media">
+                        <a>
+                            <img src="../icons/Icon-20.png" alt="Icon-20">
+                            <p>
+                                Film & Media
+                            </p>
+                        </a>
+                    </li>
+                    <li class="music">
+                        <a>
+                            <img src="../icons/Icon-21.png" alt="Icon-21">
+                            <p>
+                                Music
+                            </p>
+                        </a>
+                    </li>
+                    <li class="food-drinks">
+                        <a>
+                            <img src="../icons/Icon-22.png" alt="Icon-22">
+                            <p>
+                                Food & Drink
+                            </p>
+                        </a>
+                    </li>
+                    <li class="sports-fitness">
+                        <a>
+                            <img src="../icons/Icon-27.png" alt="Icon-21">
+                            <p>
+                                Sport & Fitness
+                            </p>
+                        </a>
+                    </li>
+                    <li class="fashion-lifestyle">
+                        <a>
+                            <img src="../icons/Icon-30.png" alt="Icon-22">
+                            <p>
+                                Fashion & Lifestyle
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <main class="filter-main">
+                <main class="home-main">
+                    <div class="event-filter">
+                        <a>
+                            <img src="../icons/Icon-05.png" alt="">
+                            <p>Date</p>
+                        </a>
+                        <a>
+                            <img src="../icons/Icon-04.png" alt="">
+                            <p>Price</p>
+                        </a>
+                        <a>
+                            <img src="../icons/Icon-03.png" alt="">
+                            <p>Location</p>
+                        </a>
+
+                    </div>
+
+                </main>
+            </main>
+
+            <div class="opening-display">
+                <li class="content-child content-child1">
+                    <a>
+                        <img src="../img/t&o-01.jpeg" alt="Tofino Surf Events 2020">
+                        <!-- Photo by Mohamed Nohassi on Unsplash -->
+                        <h3>
+                            <p>Rock Music Fest</p>
+                            <p>Today, 7:00 PM</p>
+                        </h3>
+                    </a>
+                </li>
+
+                <li class="content-child content-child2">
+                    <a>
+                        <img src="../img/t&o-02.jpeg" alt="Cycling Club Offline"> <!-- Photo by Paul Green on Unsplash -->
+                        <h3>
+                            <p>Cycling</p>
+                            <p>Today, 7:00 PM</p>
+                        </h3>
+                    </a>
+                </li>
+
+                <li class="content-child content-child3">
+                    <a>
+                        <img src="../img/t&o-03.jpeg" alt="Camping at Rolley Lake Park">
+                        <!-- Photo by Jonathan Forage on Unsplash -->
+                        <h3>
+                            <p>Restore Nature</p>
+                            <p>Today, 7:00 PM</p>
+                        </h3>
+                    </a>
+                </li>
+
+                <div class="content-child">
+                    <button type="button" id="btnLoadMore">Load More</button>
+                </div>
+            </div>
+
+
+
+            <!-- ******************************************* -->
+            <!--         Travel and Outdoors content         -->
+            <!-- ******************************************* -->
+
+            <main class="travelContent">
+                <div class="content-child content-child1">
+                    <a>
+                        <img src="../img/t&o-01.jpeg" alt="Tofino Surf Events 2020">
+                        <!-- Photo by Mohamed Nohassi on Unsplash -->
+                        <h3>
+                            <p>
+                                Wake Surfing
+                            </p>
+                            <p>CAD $40</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child2">
+                    <a>
+                        <img src="../img/t&o-02.jpeg" alt="Cycling Club Offline">
+                        <!-- Photo by Paul Green on Unsplash -->
+                        <h3>
+                            <p>
+                                karaoke
+                            </p>
+                            <p>CAD $25</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child3">
+                    <a>
+                        <img src="../img/t&o-03.jpeg" alt="Camping at Rolley Lake Park">
+                        <!-- Photo by Jonathan Forage on Unsplash -->
+                        <h3>
+                            <p>
+                                Beer Festival
+                            </p>
+                            <p>CAD $20</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <button type="button" id="btnLoadMore">Load More</button>
+            </main>
+
+
+
+            <!-- ******************************************* -->
+            <!--            Film and Media content           -->
+            <!-- ******************************************* -->
+
+            <main class="filmMediaContent">
+                <div class="content-child content-child1">
+                    <a>
+                        <img src="../img/film-01.jpeg" alt="Anime Cosplay Fest">
+                        <!-- Photo by Ekaterina Novitskaya on Unsplash -->
+                        <h3>
+                            <p>
+                                Anime Cosplay Fest
+                            </p>
+                            <p>CAD $40</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child2">
+                    <a>
+                        <img src="../img/film-02.jpeg" alt="The art of visual effect">
+                        <!-- Photo by Craig Adderley from Pexels -->
+                        <h3>
+                            <p>
+                                The art of visual effect
+                            </p>
+                            <p>CAD $25</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child3">
+                    <a>
+                        <img src="../img/film-03.jpeg" alt="Radio studio tour">
+                        <!-- Photo by Austin Distel on Unsplash -->
+                        <h3>
+                            <p>
+                                Radio studio tour
+                            </p>
+                            <p>CAD $20</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <button type="button" id="btnLoadMore">Load More</button>
+            </main>
+
+
+            <!-- ******************************************* -->
+            <!--                  Music content              -->
+            <!-- ******************************************* -->
+
+            <main class="musicContent">
+                <div class="content-child content-child1">
+                    <a>
+                        <img src="../img/music-01.jpeg" alt="Heavy Metal Concert">
+                        <!-- Photo by John Pratt on Unsplash -->
+                        <h3>
+                            <p>
+                                Heavy Metal Concert
+                            </p>
+                            <p>CAD $40</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child2">
+                    <a>
+                        <img src="../img/music-02.jpeg" alt="Japanese Drum Performance">
+                        <!-- https://www.notsomoderndrummer.com/not-so-modern-drummer/2017/3/15/yamato-taiko-group-uk-premiere-and-tour -->
+                        <h3>
+                            <p>
+                                Japanese Drum Performance
+                            </p>
+                            <p>CAD $25</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child3">
+                    <a>
+                        <img src="../img/music-03.jpeg" alt="Guitar tutorial for beginner">
+                        <!-- http://seakalm.com.br/aprender-instrumento-musical/ -->
+                        <h3>
+                            <p>
+                                Guitar tutorial for beginner
+                            </p>
+                            <p>CAD $20</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <button type="button" id="btnLoadMore">Load More</button>
+            </main>
+
+
+            <!-- ******************************************* -->
+            <!--            Food and Drinks content          -->
+            <!-- ******************************************* -->
+
+            <main class="foodDrinksContent">
+                <div class="content-child content-child1">
+                    <a>
+                        <img src="../img/food-01.jpeg" alt="Cheese Fest">
+                        <!-- https://www.vadimdaniel.com/focus/product-and-food-photography/#!jig[1]/ML/5992 -->
+                        <h3>
+                            <p>
+                                Cheese Fest
+                            </p>
+                            <p>CAD $40</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child2">
+                    <a>
+                        <img src="../img/food-02.jpeg" alt="Beer tasting party">
+                        <!-- Photo by ELEVATE from Pexels -->
+                        <h3>
+                            <p>
+                                Beer tasting party
+                            </p>
+                            <p>CAD $25</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <div class="content-child content-child3">
+                    <a>
+                        <img src="../img/food-03.jpeg" alt="Latte art class">
+                        <!-- Photo by Nathan Dumlao on Unsplash -->
+                        <h3>
+                            <p>
+                                Latte art class
+                            </p>
+                            <p>CAD $20</p>
+                        </h3>
+                    </a>
+                </div>
+
+                <button type="button" id="btnLoadMore">Load More</button>
+            </main>
+        </main>
+    </main>
+
+
+
+    <main class="profile-main">
+        <header>
+            <div class="profile-header">
+                <div class="profile-heading">
+                    <h3>USER PROFILE</h3>
+                </div>
+
+                <div class="profile-message">
+                    <p>WELCOME,</p>
+                    <p class="display-username" id="displayUsername">Kevin Lou</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="profile-info">
+            <label for="retrieveUsername">Username</label>
+            <input type="text" id="retrieveUsername">
+
+            <label for="retrieveUserEmail">Email</label>
+            <input type="email" id="retrieveUserEmail">
+
+            <label for="retrieveUserPwd">Password</label>
+            <input type="password" id="retrieveUserPwd">
+
+            <label for="retrieveUserDob">Birthday</label>
+            <input type="date" id="retrieveUserDob">
+
+            <label for="retrieveUserGender">Gender</label>
+            <input type="text" id="retrieveUserGender">
+
+            <!-- <div class="profile-buttons"> -->
+            <button id="btn-edit-profile">Edit</button>
+            <button id="btn-save-profile">Save</button>
+            <!-- </div> -->
+        </div>
+    </main>
+
+    <main class="settings-page">
+        <header>
+            <div class=" settings-header">
+                <div class=" settings-heading">
+                    <h3>SETTINGS</h3>
+                </div>
+            </div>
+        </header>
+
+        <main class="settings-main">
+            <div class="settings-block">
+                <a>
+                    <div class="settings-options">
+                        <img src="../icons/Icon-31.png" alt="">
+                        <h3>PREFERENCE SETTINGS</h3>
+                    </div>
+                </a>
+                <a>
+                    <div class="settings-options">
+                        <img src="../icons/Icon-32.png" alt="">
+                        <h3>CONTACT US</h3>
+                    </div>
+                </a>
+                <a>
+                    <div class="settings-options">
+                        <img src="../icons/Icon-33.png" alt="">
+                        <h3>FAQ</h3>
+                    </div>
+                </a>
+                <a>
+                    <div>
+                        <button id="btnLogout">Log out</button>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </main>
+
+    <footer class="settings-footer">
+        <div class="footer-container">
+            <a class="home"><img src="../icons/Icon-01.png" alt="">
+                <p>Home</p>
+            </a>
+            <a class="profile"><img src="../icons/Icon-09.png" alt="">
+                <p>Profile</p>
+            </a>
+            <a class="settings"><img src="../icons/Icon-10.png" alt="">
+                <p>Settings</p>
+            </a>
+        </div>
+    </footer>
+
+ 
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+
+</body>
+
+</html>

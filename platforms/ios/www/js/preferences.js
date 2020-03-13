@@ -1,64 +1,37 @@
 
-const firebaseConfig = {
-    apiKey: "AIzaSyDL2H9c_9LuUq_-V7oqHSWuG-ftJQXpIb8",
-    authDomain: "wanderlust-78253.firebaseapp.com",
-    databaseURL: "https://wanderlust-78253.firebaseio.com",
-    projectId: "wanderlust-78253",
-    storageBucket: "wanderlust-78253.appspot.com",
-    messagingSenderId: "48070936115",
-    appId: "1:48070936115:web:779ebc778452cc8f8a0546",
-    measurementId: "G-JQL8HFHSRJ"
-};
-
-// const firebase = require("firebase");
-// // Required for side-effects
-// require("firebase/firestore");
-
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-apiKey: firebaseConfig.apiKey,
-authDomain: firebaseConfig.authDomain,
-projectId: firebaseConfig.projectId
-});
-
-var db = firebase.firestore();
 var useremail;
-var hikingchoice;
-var moviechoice;
-var rockchoice;
-var noodlechoice
+var filmChoice = false; 
+var sportChoice = false; 
+var musicChoice = false; 
+var travelChoice = false; 
+var foodChoice = false; 
+var fashionChoice = false; 
+
 var username;
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         // User is signed in.
-        var emailshow = $("#emailshow");
         useremail = user.email;
-        emailshow.empty();
-        emailshow.append(`<p> ${useremail}  </p>`);
-        getData();
     } else {
-        emailshow.append(`<p> Not Logged in </p>`);
+        window.location.replace("../index.html");
     }
 });
 
 logOutButton = () => {
     firebase.auth().signOut().then(() => {
-        window.location.replace("index.html");
+        window.location.replace("../index.html");
     });
 };
 
 savePrefs = () => {
-    hikingchoice = document.querySelector('#hiking').checked;
-    moviechoice = document.querySelector('#movie').checked;
-    rockchoice = document.querySelector('#rock').checked;
-    noodlechoice = document.querySelector('#noodle').checked;
+    filmChoice = document.querySelector('#film').checked;
+    sportChoice = document.querySelector('#sport').checked;
+    musicChoice = document.querySelector('#music').checked;
+    travelChoice = document.querySelector('#travel').checked;
+    foodChoice = document.querySelector('#food').checked;
+    fashionChoice = document.querySelector('#fashion').checked;
     addData();
-};
-
-nextPage = () => {
-    window.location.replace("homepage.html");
-   
 };
 
 
@@ -69,33 +42,38 @@ addData = () => {
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
-            o.hiking = hikingchoice;
-            o.movie = moviechoice;
-            o.rock = rockchoice;
-            o.noodle = noodlechoice;
-
-            docRef.update(o);
+            o.film = filmChoice;
+            o.sport = sportChoice;
+            o.music = musicChoice;
+            o.travel = travelChoice;
+            o.food = foodChoice;
+            o.fashion = fashionChoice;
+            o.email = useremail;
+            
+            docRef.update(o).then(function(thisDoc) {
+                window.location.href = "frontPage.html";
+            });
         }
         else {
             //new user
             o.uid = docRef;
             o.email = useremail;
-            o.hiking = hikingchoice;
-            o.movie = moviechoice;
-            o.rock = rockchoice;
-            o.noodle = noodlechoice;
+            o.film = filmChoice;
+            o.sport = sportChoice;
+            o.music = musicChoice;
+            o.travel = travelChoice;
+            o.food = foodChoice;
+            o.fashion = fashionChoice;
 
             // Send it
-            docRef.set(o);
+            docRef.set(o).then(function(thisDoc) {
+                window.location.href = "frontPage.html";
+            });
         }
-
     });
-    // .then(() => {
-    //     //window.location.replace("homepage.html");
-    // });
 }
 
-getData = () => {
+getUserPrefsData = () => {
     // Add Data 
     var datashow = $("#data");
     
@@ -105,19 +83,23 @@ getData = () => {
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
-            datashow.append(`<p> hiking: ${thisDoc.data().hiking} </p>`);
-            datashow.append(`<p> movie: ${thisDoc.data().movie} </p>`);
-            datashow.append(`<p> rock: ${thisDoc.data().rock} </p>`);
-            datashow.append(`<p> noodle: ${thisDoc.data().noodle} </p>`);
+            datashow.append(`<p> Film: ${thisDoc.data().film} </p>`);
+            datashow.append(`<p> Sport: ${thisDoc.data().sport} </p>`);
+            datashow.append(`<p> Music: ${thisDoc.data().music} </p>`);
+            datashow.append(`<p> Travel: ${thisDoc.data().travel} </p>`);
+            datashow.append(`<p> Food: ${thisDoc.data().food} </p>`);
+            datashow.append(`<p> Fashion: ${thisDoc.data().fashion} </p>`);
         }
         else {
-            //new user
+            // new user
             o.uid = docRef;
             o.email = useremail;
-            o.hiking = hikingchoice;
-            o.movie = moviechoice;
-            o.rock = rockchoice;
-            o.noodle = noodlechoice;
+            o.film = filmChoice;
+            o.sport = sportChoice;
+            o.music = musicChoice;
+            o.travel = travelChoice;
+            o.food = foodChoice;
+            o.fashion = fashionChoice;
 
             // Send it
             docRef.set(o);
@@ -126,72 +108,80 @@ getData = () => {
     });
 }
 
-
-// addData = () => {
-//     // Add Data
-//     alert("Adding Data");
-//     var username = false;
-//     db.collection("users").get().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             if ($("#username").val() == `${doc.data().username}`) {
-//                 //Username found
-//                 username = true;
-//             }
-//         })
-//     })
-//     .then(function(test) {
-//         if (username) {
-//             $("#deviceready").append(`<p>Username already existed.</p>`)
-//         }
-//         else {
-//             db.collection("users").add({
-//                 username: $("#username").val(),
-//                 password: $("#password").val(),
-//                 })
-//                 .then(function(docRef) {
-//                 console.log("Document written with ID: ", docRef.id);
-//                 $("#deviceready").append(`<p>User created.</p>`)
-//                 })
-//                 .catch(function(error) {
-//                 console.error("Error adding document: ", error);
-//                 $("#deviceready").append(`<p>Error.</p>`)
-//                 });
-//         }
-//     });
+$('.btnDone').click(addData);
 
 
-// }
+// Preference
 
-// getDataz = () => {
-//     // Add Data
-//     alert("Getting Data");
-//     var username = false;
-//     db.collection("users").get().then((querySnapshot) => {
-//         querySnapshot.forEach((doc) => {
-//             console.log(`${doc.id} => ${doc.data()}`);
-//             if ($("#username").val() == `${doc.data().username}`) {
-//                 //Username found
-//                 username = true;
-//                 // Checking password
-//                 if($("#password").val() == `${doc.data().password}`) {
-//                     // Password Correct
-//                     $("#deviceready").append(`<p>Login Sucessfully</p>`);
-//                 }
-//                 else {
-//                     // Password Incorrect
-//                     $("#deviceready").append(`<p>Incorrect password!</p>`);
-//                 }
-//             }
-//         })  
-//     }).then(function(test) {
-//         if (!username) {
-//             $("#deviceready").append(`<p>Username not found!</p>`);
-//         }
-//     });
-// }
+const preference1 = document.querySelector('.preferences-tag1');
+const preference2 = document.querySelector('.preferences-tag2');
+const preference3 = document.querySelector('.preferences-tag3');
+const preference4 = document.querySelector('.preferences-tag4');
+const preference5 = document.querySelector('.preferences-tag5');
+const preference6 = document.querySelector('.preferences-tag6');
 
+preference1.addEventListener('click', () => {
+    preference1.classList.toggle('active');
 
-$('#savePrefs').click(savePrefs);
-$('#nextPage').click(nextPage);
+    if (travelChoice == false) {
+        travelChoice = true;
+    }
+    else {
+        travelChoice = false;
+    }
+})
 
-$('#logoutbutton').click(logOutButton);
+preference2.addEventListener('click', () => {
+    preference2.classList.toggle('active');
+
+    if (musicChoice == false) {
+        musicChoice = true;
+    }
+    else {
+        musicChoice = false;
+    }
+})
+
+preference3.addEventListener('click', () => {
+    preference3.classList.toggle('active');
+
+    if (filmChoice == false) {
+        filmChoice = true;
+    }
+    else {
+        filmChoice = false;
+    }
+})
+
+preference4.addEventListener('click', () => {
+    preference4.classList.toggle('active');
+
+    if (foodChoice == false) {
+        foodChoice = true;
+    }
+    else {
+        foodChoice = false;
+    }
+})
+
+preference5.addEventListener('click', () => {
+    preference5.classList.toggle('active');
+
+    if (sportChoice == false) {
+        sportChoice = true;
+    }
+    else {
+        sportChoice = false;
+    }
+})
+
+preference6.addEventListener('click', () => {
+    preference6.classList.toggle('active');
+
+    if (fashionChoice == false) {
+        fashionChoice = true;
+    }
+    else {
+        fashionChoice = false;
+    }
+})

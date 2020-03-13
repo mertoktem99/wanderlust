@@ -39,6 +39,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/connectFirebase.js" defer></script>
     <script src="js/homepage.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
     <title>Hello World</title>
@@ -46,7 +47,7 @@
 
 <body>
     <div class="app">
-        <h1>Home</h1>
+        <h1>Homepage</h1>
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
@@ -54,13 +55,12 @@
             <div id="eventshow">
 
             </div>
-            <article class="eventsuggestion">
-                <img href="#">
-                <h2>Event Name</h2>
-            </article>
-
 
             <button id="logoutbutton">Log Out</button>
+            <button id="preferencesbutton"> Preferences</button>
+            <button id="location"><a href="map.html">Location</a></button>
+
+
             <p id="data"></p>
             <p id="emailshow"></p>
         </div>

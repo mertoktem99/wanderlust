@@ -1,27 +1,22 @@
 
-
 var Latitude = undefined;
 var Longitude = undefined;
+var city = null;
 
 // Get geo coordinates
 
 function getMapLocation() {
-    alert("Get Map Location");
     navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, { enableHighAccuracy: true });
 }
 
 // Success callback for get geo coordinates
 
 var onMapSuccess = function (position) {
-    alert("On Map Success");
 
     Latitude = position.coords.latitude;
     Longitude = position.coords.longitude;
 
     getMap(Latitude, Longitude);
-
-    alert("Longitutude: " + Longitude +
-          "Latitutede: " + Latitude)
 
 }
 
@@ -35,7 +30,6 @@ function onMapError(error) {
 // Get map by using coordinates
 
 function getMap(latitude, longitude) {
-    alert("Get Map");
     var mapOptions = {
         center: new google.maps.LatLng(0, 0),
         zoom: 1,
@@ -90,14 +84,13 @@ function watchMapPosition() {
 // AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w
 
 function getCity() {
-    alert("Get City");
     var latlng;
     latlng = new google.maps.LatLng(Latitude, Longitude);
 
     new google.maps.Geocoder().geocode({'latLng' : latlng}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[1]) {
-                var country = null, countryCode = null, city = null, cityAlt = null;
+                var country = null, countryCode = null, cityAlt = null;
                 var c, lc, component;
                 for (var r = 0, rl = results.length; r < rl; r += 1) {
                     var result = results[r];
@@ -135,6 +128,24 @@ function getCity() {
             }
         }
     });
+
+    addLocationData();
+}
+
+addLocationData = () => {
+    // Add Data    
+    var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
+    var o = {};
+    docRef.get().then(function(thisDoc) {
+        if (thisDoc.exists) {
+            //user is already there, write only last login
+            if (city != null) {
+                o.location = city;
+            }
+            docRef.update(o);
+        }
+    })
+    alert(city);
 }
 
 

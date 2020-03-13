@@ -39,6 +39,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/connectFirebase.js" defer></script>
     <script src="js/preferences.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
     <title>Hello World</title>
@@ -50,18 +51,20 @@
         <div id="deviceready" class="blink">
             <p class="event listening">Connecting to Device</p>
             <p class="event received">Device is Ready</p>
-            <label for="hiking">Hiking</label>
-            <input id="hiking" name = "hiking" type="checkbox">
-            <label for="rock">Rock</label>
-            <input id="rock" name = "rock" type="checkbox">
-            <label for="movie">Movie</label>
-            <input id="movie" name = "movie" type="checkbox">
-            <label for="noodle">Noodle</label>
-            <input id="noodle" name = "noodle" type="checkbox">
+            <label for="film">Film & Media</label>
+            <input id="film" name = "film" type="checkbox">
+            <label for="sport">Sport</label>
+            <input id="sport" name = "sport" type="checkbox">
+            <label for="music">Music</label>
+            <input id="music" name = "music" type="checkbox">
+            <label for="Travel">Travel</label>
+            <input id="travel" name = "travel" type="checkbox">
+            <label for="food">Food</label>
+            <input id="food" name = "food" type="checkbox">
+            <label for="fashion">Fashion</label>
+            <input id="fashion" name = "fashion" type="checkbox">
             
             <button id="savePrefs">Save Preferences</button>
-            <button id="nextPage">Next Page</button>
-
             <button id="logoutbutton">Log Out</button>
             <p id="data"></p>
             <p id="emailshow"></p>

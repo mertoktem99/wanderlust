@@ -1,0 +1,834 @@
+body{
+    font-family: "Montserrat",sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+li{
+    list-style-type: none;
+}
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                   Login Page and Sign Up Page                                        */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.login-main{
+    margin: 0;
+    padding: 0;
+}
+
+
+.loginMenu-options{
+    background-color: white;
+    top: 1.8rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    /* padding-bottom: 0; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 2px solid #32D9C6;
+}
+
+
+.loginMenu-options a{
+    flex-basis: 50%;
+    justify-content: center; 
+    padding-bottom: 10px;   
+}
+
+.loginMenu-options a.active{
+    border-bottom: 5px solid #32D9C6;
+}
+
+
+.loginMenu-options button{
+    background-color: white;
+    color: #0A1943;
+    border: 0;
+    font-family: "Montserrat";
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.menu-options{
+    background-color: white;
+    top: -4.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    /* padding-bottom: 0; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 2px solid #32D9C6;
+}
+
+
+.menu-options a{
+    flex-basis: 50%;
+    justify-content: center; 
+    padding-bottom: 10px;   
+}
+
+.menu-options a.active{
+    border-bottom: 5px solid #32D9C6;
+}
+
+
+.menu-options button{
+    background-color: white;
+    color: #0A1943;
+    border: 0;
+    font-family: "Montserrat";
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+#loginOption , #signupOption{
+    border-bottom: 5px solid #32D9C6;
+}
+
+.login-info-input{
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    padding-left: 30px;
+    padding-right: 30px ;
+    padding-top: 0;
+   justify-content: center;
+}
+
+.login-info-input .login-heading{
+    color: #0088fd;
+    font-size: 1.7rem;
+    top: 2rem;
+    position: relative;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-30px);
+}
+
+
+.login-info-input input , .login-info-input label{
+    flex-basis: 100%;
+}
+
+.login-info-input label{
+    font-size: 0.9rem;
+    /* margin-top: 5px; */
+}
+
+.login-info-input input{
+    border:0;
+    border-bottom: 2px solid #D0D0D0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.login-info-input a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0.6rem 0 0 0;
+    text-decoration-line: underline;
+}
+
+.login-footer {
+    display: flex;
+    flex-flow: row wrap;
+    /* padding: 20px; */
+}
+
+.login-footer div{
+    flex-basis: 100%;
+    padding: 30px;
+}
+/* 
+.login-footer .login-buttons{
+    min-width: 80%;
+    margin: 0 8% 0 8%;
+    border-bottom: 1px solid #D0D0D0;
+} */
+
+.login-footer a{
+    text-decoration: none;
+}
+
+/* .login-footer  */
+button{
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 0;
+    padding: 15px;
+    font-family: "Montserrat",sans-serif;
+    font-weight: bold;
+    /* height: 40px; */
+}
+
+.login-footer #login{
+    background-color: #FFCA00; 
+    color: #0A1943; 
+}
+
+.login-footer #google-login{
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #32D9C6;
+    color: white; 
+    align-items: center;  
+    /* padding: 0;    */
+}
+
+#google-login p:first-of-type{
+    flex-basis: 75%;
+    /* font-size: 18px; */
+    text-align: center;
+    text-decoration: none;     
+}
+
+#google-login p{
+    padding: 0;
+    margin: 0;
+}
+
+#google-login p:last-of-type{
+    flex-basis: 25%;
+    text-align: left;
+    font-size: 1.4rem;
+}
+
+.login-footer #signUp{
+    background-color: #FFCA00; 
+}
+
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                           User Profile Page                                          */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.profile-header ,.settings-header{
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;    
+}
+
+.profile-heading , .settings-heading {
+    flex-basis: 100%;
+    background-color: white;
+    color: black;    
+    display: flex;
+    padding: 20px;
+    justify-items: center;
+}
+
+.profile-heading h3 , .settings-heading h3{
+    padding: 0;
+    margin: 0;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.btnBack{
+    background-color: white;
+    color: #909090;
+    border: 0;
+    font-family: "Merriserrat" , sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-message{
+    flex-basis: 100%;
+    background-color: #FFCA00;
+    color: #0A1943;
+    font-weight: bolder;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 45px 30px 10px 30px;
+}
+
+.profile-message p{
+    padding: 0;
+    margin: 0;
+}
+
+.display-username {
+    font-size: 28px;
+}
+
+.profile-info{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px;
+}
+
+.profile-info label{
+    flex-basis: 100%;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-info input{
+    flex-basis: 100%;
+    border: 0;
+    border-bottom: 2px solid #D0D0D0;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+
+#retrieveUserGender{
+    margin-bottom: 30px;
+}
+
+.profile-info  button {
+    font-family: "Montserrat",sans-serif;
+    margin-bottom: 10px;
+    border-radius: 10px ;
+    font-size: 16px;
+    border: 0;
+    padding: 15px;   
+    font-weight: bold ; 
+}
+
+#btn-edit-profile{
+    flex-basis: 100%;
+    background-color: #FFCA00;
+    color: #0A1943;
+}
+
+#btn-save-profile{
+    flex-basis: 100%;
+    background-color: #32D9C6;
+    color: white;  
+    margin: 0;  
+}
+
+.profile-footer , .settings-footer{
+     border-top: 1px solid #909090;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.profile-footer img , .settings-footer img {
+    justify-items: center;
+    align-self: center;
+    height: 30px;
+    width: 30px;
+}
+
+.profile-footer a , .settings-footer a{
+    color: #909090;
+    text-decoration: none;
+    font-size: 12px ;
+    align-items: center;
+    text-align: center;  
+    margin: 15px;  
+}
+
+.profile-footer p , .settings-footer p{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.settings-heading {
+    border-bottom: 1px solid #909090;
+}
+
+.settings-block {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+
+.settings-block a:not(:last-of-type){
+    flex-basis: 100%;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.settings-block a img{
+    width: 60px;
+    height: 60px;    
+}
+
+.settings-block a:nth-of-type(1) {
+    background-color: #32D9C6;
+}
+
+.settings-block a:nth-of-type(1) h3{
+   text-align: center;
+   width: min-content;
+}
+
+.settings-block a:nth-of-type(2) {
+    background-color: #FFCA00;
+}
+
+.settings-block a:nth-of-type(3) {
+    background-color: #0088fd;
+}
+
+.settings-block a:last-of-type {
+    flex-basis: 100%;
+}
+
+#btnLogout {
+    background-color: #ffca00;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+}
+
+
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                            Front Page                                                */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+
+
+body, img{
+    max-width: 100%;
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.filterOption.active, .categoryOption.active {
+    border-bottom: 5px solid #32D9C6;
+}
+
+.header-image{
+    margin-bottom: -6rem;
+}
+
+.header-image img {    
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.header-image h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 800;
+    top: -8rem;
+    font-size: 1.75rem;
+    /* padding: 10px; */
+    max-width: 85%;
+    margin: auto;
+}
+
+header .search{
+    max-width: 100%;
+    margin-left: 7%;
+}
+
+header .search input{
+    width: 90%;
+    height: 35px;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.main-content {
+    /* max-width: 100%;
+    margin: auto; */
+    padding: 30px;
+}
+
+.home-menu-options{
+    background-color: white;
+    /* top: -50px; */
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    /* padding-bottom: 0; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 2px solid #32D9C6;
+}
+
+.home-menu-options a{
+    flex-basis: 50%;
+    justify-content: center; 
+    padding-bottom: 10px;   
+}
+
+.home-menu-options a.active{
+    border-bottom: 5px solid #32D9C6;
+}
+
+
+.home-menu-options button{
+    background-color: white;
+    color: #0A1943;
+    border: 0;
+    font-family: "Montserrat";
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.secondary-nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+.secondary-nav ul li{
+    flex-basis: 42%;
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #D0D0D0;
+    border-radius: 8px;
+    /* justify-content: space-evenly;     */
+}
+
+.secondary-nav ul li a{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0;
+}
+
+.secondary-nav li p{
+    text-align: center;
+    margin: 0 10px;
+}
+
+.secondary-nav  ul li a img{
+    max-width: 50px;
+    height: auto;
+    justify-content: flex-start;
+}
+
+/* .secondary-nav li:first-of-type{
+    background-color: #0088fd;
+} */
+
+
+
+.content-child1, .content-child2, .content-child3{
+    margin-bottom: 2rem;
+    /* margin-top: 2rem; */
+}
+
+.content-child1 img, .content-child2 img, .content-child3 img {
+    margin-bottom: -4.5rem;
+    border-radius: 15px;
+}
+
+.content-child1 h3, .content-child2 h3, .content-child3 h3{
+    position: relative;
+    /* top: -4.5rem; */
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: #fff;
+    padding: 13px;
+}
+
+.content-child1 h3 {
+    background-color: #32D9C6;
+}
+
+.content-child2 h3 {
+    background-color: #ffca00;
+}
+
+.content-child3 h3 {
+    background-color: #0088fd;
+}
+
+
+#btnLoadMore {
+    background-color: #ffca00;
+    color: #0A1943;
+}
+
+
+.content-child h3{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.content-child h3 p{
+    flex-basis: 50%;
+    margin: 0;
+}
+
+.content-child h3 p:first-of-type{
+    justify-content: flex-start;
+}
+
+.content-child h3 p:last-of-type{
+    justify-content: flex-end;
+    text-align: right;
+}
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                             Home Page                                                */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.event-filter{
+    display: flex;
+    flex-flow: row;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.event-filter a{
+    flex-basis: 30%;
+    border: 2px solid #D0D0D0;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.event-filter img {
+    width: 60px;
+    height: 60px;
+}
+
+.event-filter a:nth-of-type(1) {
+    color: #32D9C6 ;
+}
+
+.event-filter a:nth-of-type(2) {
+    color: #ffca00;
+}
+
+.event-filter a:nth-of-type(3) {
+    color: #0088fd;    
+}
+
+.event-filter a:first-of-type a.active {
+    color:white;
+    background-color: #32D9C6;
+}
+
+
+.event-options{
+    display: flex;
+    flex-flow: row wrap;
+    padding: 30px;
+}
+
+.event-options .content-child {
+    flex-basis: 100%;
+}
+
+.travel-outdoors a {
+    color: #0088fd;
+}
+
+.film-media a {
+    color: #FFCA00;
+}
+
+.music a{
+    color: #0A1943
+}
+
+.food-drinks a {
+    color: #32D9C6;
+}
+
+.sports-fitness a{
+    color: #0088fd
+}
+
+.fashion-lifestyle a {
+    color: #FFCA00;
+}
+
+li a p {
+    font-weight: bold;
+}
+
+.travel-outdoors.active {
+    background-color: #0088fd;
+}
+
+.film-media.active{
+    background-color: #FFCA00;
+}
+
+.music.active {
+    background-color: #0A1943;
+}
+
+.food-drinks.active {
+    background-color: #32D9C6;
+}
+
+.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p{
+    color: #fff;
+}
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                             Footer                                                   */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.settings-footer {
+    position: fixed;
+    visibility: visible;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+.main-content{
+    padding-bottom: 100px;
+}
+
+
+
+
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                             Preferences                                              */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.preferences-header h2{
+    top: -7rem;
+}
+
+.preferences {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding-top: 4.8rem;
+    grid-gap: 1rem;
+    grid-row-gap: 4rem;
+    max-width: 90%;
+    margin: auto;
+}
+
+.preferences-child1 h3,
+.preferences-child2 h3,
+.preferences-child3 h3,
+.preferences-child4 h3,
+.preferences-child5 h3,
+.preferences-child6 h3 {
+    position: relative;
+    color: #fff;
+    /* background-color: #000; */
+    /* background-blend-mode: hue; */
+    top: 1.5rem;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+
+.preferences-child1 img,
+.preferences-child2 img,
+.preferences-child3 img,
+.preferences-child4 img,
+.preferences-child5 img,
+.preferences-child6 img {
+    /* position: absolute; */
+    margin-bottom: -4.5rem;
+    border-radius: 15px; 
+    border: 5px solid rgb(255, 255, 255);
+    /* border: 5px solid rgb(255, 255, 255); */
+}
+
+
+.preferences-tag1.active img,
+.preferences-tag2.active img,
+.preferences-tag3.active img,
+.preferences-tag4.active img,
+.preferences-tag5.active img,
+.preferences-tag6.active img {
+    border: 5px solid #32D9C6;
+}
+
+.btnDone, .btnBack {
+    max-width: 90%;
+    margin-left: 5%;
+    
+}
+
+.btnDone {
+    background-color: #FFCA00;
+    margin-top: 5rem;
+}
+
+.btnBack {
+    background-color: #32D9C6;
+    color: #fff;
+    padding: 15px;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
+
+/* **************************************** */
+/* Revised */
+/* **************************************** */
+
+
+hr {
+    width: 85%
+}
