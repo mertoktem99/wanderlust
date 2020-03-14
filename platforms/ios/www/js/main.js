@@ -10,22 +10,23 @@ const settingsPage = document.querySelector('.settings-page');
 const filterBtn = document.querySelector('.filterOption');
 const categoryBtn = document.querySelector('.categoryOption');
 const header = document.querySelector('.app-header');
-const travelContent = document.querySelector('.travelContent');
-const filmContent = document.querySelector('.filmMediaContent');
-const musicContent = document.querySelector('.musicContent');
-const foodDrinksContent = document.querySelector('.foodDrinksContent');
+// const travelContent = document.querySelector('.travelContent');
+// const filmContent = document.querySelector('.filmMediaContent');
+// const musicContent = document.querySelector('.musicContent');
+// const foodDrinksContent = document.querySelector('.foodDrinksContent');
 
 
+const loadMoreButton = document.querySelector('.loadMoreButton');
 
 
 
 filterNav.style.display = 'none';
 profilePage.style.display = 'none';
 settingsPage.style.display = 'none';
-travelContent.style.display = 'none';
-filmContent.style.display = 'none';
-musicContent.style.display = 'none';
-foodDrinksContent.style.display = 'none';
+// travelContent.style.display = 'none';
+// filmContent.style.display = 'none';
+// musicContent.style.display = 'none';
+// foodDrinksContent.style.display = 'none';
 categoryNav.style.display = 'none';
 
 
@@ -75,6 +76,7 @@ home.addEventListener('click', () => {
     header.style.display = 'initial';
 
     homePage.style.display = 'initial';
+    frontPage.style.display = 'initial';
 
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
@@ -208,13 +210,13 @@ travelOutdoors.addEventListener('click', () => {
     `;
 
 
-    travelContent.style.display = 'initial';
+    // travelContent.style.display = 'initial';
 
 
-    frontPage.style.display = 'none';
-    filmContent.style.display = 'none';
-    musicContent.style.display = 'none';
-    foodDrinksContent.style.display = 'none';
+    //frontPage.style.display = 'none';
+    // filmContent.style.display = 'none';
+    // musicContent.style.display = 'none';
+    // foodDrinksContent.style.display = 'none';
 })
 
 
@@ -300,11 +302,11 @@ filmMedia.addEventListener('click', () => {
         </a>
     `;
 
-    travelContent.style.display = 'none';
-    frontPage.style.display = 'none';
-    filmContent.style.display = 'initial';
-    musicContent.style.display = 'none';
-    foodDrinksContent.style.display = 'none';
+    // travelContent.style.display = 'none';
+    //frontPage.style.display = 'none';
+    // filmContent.style.display = 'initial';
+    // musicContent.style.display = 'none';
+    // foodDrinksContent.style.display = 'none';
 })
 
 
@@ -390,11 +392,11 @@ music.addEventListener('click', () => {
         </a>
     `;
 
-    travelContent.style.display = 'none';
-    frontPage.style.display = 'none';
-    filmContent.style.display = 'none';
-    musicContent.style.display = 'initial';
-    foodDrinksContent.style.display = 'none';
+    // travelContent.style.display = 'none';
+    //frontPage.style.display = 'none';
+    // filmContent.style.display = 'none';
+    // musicContent.style.display = 'initial';
+    // foodDrinksContent.style.display = 'none';
 })
 
 
@@ -480,11 +482,11 @@ food.addEventListener('click', () => {
     music.classList.remove('active');
     food.classList.add('active');
 
-    travelContent.style.display = 'none';
-    frontPage.style.display = 'none';
-    filmContent.style.display = 'none';
-    musicContent.style.display = 'none';
-    foodDrinksContent.style.display = 'initial';
+    // travelContent.style.display = 'none';
+    //frontPage.style.display = 'none';
+    // filmContent.style.display = 'none';
+    // musicContent.style.display = 'none';
+    // foodDrinksContent.style.display = 'initial';
 })
 
 
@@ -529,11 +531,13 @@ profile.addEventListener('click', () => {
     header.style.display = 'none';
     filterNav.style.display = 'none';
 
-    homePage.style.display = 'none';
-
+    //homePage.style.display = 'none';
+    frontPage.style.display = 'none';
+    loadMoreButton.style.display = 'none';
     profilePage.style.display = 'initial';
 
     settingsPage.style.display = 'none';
+    categoryNav.style.display = 'none';
 
     profilePage.classList.add('active');
 })
@@ -581,13 +585,16 @@ settings.addEventListener('click', () => {
 
     filterNav.style.display = 'none';
     header.style.display = 'none';
-    homePage.style.display = 'none';
-
+    
+    //homePage.style.display = 'none';
+    frontPage.style.display = 'none';
+    loadMoreButton.style.display = 'none';
     profilePage.style.display = 'none';
+    categoryNav.style.display = 'none';
 
     settingsPage.style.display = 'initial';
 
-    profilePage.classList.add('active');
+    settingsPage.classList.add('active');
 })
 
 

@@ -9,6 +9,9 @@ var foodChoice;
 var fashionChoice;
 var username;
 
+var loadEventItems = 3;
+var loadedEventItems = 0;
+
 
 // Filters
 var dateFilter = new Date();
@@ -55,40 +58,58 @@ getUserPrefsData = () => {
 }
 
 getEventsAccordingToUserPrefs = () => {
-    var eventshow = $("#eventshow");
+    var travelContent = $(".travelContent");
+    var filmMediaContent = $(".opening-display");
+    var musicContent = $(".musicContent");
+    var foodDrinksContent = $(".foodDrinksContent");
+
+    //var foodDrinksContent = $("#foodDrinksContent");
+    //var foodDrinksContent = $("#foodDrinksContent");
+
+
     const currentDate = new Date();
 
 
     db.collection("events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            if (doc.data().date.toDate() > currentDate &&
+            if (loadedEventItems < loadEventItems &&
+                doc.data().date.toDate() > currentDate &&
                 doc.data().date.toDate() > dateFilter &&
                 doc.data().price >= priceFilter &&
                 doc.data().city == locationFilter) {
                     if (filmChoice == true && `${doc.data().category}` == "Film&Media") {
-                            eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                            <p> event category: ${doc.data().category} </p> </article>`);
+                        filmMediaContent.append(`
+                            <li class='content-child content-child1' data-name='${doc.data().name}'>
+                                <a>
+                                    <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
+                                    <h3> 
+                                        <p> ${doc.data().name} </p>
+                                        <p> ${doc.data().date.toDate()}$ </p> 
+                                    </h3>
+                                </a>
+                            </li>`);
                     }
-                    else if (musicChoice == true && `${doc.data().category}` == "Music") {
-                        eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                        <p> event category: ${doc.data().category} </p> </article>`);
-                    }
-                    else if (travelChoice == true && `${doc.data().category}` == "Travel") {
-                        eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                        <p> event category: ${doc.data().category} </p> </article>`);
-                    }
-                    else if (sportChoice == true && `${doc.data().category}` == "Sport&Fitness") {
-                        eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                        <p> event category: ${doc.data().category} </p> </article>`);
-                    }
-                    else if (foodChoice == true && `${doc.data().category}` == "Food&Drink") {
-                        eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                        <p> event category: ${doc.data().category} </p> </article>`);
-                    }
-                    else if (fashionChoice == true && `${doc.data().category}` == "Fashion&Lifestyle") {
-                        eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                        <p> event category: ${doc.data().category} </p> </article>`);
-                    }
+                    // else if (musicChoice == true && `${doc.data().category}` == "Music") {
+                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
+                    //     <p> event category: ${doc.data().category} </p> </article>`);
+                    // }
+                    // else if (travelChoice == true && `${doc.data().category}` == "Travel") {
+                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
+                    //     <p> event category: ${doc.data().category} </p> </article>`);
+                    // }
+                    // else if (sportChoice == true && `${doc.data().category}` == "Sport&Fitness") {
+                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
+                    //     <p> event category: ${doc.data().category} </p> </article>`);
+                    // }
+                    // else if (foodChoice == true && `${doc.data().category}` == "Food&Drink") {
+                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
+                    //     <p> event category: ${doc.data().category} </p> </article>`);
+                    // }
+                    // else if (fashionChoice == true && `${doc.data().category}` == "Fashion&Lifestyle") {
+                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
+                    //     <p> event category: ${doc.data().category} </p> </article>`);
+                    // }
+                    loadedEventItems++;
         }
             var articles = document.querySelectorAll("article");
             articles.forEach(article => article.addEventListener('click', gotoItem ));
@@ -126,5 +147,12 @@ preferencesButton = () => {
         window.location.replace("preferences.html");
 };
 
+loadMoreItems = () => {
+    loadedEventItems = 0;
+    loadEventItems += 3;
+    getEventsAccordingToUserPrefs();
+}
+
+$('#btnLoadMore').click(loadMoreItems)
 $('#btnLogout').click(logOutButton);
 $('#preferencesbutton').click(preferencesButton);
