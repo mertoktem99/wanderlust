@@ -540,6 +540,8 @@ profile.addEventListener('click', () => {
     categoryNav.style.display = 'none';
 
     profilePage.classList.add('active');
+
+    getUserProfileData();
 })
 
 

@@ -8,6 +8,7 @@ var travelChoice
 var foodChoice;
 var fashionChoice;
 var username;
+var childCount = 1;
 
 var loadEventItems = 3;
 var loadedEventItems = 0;
@@ -58,11 +59,8 @@ getUserPrefsData = () => {
 }
 
 getEventsAccordingToUserPrefs = () => {
-    var travelContent = $(".travelContent");
-    var filmMediaContent = $(".opening-display");
-    var musicContent = $(".musicContent");
-    var foodDrinksContent = $(".foodDrinksContent");
-
+    var openingDisplay = $(".opening-display");
+    openingDisplay.empty();
     //var foodDrinksContent = $("#foodDrinksContent");
     //var foodDrinksContent = $("#foodDrinksContent");
 
@@ -72,48 +70,92 @@ getEventsAccordingToUserPrefs = () => {
 
     db.collection("events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            if (loadedEventItems < loadEventItems &&
+            if (childCount > 3) {
+                childCount = 1;
+            }
+            if (loadedEventItems <= loadEventItems &&
                 doc.data().date.toDate() > currentDate &&
                 doc.data().date.toDate() > dateFilter &&
                 doc.data().price >= priceFilter &&
                 doc.data().city == locationFilter) {
                     if (filmChoice == true && `${doc.data().category}` == "Film&Media") {
-                        filmMediaContent.append(`
-                            <li class='content-child content-child1' data-name='${doc.data().name}'>
+                        openingDisplay.append(`
+                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
                                     <h3> 
                                         <p> ${doc.data().name} </p>
-                                        <p> ${doc.data().date.toDate()}$ </p> 
+                                        <p> ${TimeConverter(doc.data().date.toDate())} </p> 
                                     </h3>
                                 </a>
                             </li>`);
                     }
-                    // else if (musicChoice == true && `${doc.data().category}` == "Music") {
-                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                    //     <p> event category: ${doc.data().category} </p> </article>`);
-                    // }
-                    // else if (travelChoice == true && `${doc.data().category}` == "Travel") {
-                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                    //     <p> event category: ${doc.data().category} </p> </article>`);
-                    // }
-                    // else if (sportChoice == true && `${doc.data().category}` == "Sport&Fitness") {
-                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                    //     <p> event category: ${doc.data().category} </p> </article>`);
-                    // }
-                    // else if (foodChoice == true && `${doc.data().category}` == "Food&Drink") {
-                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                    //     <p> event category: ${doc.data().category} </p> </article>`);
-                    // }
-                    // else if (fashionChoice == true && `${doc.data().category}` == "Fashion&Lifestyle") {
-                    //     eventshow.append(`<article data-name='${doc.data().name}'  > <p> event name: ${doc.data().name} </p>
-                    //     <p> event category: ${doc.data().category} </p> </article>`);
-                    // }
+                    else if (musicChoice == true && `${doc.data().category}` == "Music") {
+                        openingDisplay.append(`
+                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                                <a>
+                                    <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
+                                    <h3> 
+                                        <p> ${doc.data().name} </p>
+                                        <p> ${TimeConverter(doc.data().date.toDate())} </p> 
+                                    </h3>
+                                </a>
+                            </li>`);
+                    }
+                    else if (travelChoice == true && `${doc.data().category}` == "Travel") {
+                        openingDisplay.append(`
+                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                                <a>
+                                    <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
+                                    <h3> 
+                                        <p> ${doc.data().name} </p>
+                                        <p> ${TimeConverter(doc.data().date.toDate())} </p> 
+                                    </h3>
+                                </a>
+                            </li>`);
+                    }
+                    else if (sportChoice == true && `${doc.data().category}` == "Sport&Fitness") {
+                        openingDisplay.append(`
+                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                                <a>
+                                    <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
+                                    <h3> 
+                                        <p> ${doc.data().name} </p>
+                                        <p> ${TimeConverter(doc.data().date.toDate())} </p> 
+                                    </h3>
+                                </a>
+                            </li>`);
+                    }
+                    else if (foodChoice == true && `${doc.data().category}` == "Food&Drink") {
+                        openingDisplay.append(`
+                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                                <a>
+                                    <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
+                                    <h3> 
+                                        <p> ${doc.data().name} </p>
+                                        <p> ${TimeConverter(doc.data().date.toDate())} </p> 
+                                    </h3>
+                                </a>
+                            </li>`);
+                    }
+                    else if (fashionChoice == true && `${doc.data().category}` == "Fashion&Lifestyle") {
+                        openingDisplay.append(`
+                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                                <a>
+                                    <img src='../img/film-01.jpeg' alt='Anime Cosplay Fest'>
+                                    <h3> 
+                                        <p> ${doc.data().name} </p>
+                                        <p> ${TimeConverter(doc.data().date.toDate())} </p> 
+                                    </h3>
+                                </a>
+                            </li>`);
+                    }
                     loadedEventItems++;
-        }
-            var articles = document.querySelectorAll("article");
-            articles.forEach(article => article.addEventListener('click', gotoItem ));
 
+        }
+        childCount++;
+        var articles = document.querySelectorAll("article");
+        articles.forEach(article => article.addEventListener('click', gotoItem ));
         })
     });
 }
@@ -126,26 +168,17 @@ function gotoItem( event ){
     window.location.href = url;
 }
 
-function TurnToStringDate( timestamp ){
-    var date = timestamp.getDate();
-    var month = timestamp.getMonth(); //Be careful! January is 0 not 1
-    var year = timestamp.getFullYear();
-    return dateString = date + "-" +(month + 1) + "-" + year;
-}
-
-
-
-
-
-logOutButton = () => {
-    firebase.auth().signOut().then(() => {
-        window.location.replace("../index.html");
-    });
-};
-
-preferencesButton = () => {
-        window.location.replace("preferences.html");
-};
+function TimeConverter(UNIX_timestamp){
+    var a = UNIX_timestamp;
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':0' + min;
+    return time;
+  }
 
 loadMoreItems = () => {
     loadedEventItems = 0;
@@ -154,5 +187,83 @@ loadMoreItems = () => {
 }
 
 $('#btnLoadMore').click(loadMoreItems)
+
+
+
+// PROFILE PAGE
+var username;
+var email;
+var password;
+var dob;
+var gender;
+
+
+savePrefs = () => {
+    username = $("#retrieveUsername").val()
+    email = $("#retrieveUserEmail").val()
+    password = $("#retrieveUserPwd").val();
+    dob = $("#retrieveUserDob").val();
+    gender = $("#retrieveUserGender").val();
+    addData();
+};
+
+
+addData = () => {
+    // Add Data    
+    var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
+    var o = {};
+    docRef.get().then(function(thisDoc) {
+        if (thisDoc.exists) {
+            //user is already there, write only last login
+            o.username = $("#retrieveUsername").val();
+            o.email = $("#retrieveUserEmail").val();
+            o.password = $("#retrieveUserPwd").val();
+            o.dob = $("#retrieveUserDob").val();
+            o.gender = $("#retrieveUserGender").val();
+            
+            docRef.update(o).then(function(thisDoc) {
+                window.location.href = "frontPage.html";
+            });
+        }
+    });
+}
+
+getUserProfileData = () => {
+    // Add Data     
+    var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
+    var o = {};
+    docRef.get().then(function(thisDoc) {
+        if (thisDoc.exists) {
+            //user is already there, write only last login
+            $("#retrieveUsername").defaultValue = thisDoc.data().username;
+            $("#retrieveUserEmail").value = thisDoc.data().email;
+            $("#retrieveUserPwd").value = thisDoc.data().password;
+            $("#retrieveUserDob").value = thisDoc.data().username.dob;
+            $("#retrieveUserGender").value = thisDoc.data().gender;
+        }
+    });
+}
+
+$('.btnDone').click(addData);
+
+
+
+$('#btn-save-profile').click(savePrefs);
+
+
+// SETTINGS PAGE
+preferencesButton = () => {
+    window.location.replace("preference.html");
+};
+
+$('.preferenceButton').click(preferencesButton);
+
+
+logOutButton = () => {
+    firebase.auth().signOut().then(() => {
+        window.location.replace("../index.html");
+    });
+};
+
+
 $('#btnLogout').click(logOutButton);
-$('#preferencesbutton').click(preferencesButton);
