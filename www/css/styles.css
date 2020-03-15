@@ -832,3 +832,179 @@ li a p {
 hr {
     width: 85%
 }
+
+
+/************ Location Select Page ************/
+
+.location-header{
+    margin-bottom: -6rem;
+}
+
+.location-header img {    
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background: rgba(0, 0, 0, 1)
+    /* position: relative; */
+}
+
+.location-header h2 {
+    color: #fff;
+    font-weight: 800;
+    top: -15rem;
+    font-size: 1.9rem;
+    max-width: 85%;
+    margin: auto;
+}
+
+/* .overlay {
+    z-index: 0;
+    height: 50%;
+    width: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.7); 
+} */
+
+.location-set-main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.location-select {
+    position: relative;
+    flex-basis: 80%;
+    top: -7.5rem;
+    height: 60%;
+    background-color: white;
+    border-radius: 15px; 
+    align-items: space-evenly;
+    padding: 40px 15px;
+    filter: drop-shadow(0 0 0.5rem #909090);
+}
+
+.location-select p{
+    border-bottom: 1px solid #909090;
+    margin: 40px 2px;
+}
+
+#currentLocationBtn {
+    flex-basis: 100%;
+    background-color: #F7BE00;
+    color: white;
+}
+
+#cityBtn {
+    background-color: #2ec4b3;
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+#cityBtn a{
+    text-align: center;
+}
+
+#cityBtn p{
+    margin: 0;
+}
+
+.location-set-footer {
+    flex-basis: 80%;
+    display: block;  
+    align-content: center;
+    justify-items: center;
+}
+
+#confirmBtn {
+    flex-basis: 100%;
+    background-color: #F7BE00;
+    position: relative;
+    top: -6rem;
+    /* margin: 20px 0;  */
+}
+
+
+/*************** Location Filter ***************/
+
+.location-main{
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+} 
+    
+.location-input{
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+    
+.location-input input{
+    flex-basis: 100%;
+    border-radius: 12px;
+    font-size: 20px;
+    position: absolute;
+    padding: 8px 0;
+    width: 80%;
+    margin-top: 10%;
+}
+
+.search-placeholder {
+    margin-top: 10%;
+    flex-basis: 80%;
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+    
+.search-placeholder img {
+    position: relative;
+    margin: 8px;
+    width: 25px;
+    height: 25px;
+}
+
+.search-placeholder p {
+    position: relative;
+    font-family: "Montserrat" ,sans-serif;
+    font-size: 12px;
+    color: grey;
+    margin: 10px;
+}
+
+.location-buttons{
+    flex-basis: 80%; 
+    margin-top: 60%;
+    margin-bottom: 10%; 
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.location-buttons a{   
+    flex-basis: 100%;
+    margin: 10px 0;
+    padding: 0;
+}
+
+#searchBtn {
+    background-color: #F7BE00;
+    color: black;
+}
+
+#cancelBtn {
+    background-color: #2ec4b3;
+    color: white;
+}
+
+.location-footer {
+    flex-basis: 100%;
+    align-self: flex-end;
+}
