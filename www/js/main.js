@@ -252,6 +252,9 @@ const travelOutdoors = document.querySelector('.travel-outdoors');
 const filmMedia = document.querySelector('.film-media');
 const music = document.querySelector('.music');
 const food = document.querySelector('.food-drinks');
+const sportsFitness = document.querySelector('.sports-fitness');
+const fashionLifestyle = document.querySelector('.fashion-lifestyle');
+
 
 
 // **************************
@@ -302,6 +305,8 @@ travelOutdoors.addEventListener('click', () => {
     filmMedia.classList.remove('active');
     music.classList.remove('active');
     food.classList.remove('active');
+    sportsFitness.classList.remove('active');
+    fashionLifestyle.classList.remove('active');
 
     // Music **********************
 
@@ -333,6 +338,41 @@ travelOutdoors.addEventListener('click', () => {
             <img src="${replaceFoodIcon}" alt="Icon-22">
             <p>
                 Food & Drinks
+            </p>
+        </a>
+    `;
+
+
+    // Sports and Fitness **********************
+
+    const sportsIcon = sportsFitness.querySelector('img');
+    const sportsIconSrc = sportsIcon.src;
+    const replaceSportsIcon = sportsIconSrc.replace('Icon-28', 'Icon-27');
+
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+    `;
+
+    // Fashion and Lifestyle **********************
+
+    const fashionIcon = fashionLifestyle.querySelector('img');
+    const fashionIconSrc = fashionIcon.src;
+    const replaceFashionIcon = fashionIconSrc.replace('Icon-29', 'Icon-30');
+
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <p>
+                Fashion & Lifestyle
             </p>
         </a>
     `;
@@ -395,6 +435,8 @@ filmMedia.addEventListener('click', () => {
     filmMedia.classList.add('active');
     music.classList.remove('active');
     food.classList.remove('active');
+    sportsFitness.classList.remove('active');
+    fashionLifestyle.classList.remove('active');
 
     // Music **********************
 
@@ -430,6 +472,40 @@ filmMedia.addEventListener('click', () => {
         </a>
     `;
 
+
+    // Sports and Fitness **********************
+
+    const sportsIcon = sportsFitness.querySelector('img');
+    const sportsIconSrc = sportsIcon.src;
+    const replaceSportsIcon = sportsIconSrc.replace('Icon-28', 'Icon-27');
+
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+    `;
+
+    // Fashion and Lifestyle **********************
+
+    const fashionIcon = fashionLifestyle.querySelector('img');
+    const fashionIconSrc = fashionIcon.src;
+    const replaceFashionIcon = fashionIconSrc.replace('Icon-29', 'Icon-30');
+
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <p>
+                Fashion & Lifestyle
+            </p>
+        </a>
+    `;
     // travelContent.style.display = 'none';
     //frontPage.style.display = 'none';
     // filmContent.style.display = 'initial';
@@ -502,6 +578,9 @@ music.addEventListener('click', () => {
     filmMedia.classList.remove('active');
     music.classList.add('active');
     food.classList.remove('active');
+    sportsFitness.classList.remove('active');
+    fashionLifestyle.classList.remove('active');
+
 
     // Food and Drinks **********************
 
@@ -516,6 +595,40 @@ music.addEventListener('click', () => {
             <img src="${replaceFoodIcon}" alt="Icon-22">
             <p>
                 Food & Drinks
+            </p>
+        </a>
+    `;
+
+    // Sports and Fitness **********************
+
+    const sportsIcon = sportsFitness.querySelector('img');
+    const sportsIconSrc = sportsIcon.src;
+    const replaceSportsIcon = sportsIconSrc.replace('Icon-28', 'Icon-27');
+
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+    `;
+
+    // Fashion and Lifestyle **********************
+
+    const fashionIcon = fashionLifestyle.querySelector('img');
+    const fashionIconSrc = fashionIcon.src;
+    const replaceFashionIcon = fashionIconSrc.replace('Icon-29', 'Icon-30');
+
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <p>
+                Fashion & Lifestyle
             </p>
         </a>
     `;
@@ -605,10 +718,48 @@ food.addEventListener('click', () => {
         </a>
     `;
 
+    // Sports and Fitness **********************
+
+    const sportsIcon = sportsFitness.querySelector('img');
+    const sportsIconSrc = sportsIcon.src;
+    const replaceSportsIcon = sportsIconSrc.replace('Icon-28', 'Icon-27');
+
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+    `;
+
+    // Fashion and Lifestyle **********************
+
+    const fashionIcon = fashionLifestyle.querySelector('img');
+    const fashionIconSrc = fashionIcon.src;
+    const replaceFashionIcon = fashionIconSrc.replace('Icon-29', 'Icon-30');
+
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <p>
+                Fashion & Lifestyle
+            </p>
+        </a>
+    `;
+
+
     travelOutdoors.classList.remove('active');
     filmMedia.classList.remove('active');
     music.classList.remove('active');
     food.classList.add('active');
+    sportsFitness.classList.remove('active');
+    fashionLifestyle.classList.remove('active');
+
 
     // travelContent.style.display = 'none';
     //frontPage.style.display = 'none';
@@ -617,6 +768,249 @@ food.addEventListener('click', () => {
     // foodDrinksContent.style.display = 'initial';
 })
 
+
+// **************************
+//      Sports & Fitness
+// **************************
+
+
+
+sportsFitness.addEventListener('click', () => {
+
+
+
+    // Travel and Outdoors **********************
+
+    const travelIcon = travelOutdoors.querySelector('img');
+    const travelIconSrc = travelIcon.src;
+    const replaceTravelIcon = travelIconSrc.replace('Icon-23', 'Icon-19');
+
+    console.log(travelIcon, travelIconSrc, replaceTravelIcon);
+
+    travelOutdoors.innerHTML = `
+        <a>
+            <img src="${replaceTravelIcon}" alt="Icon-23">
+            <p>
+                Travel & Outdoor
+            </p>
+        </a>
+    `;
+
+    // Film and Media **********************
+
+    const filmIcon = filmMedia.querySelector('img');
+    const filmIconSrc = filmIcon.src;
+    const replaceFilmIcon = filmIconSrc.replace('Icon-25', 'Icon-20');
+
+    console.log(filmIcon, filmIconSrc, replaceFilmIcon);
+
+    filmMedia.innerHTML = `
+        <a>
+            <img src="${replaceFilmIcon}" alt="Icon-20">
+            <p>
+                Film & Media
+            </p>
+        </a>
+    `;
+
+    travelOutdoors.classList.remove('active');
+    filmMedia.classList.remove('active');
+    music.classList.remove('active');
+    food.classList.remove('active');
+    sportsFitness.classList.add('active');
+    fashionLifestyle.classList.remove('active');
+
+
+    // Music **********************
+
+    const musicIcon = music.querySelector('img');
+    const musicIconSrc = musicIcon.src;
+    const replaceMusicIcon = musicIconSrc.replace('Icon-24', 'Icon-21');
+
+    console.log(musicIcon, musicIconSrc, replaceMusicIcon);
+
+    music.innerHTML = `
+        <a>
+            <img src="${replaceMusicIcon}" alt="Icon-21">
+            <p>
+                Music
+            </p>
+        </a>
+    `;
+
+    // Food and Drinks **********************
+
+    const foodIcon = food.querySelector('img');
+    const foodIconSrc = foodIcon.src;
+    const replaceFoodIcon = foodIconSrc.replace('Icon-26', 'Icon-22');
+
+    console.log(foodIcon, foodIconSrc, replaceFoodIcon);
+
+    food.innerHTML = `
+        <a>
+            <img src="${replaceFoodIcon}" alt="Icon-22">
+            <p>
+                Food & Drinks
+            </p>
+        </a>
+    `;
+
+    // Sports and Fitness **********************
+
+    const sportsIcon = sportsFitness.querySelector('img');
+    const sportsIconSrc = sportsIcon.src;
+    const replaceSportsIcon = sportsIconSrc.replace('Icon-27', 'Icon-28');
+
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+    `;
+
+    // Fashion and Lifestyle **********************
+
+    const fashionIcon = fashionLifestyle.querySelector('img');
+    const fashionIconSrc = fashionIcon.src;
+    const replaceFashionIcon = fashionIconSrc.replace('Icon-29', 'Icon-30');
+
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <p>
+                Fashion & Lifestyle
+            </p>
+        </a>
+    `;
+
+})
+
+// **************************
+//   Fashion & Lifestyle
+// **************************
+
+
+
+fashionLifestyle.addEventListener('click', () => {
+
+
+
+    // Travel and Outdoors **********************
+
+    const travelIcon = travelOutdoors.querySelector('img');
+    const travelIconSrc = travelIcon.src;
+    const replaceTravelIcon = travelIconSrc.replace('Icon-23', 'Icon-19');
+
+    console.log(travelIcon, travelIconSrc, replaceTravelIcon);
+
+    travelOutdoors.innerHTML = `
+        <a>
+            <img src="${replaceTravelIcon}" alt="Icon-23">
+            <p>
+                Travel & Outdoor
+            </p>
+        </a>
+    `;
+
+    // Film and Media **********************
+
+    const filmIcon = filmMedia.querySelector('img');
+    const filmIconSrc = filmIcon.src;
+    const replaceFilmIcon = filmIconSrc.replace('Icon-25', 'Icon-20');
+
+    console.log(filmIcon, filmIconSrc, replaceFilmIcon);
+
+    filmMedia.innerHTML = `
+        <a>
+            <img src="${replaceFilmIcon}" alt="Icon-20">
+            <p>
+                Film & Media
+            </p>
+        </a>
+    `;
+
+    travelOutdoors.classList.remove('active');
+    filmMedia.classList.remove('active');
+    music.classList.remove('active');
+    food.classList.remove('active');
+    sportsFitness.classList.remove('active');
+    fashionLifestyle.classList.add('active');
+
+    // Music **********************
+
+    const musicIcon = music.querySelector('img');
+    const musicIconSrc = musicIcon.src;
+    const replaceMusicIcon = musicIconSrc.replace('Icon-24', 'Icon-21');
+
+    console.log(musicIcon, musicIconSrc, replaceMusicIcon);
+
+    music.innerHTML = `
+        <a>
+            <img src="${replaceMusicIcon}" alt="Icon-21">
+            <p>
+                Music
+            </p>
+        </a>
+    `;
+
+    // Food and Drinks **********************
+
+    const foodIcon = food.querySelector('img');
+    const foodIconSrc = foodIcon.src;
+    const replaceFoodIcon = foodIconSrc.replace('Icon-26', 'Icon-22');
+
+    console.log(foodIcon, foodIconSrc, replaceFoodIcon);
+
+    food.innerHTML = `
+        <a>
+            <img src="${replaceFoodIcon}" alt="Icon-22">
+            <p>
+                Food & Drinks
+            </p>
+        </a>
+    `;
+
+    // Sports and Fitness **********************
+
+    const sportsIcon = sportsFitness.querySelector('img');
+    const sportsIconSrc = sportsIcon.src;
+    const replaceSportsIcon = sportsIconSrc.replace('Icon-28', 'Icon-27');
+
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+    `;
+
+    // Fashion and Lifestyle **********************
+
+    const fashionIcon = fashionLifestyle.querySelector('img');
+    const fashionIconSrc = fashionIcon.src;
+    const replaceFashionIcon = fashionIconSrc.replace('Icon-30', 'Icon-29');
+
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <p>
+                Fashion & Lifestyle
+            </p>
+        </a>
+    `;
+
+})
 
 
 // ***************************************************************************

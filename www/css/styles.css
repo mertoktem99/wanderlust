@@ -152,6 +152,59 @@ li{
     text-decoration-line: underline;
 }
 
+.signup-info-input{
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    padding-left: 30px;
+    padding-right: 30px ;
+    padding-top: 0;
+   justify-content: center;
+   top: -4rem;
+   position: relative;
+}
+
+.signup-info-input .signup-heading{
+    color: #0088fd;
+    font-size: 1.7rem;
+    top: 1rem;
+    position: relative;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-30px);
+}
+
+
+.signup-info-input input , .signup-info-input label{
+    flex-basis: 100%;
+}
+
+.signup-info-input label{
+    font-size: 0.9rem;
+    /* margin-top: 5px; */
+}
+
+.signup-info-input input{
+    border:0;
+    border-bottom: 2px solid #D0D0D0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.signup-info-input a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0.6rem 0 0 0;
+    text-decoration-line: underline;
+}
+
 .login-footer {
     display: flex;
     flex-flow: row wrap;
@@ -221,6 +274,10 @@ button{
     background-color: #FFCA00; 
 }
 
+#signupFooter {
+    position: relative;
+    top: -2rem;
+}
 
 /********************************************************************************************************/
 /********************************************************************************************************/
@@ -927,7 +984,16 @@ li a p {
     background-color: #32D9C6;
 }
 
-.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p{
+.sports-fitness.active {
+    background-color: #0088fd;
+}
+
+.fashion-lifestyle.active{
+    background-color: #FFCA00;
+}
+
+
+.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p, .sports-fitness.active p, .fashion-lifestyle.active p{
     color: #fff;
 }
 
