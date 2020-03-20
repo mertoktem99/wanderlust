@@ -63,15 +63,15 @@ function datePopUp() {
 
         <div class="date-input">
         	<input type="date" id="date">
-        	<button id="btnApply" class="btnApply">Apply</button>
-        	<button id="btnCancel" class="btnCancel">Cancel</button>
+        	<button id="btnApply" class="dateApply">Apply</button>
+        	<button id="btnCancel" class="dateCancel">Cancel</button>
         </div>
       
     </div>
     `;
 
     dateOuter.classList.add('active');
-    const cancel = document.querySelector('#btnCancel');
+    const cancel = document.querySelector('.dateCancel');
     cancel.addEventListener('click', closedate);
 
 };
@@ -107,13 +107,13 @@ function pricePopUp() {
                 <option value="Between $10-$20">Between $10-$20</option>
 
             </select>
-            <button id="btnApply" class="btnApply">Apply</button>
-            <button id="btnCancel" class="btnCancel">Cancel</button>
+            <button id="btnApply" class="priceApply">Apply</button>
+            <button id="btnCancel" class="priceCancel">Cancel</button>
         </div>      
     </div>
     `;
     priceOuter.classList.add('active');
-    const cancel = document.querySelector('#btnCancel');
+    const cancel = document.querySelector('.priceCancel');
     cancel.addEventListener('click', closeprice);
 
 };
@@ -141,15 +141,13 @@ function locationPopUp() {
            
         <a href=""><button id="currentLocationBtn">Use Your Location</button></a>
         <p></p>
-        <a href=""><button id="cityBtn">
         <select id="city" name="city">
             <option value="location">Choose Location</option>
-            <option value="vancouver">Vancouver</option>
-            <option value="surrey">Surrey</option>
-            <option value="richmond">Richmond</option>
-            <option value="delta">Delta</option>
-        </select>
-        </button></a>           
+            <option value="vancouver"><a href="#">Vancouver</a></option>
+            <option value="surrey"><a href="#">Surrey</a></option>
+            <option value="richmond"><a href="#">Richmond</a></option>
+            <option value="delta"><a href="#">Delta</a></option>
+        </select>     
              
     </div>
     `;

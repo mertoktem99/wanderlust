@@ -570,13 +570,13 @@ button{
     line-height: 1rem;
 }
 
-.btnApply {
+.dateApply, .priceApply {
     color: black;
     background-color: #F7BE00;
     margin: 0.3rem;
 }
 
-.btnCancel {
+.dateCancel, .priceCancel {
     color: white;
     background-color: #2ec4b3;
     margin: 0.3rem;
@@ -605,16 +605,19 @@ button{
     color: white;
 }
 
-.locationPopUp #cityBtn {
+.locationPopUp select {
     background-color: #2ec4b3;
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    /* justify-content: space-evenly; */
+    padding: 15px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+    /* justify-content: center; */
     align-items: center;
 }
 
-.locationPopUp #cityBtn p:first-of-type{
+.locationPopUp select option:first-of-type{
     justify-self: flex-start;
     word-wrap: none;    
 }
@@ -816,8 +819,8 @@ ul{
 }
 
 .secondary-nav  ul li a img{
-    max-width: 50px;
-    height: auto;
+    width: auto;
+    height: 50px;
     justify-content: flex-start;
 }
 
@@ -908,8 +911,12 @@ ul{
 }
 
 .event-filter img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: auto;
+}
+
+#btnPrice img{
+    margin-top: 1rem;
 }
 
 .event-filter a:nth-of-type(1) {
@@ -1283,6 +1290,138 @@ hr {
     flex-basis: 100%;
     align-self: flex-end;
 }
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                           Events Page                                                */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.event-header img{
+    position: relative;
+    /* border-radius: 1rem; */
+}
+
+.event-main {   
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    position: relative;
+    top: -1rem;
+    padding: 0.05rem;     
+    background-color: white;  
+    margin: 0;  
+    margin-bottom: 3rem;
+}
+
+.event-heading {  
+    /* position: relative; */
+    /* top: 5rem; */
+    background-color: white;
+    /* border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; */
+    padding: 1.1rem 1rem;  
+    display: flex;
+    flex-flow: row nowrap; 
+    justify-content: space-between;
+    border-radius: 2rem;
+
+}
+
+.event-heading h2{
+    color: #2ec4b3;
+    margin: 0;
+    padding: 0;
+}
+
+.event-heading a{
+    color: #F7BE00;
+    text-align: right;
+}
+
+.event-info {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid #909090;
+}
+
+
+.event-time , .event-price {
+    flex-basis: 50%;
+}
+
+.event-time , .event-price , .event-location {
+    margin: 0.3rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.event-time .tag, 
+.event-price .tag ,
+.event-location .tag {
+    flex-basis: 50%;
+    margin: 0;
+    padding: 0 0.3rem;
+}
+
+.event-time img, 
+.event-price img , 
+.event-location img{
+    width: 30px;
+    height: auto;
+}
+
+.event-time .date , 
+.event-price .price , 
+.event-location .location {
+    flex-basis: 100%;
+    margin: 0.3rem  0;
+    padding: 0;
+}
+
+.event-location {
+    flex-basis: 100%;
+}
+
+.event-info .tag {
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.date,.price, .location {
+    font-size: 1.1rem;
+    color: #0088fd;
+    font-weight: bold;
+}
+
+.event-content {
+    font-size: 0.9rem;
+    color: #909090;
+    padding: 0 1rem;
+}
+
+.event-content a:not(:last-child) {
+    text-decoration: #0A1943;
+}
+
+
+#backBtn {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+
+#directionBtn {
+    background-color: #F7BE00;
+    color: #0A1943;
+    margin-top: 2rem;
+}
+
 
 /********************************************************************************************************/
 /********************************************************************************************************/
