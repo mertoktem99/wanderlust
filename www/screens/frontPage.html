@@ -13,7 +13,7 @@
 
     <script src="../js/connectFirebase.js" defer></script>
     <script src="../js/homepage.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <title>Home Categories</title>
 </head>
@@ -120,15 +120,15 @@
             <main class="filter-main">
                 <main class="home-main">
                     <div class="event-filter">
-                        <a>
+                        <a id="btnDate">
                             <img src="../icons/Icon-05.png" alt="">
                             <p>Date</p>
                         </a>
-                        <a>
+                        <a id="btnPrice">
                             <img src="../icons/Icon-04.png" alt="">
                             <p>Price</p>
                         </a>
-                        <a>
+                        <a id="btnLocation">
                             <img src="../icons/Icon-03.png" alt="">
                             <p>Location</p>
                         </a>
@@ -187,107 +187,125 @@
 
 
 
-    <main class="profile-main">
-        <header>
-            <div class="profile-header">
-                <div class="profile-heading">
-                    <h3>USER PROFILE</h3>
-                </div>
+            <main class="profile-main">
+                <header>
+                    <div class="profile-header">
+                        <div class="profile-heading">
+                            <h3>USER PROFILE</h3>
+                        </div>
 
-                <div class="profile-message">
-                    <p>WELCOME,</p>
-                    <p class="display-username" id="displayUsername">Kevin Lou</p>
+                        <div class="profile-message">
+                            <p>WELCOME,</p>
+                            <p class="display-username" id="displayUsername">Kevin Lou</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="profile-info">
+                    <label for="retrieveUsername">Username</label>
+                    <input type="text" id="retrieveUsername">
+
+                    <label for="retrieveUserEmail">Email</label>
+                    <input type="email" id="retrieveUserEmail">
+
+                    <label for="retrieveUserPwd">Password</label>
+                    <input type="password" id="retrieveUserPwd">
+
+                    <label for="retrieveUserDob">Birthday</label>
+                    <input type="date" id="retrieveUserDob">
+
+                    <label for="retrieveUserGender">Gender</label>
+                    <input type="text" id="retrieveUserGender">
+
+                    <!-- <div class="profile-buttons"> -->
+                    <button id="btn-edit-profile">Edit</button>
+                    <button id="btn-save-profile">Save</button>
+                    <!-- </div> -->
+                </div>
+            </main>
+
+            <main class="settings-page">
+                <header>
+                    <div class=" settings-header">
+                        <div class=" settings-heading">
+                            <h3>SETTINGS</h3>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="settings-main">
+                    <div class="settings-block">
+                        <a>
+                            <div class="settings-options">
+                                <img src="../icons/Icon-31.png" alt="">
+                                <h3>PREFERENCE SETTINGS</h3>
+                            </div>
+                        </a>
+                        <a>
+                            <div class="settings-options">
+                                <img src="../icons/Icon-32.png" alt="">
+                                <h3>CONTACT US</h3>
+                            </div>
+                        </a>
+                        <a href="ContactUs.html">
+                            <div class="settings-options">
+                                <img src="../icons/Icon-33.png" alt="">
+                                <h3>FAQ</h3>
+                            </div>
+                        </a>
+                        <a>
+                            <div>
+                                <button id="btnLogout">Log out</button>
+                            </div>
+                        </a>
+                    </div>
+                </main>
+            </main>
+
+            <footer class="settings-footer">
+                <div class="footer-container">
+                    <a class="home"><img src="../icons/Icon-01.png" alt="">
+                        <p>Home</p>
+                    </a>
+                    <a class="profile"><img src="../icons/Icon-09.png" alt="">
+                        <p>Profile</p>
+                    </a>
+                    <a class="settings"><img src="../icons/Icon-10.png" alt="">
+                        <p>Settings</p>
+                    </a>
+                </div>
+            </footer>
+
+            <div class="date-outer">
+                <div class="date-inner">
+
                 </div>
             </div>
-        </header>
 
-        <div class="profile-info">
-            <label for="retrieveUsername">Username</label>
-            <input type="text" id="retrieveUsername">
+            <div class="price-outer">
+                <div class="price-inner">
 
-            <label for="retrieveUserEmail">Email</label>
-            <input type="email" id="retrieveUserEmail">
-
-            <label for="retrieveUserPwd">Password</label>
-            <input type="password" id="retrieveUserPwd">
-
-            <label for="retrieveUserDob">Birthday</label>
-            <input type="date" id="retrieveUserDob">
-
-            <label for="retrieveUserGender">Gender</label>
-            <input type="text" id="retrieveUserGender">
-
-            <!-- <div class="profile-buttons"> -->
-            <button id="btn-edit-profile">Edit</button>
-            <button id="btn-save-profile">Save</button>
-            <!-- </div> -->
-        </div>
-    </main>
-
-    <main class="settings-page">
-        <header>
-            <div class=" settings-header">
-                <div class=" settings-heading">
-                    <h3>SETTINGS</h3>
                 </div>
             </div>
-        </header>
 
-        <main class="settings-main">
-            <div class="settings-block">
-                <a>
-                    <div class="settings-options">
-                        <img src="../icons/Icon-31.png" alt="">
-                        <h3>PREFERENCE SETTINGS</h3>
-                    </div>
-                </a>
-                <a>
-                    <div class="settings-options">
-                        <img src="../icons/Icon-32.png" alt="">
-                        <h3>CONTACT US</h3>
-                    </div>
-                </a>
-                <a>
-                    <div class="settings-options">
-                        <img src="../icons/Icon-33.png" alt="">
-                        <h3>FAQ</h3>
-                    </div>
-                </a>
-                <a>
-                    <div>
-                        <button id="btnLogout">Log out</button>
-                    </div>
-                </a>
+            <div class="location-outer">
+                <div class="location-inner">
+
+                </div>
             </div>
-        </main>
-    </main>
 
-    <footer class="settings-footer">
-        <div class="footer-container">
-            <a class="home"><img src="../icons/Icon-01.png" alt="">
-                <p>Home</p>
-            </a>
-            <a class="profile"><img src="../icons/Icon-09.png" alt="">
-                <p>Profile</p>
-            </a>
-            <a class="settings"><img src="../icons/Icon-10.png" alt="">
-                <p>Settings</p>
-            </a>
-        </div>
-    </footer>
 
- 
-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+            <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+            <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 
-<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+            <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
 
-<!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
 
 </body>
 
