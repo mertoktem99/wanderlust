@@ -34,6 +34,134 @@ categoryNav.style.display = 'none';
 console.log(home, profile, settings, homePage);
 
 
+// ***************************************************************************
+// ***************************************************************************
+//                                Filters 
+// ***************************************************************************
+// ***************************************************************************
+
+
+
+
+//============================ Date ================================
+
+const date = document.querySelector('#btnDate');
+const dateOuter = document.querySelector('.date-outer');
+const dateInner = document.querySelector('.date-inner');
+
+console.log(date, dateOuter, dateInner);
+
+date.addEventListener('click', datePopUp);
+
+function datePopUp() {
+    dateInner.innerHTML = `
+    <div class = "datePopUp">
+        <div class = "date-header">
+         <img src="../icons/Icon-12.png">
+         <p>DATE</p>
+        </div>
+
+        <div class="date-input">
+        	<input type="date" id="date">
+        	<button id="btnApply" class="btnApply">Apply</button>
+        	<button id="btnCancel" class="btnCancel">Cancel</button>
+        </div>
+      
+    </div>
+    `;
+
+    dateOuter.classList.add('active');
+    const cancel = document.querySelector('#btnCancel');
+    cancel.addEventListener('click', closedate);
+
+};
+
+
+function closedate() {
+    dateOuter.classList.remove('active');
+};
+
+
+
+//============================ Price ================================
+
+const price = document.querySelector('#btnPrice');
+const priceOuter = document.querySelector('.price-outer');
+const priceInner = document.querySelector('.price-inner');
+
+console.log(price, priceOuter, priceInner);
+
+price.addEventListener('click', pricePopUp);
+
+function pricePopUp() {
+    priceInner.innerHTML = `
+    <div class = "pricePopUp">
+        <div class = "price-header">
+         <img src="../icons/Icon-11.png">
+         <p>PRICE</p>
+        </div>
+
+        <div class="price-input">
+            <select type="text" id="price">
+                <option value="Free">Free</option>
+                <option value="Between $10-$20">Between $10-$20</option>
+
+            </select>
+            <button id="btnApply" class="btnApply">Apply</button>
+            <button id="btnCancel" class="btnCancel">Cancel</button>
+        </div>      
+    </div>
+    `;
+    priceOuter.classList.add('active');
+    const cancel = document.querySelector('#btnCancel');
+    cancel.addEventListener('click', closeprice);
+
+};
+
+// priceOuter.addEventListener('click', closeprice);
+
+function closeprice() {
+    priceOuter.classList.remove('active');
+};
+
+
+
+
+//============================ Location ================================
+
+const locationButton = document.querySelector('#btnLocation');
+const locationOuter = document.querySelector('.location-outer');
+const locationInner = document.querySelector('.location-inner');
+
+locationButton.addEventListener('click', locationPopUp);
+
+function locationPopUp() {
+    locationInner.innerHTML = `
+    <div class = "locationPopUp"> 
+           
+        <a href=""><button id="currentLocationBtn">Use Your Location</button></a>
+        <p></p>
+        <a href=""><button id="cityBtn">
+        <select id="city" name="city">
+            <option value="location">Choose Location</option>
+            <option value="vancouver">Vancouver</option>
+            <option value="surrey">Surrey</option>
+            <option value="richmond">Richmond</option>
+            <option value="delta">Delta</option>
+        </select>
+        </button></a>           
+             
+    </div>
+    `;
+    locationOuter.classList.add('active');
+};
+
+// locationOuter.addEventListener('click', closeLocation);
+// function closeLocation() {
+//     locationOuter.classList.remove('active');
+// };
+
+
 
 // ***************************************************************************
 // ***************************************************************************
@@ -104,7 +232,7 @@ categoryBtn.addEventListener('click', () => {
     filterBtn.classList.remove('active');
     categoryBtn.classList.toggle('active');
 
-    
+
 
     if (categoryNav.style.display === 'none') {
         categoryNav.style.display = 'initial';
@@ -133,7 +261,7 @@ const food = document.querySelector('.food-drinks');
 
 
 travelOutdoors.addEventListener('click', () => {
-    
+
 
 
     // Travel and Outdoors **********************
@@ -585,7 +713,7 @@ settings.addEventListener('click', () => {
 
     filterNav.style.display = 'none';
     header.style.display = 'none';
-    
+
     //homePage.style.display = 'none';
     frontPage.style.display = 'none';
     loadMoreButton.style.display = 'none';
