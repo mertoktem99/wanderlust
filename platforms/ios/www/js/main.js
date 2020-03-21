@@ -167,18 +167,20 @@ function locationPopUp() {
     locationInner.innerHTML = `
     <div class = "locationPopUp"> 
            
-        <a href=""><button id="currentLocationBtn">Use Your Location</button></a>
+        <a><button id="currentLocationBtn">Use Your Location</button></a>
         <p></p>
         <select id="city" name="city">
             <option value="location">Choose Location</option>
-            <option value="vancouver"><a href="#">Vancouver</a></option>
-            <option value="surrey"><a href="#">Surrey</a></option>
-            <option value="richmond"><a href="#">Richmond</a></option>
-            <option value="delta"><a href="#">Delta</a></option>
+            <option value="Vancouver"><a href="#">Vancouver</a></option>
+            <option value="Surrey"><a href="#">Surrey</a></option>
+            <option value="Richmond"><a href="#">Richmond</a></option>
+            <option value="Delta"><a href="#">Delta</a></option>
         </select>     
              
     </div>
     `;
+    $('#currentLocationBtn').click(getCurrentLocation);
+    document.querySelector("#city").addEventListener("change", cityChanged);
     locationOuter.classList.add('active');
 };
 

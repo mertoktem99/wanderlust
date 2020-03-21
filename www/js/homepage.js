@@ -300,18 +300,20 @@ $('.fashion-lifestyle').click(fashionCategory);
 
 // FILTERS
 
-// setGetDateFilter = () => {
-//     dateFilter = document.querySelector('#date').value;
-//     alert(dateFilter);
-//     getEventsAccordingToUserPrefs();
-// }
+cityChanged = () => {
+    locationFilter = document.getElementById("city").value;
+    console.log(locationFilter);
+    locationOuter.classList.remove('active');
 
-//priceFilter = 0;
-//locationFilter = 
+    getEventsAccordingToUserPrefs();
+}
 
 
-// $('#btnApply.dateApply').click(setGetDateFilter);
-
+getCurrentLocation = () => {
+    getMapLocation();
+    getEventsAccordingToUserPrefs();
+    locationOuter.classList.remove('active');
+}
 
 // END FILTERS
 
