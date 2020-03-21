@@ -315,6 +315,18 @@ getCurrentLocation = () => {
     locationOuter.classList.remove('active');
 }
 
+filterOptionClicked = () => {
+    // Filters
+    var dateFilter = new Date();
+    var priceFilterMin = 0;
+    var priceFilterMax = 999;
+    getUserPrefsData();
+}
+
+
+$('.filterOption').click(filterOptionClicked);
+
+
 // END FILTERS
 
 
@@ -364,6 +376,8 @@ getUserProfileData = () => {
         if (thisDoc.exists) {
             //user is already there, write only last login
             //$("#retrieveUsername").placeholder = thisDoc.data().username;
+            $("#displayUsername").text(thisDoc.data().email);
+            console.log($("#displayUsername"));
             $("#retrieveUsername").attr('placeholder',thisDoc.data().username);
             $("#retrieveUserEmail").attr('placeholder',thisDoc.data().email);
             $("#retrieveUserPwd").attr('placeholder',thisDoc.data().email);

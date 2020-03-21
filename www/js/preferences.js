@@ -49,14 +49,36 @@ addData = () => {
             o.food = foodChoice;
             o.fashion = fashionChoice;
             o.email = useremail;
-            
+
             docRef.update(o).then(function(o) {
+                // if (document.getBoolean("location") == true) {
+                //     window.location.href = "frontPage.html";
+                // }
+                // else {
+                    window.location.href = "LocationPage.html";
+                // }
+            });
+        }
+
+        else {
+            //new user
+            o.uid = docRef;
+            o.email = useremail;
+            o.film = filmChoice;
+            o.sport = sportChoice;
+            o.music = musicChoice;
+            o.travel = travelChoice;
+            o.food = foodChoice;
+            o.fashion = fashionChoice;
+
+            // Send it
+            docRef.set(o).then(function(o) {
                 if (thisDoc.data().location != undefined) {
                     window.location.href = "frontPage.html";
                 }
                 else {
                     window.location.href = "LocationPage.html";
-                }
+                } 
             });
         }
     });
