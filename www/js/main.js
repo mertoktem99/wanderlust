@@ -73,12 +73,21 @@ function datePopUp() {
     dateOuter.classList.add('active');
     const cancel = document.querySelector('.dateCancel');
     cancel.addEventListener('click', closedate);
-
+    const apply = document. querySelector('.dateApply');
+    apply.addEventListener('click', applydate);
 };
 
+function applydate() {
+    dateFilter = new Date(document.querySelector('#date').value);
+    getEventsAccordingToUserPrefs();
+
+    dateOuter.classList.remove('active');
+}
 
 function closedate() {
     dateOuter.classList.remove('active');
+
+    
 };
 
 
@@ -115,10 +124,29 @@ function pricePopUp() {
     priceOuter.classList.add('active');
     const cancel = document.querySelector('.priceCancel');
     cancel.addEventListener('click', closeprice);
-
+    const apply = document. querySelector('.priceApply');
+    apply.addEventListener('click', applyPrice);
 };
 
 // priceOuter.addEventListener('click', closeprice);
+
+function applyPrice() {
+    console.log(document.querySelector('#price').value);
+    if (document.querySelector('#price').value == "Free") {
+        priceFilterMin = 0;
+        priceFilterMax = 999;
+
+    }
+    else if (document.querySelector('#price').value == "Between $10-$20") {
+        priceFilterMin = 10;
+        priceFilterMax = 20;
+
+    }
+    alert(priceFilterMin);
+    getEventsAccordingToUserPrefs();
+
+    priceOuter.classList.remove('active');
+};
 
 function closeprice() {
     priceOuter.classList.remove('active');

@@ -5,7 +5,8 @@ var city = null;
 
 // Get geo coordinates
 
-function getMapLocation() {
+
+getMapLocation = () => {
     navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, { enableHighAccuracy: true });
 }
 
@@ -30,25 +31,25 @@ function onMapError(error) {
 // Get map by using coordinates
 
 function getMap(latitude, longitude) {
-    var mapOptions = {
-        center: new google.maps.LatLng(0, 0),
-        zoom: 1,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+    // var mapOptions = {
+    //     center: new google.maps.LatLng(0, 0),
+    //     zoom: 1,
+    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+    // };
 
-    map = new google.maps.Map
-    (document.getElementById("map"), mapOptions);
+    // map = new google.maps.Map
+    // (document.getElementById("map"), mapOptions);
 
 
-    var latLong = new google.maps.LatLng(latitude, longitude);
+    // var latLong = new google.maps.LatLng(latitude, longitude);
 
-    var marker = new google.maps.Marker({
-        position: latLong
-    });
+    // var marker = new google.maps.Marker({
+    //     position: latLong
+    // });
 
-    marker.setMap(map);
-    map.setZoom(15);
-    map.setCenter(marker.getPosition());
+    // marker.setMap(map);
+    // map.setZoom(15);
+    // map.setCenter(marker.getPosition());
 
     getCity();
 }
@@ -56,7 +57,7 @@ function getMap(latitude, longitude) {
 // Success callback for watching your changing position
 
 var onMapWatchSuccess = function (position) {
-
+    alert("successs");
     var updatedLatitude = position.coords.latitude;
     var updatedLongitude = position.coords.longitude;
 
@@ -84,6 +85,7 @@ function watchMapPosition() {
 // AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w
 
 function getCity() {
+    alert("yay");
     var latlng;
     latlng = new google.maps.LatLng(Latitude, Longitude);
 
@@ -128,11 +130,29 @@ function getCity() {
             }
         }
     });
-
-    addLocationData();
+    alert(city);
 }
 
 addLocationData = () => {
+    // Add Data    
+    var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
+    var o = {};
+    docRef.get().then(function(thisDoc) {
+        if (thisDoc.exists) {
+            //user is already there, write only last login
+            if (city != null) {
+                o.location = city;
+                docRef.update(o).then(function(thisDoc){
+                    window.location.replace("../index.html");
+                });
+            }
+        }
+    });
+    alert(city);
+}
+
+
+confirm = () => {
     // Add Data    
     var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
     var o = {};
@@ -147,6 +167,11 @@ addLocationData = () => {
     })
     alert(city);
 }
+
+
+
+$('#currentLocationBtn').click(getMapLocation);
+$('#confirmBtn').click(addLocationData);
 
 
   

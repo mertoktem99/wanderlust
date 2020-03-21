@@ -152,6 +152,59 @@ li{
     text-decoration-line: underline;
 }
 
+.signup-info-input{
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    padding-left: 30px;
+    padding-right: 30px ;
+    padding-top: 0;
+   justify-content: center;
+   top: -4rem;
+   position: relative;
+}
+
+.signup-info-input .signup-heading{
+    color: #0088fd;
+    font-size: 1.7rem;
+    top: 1rem;
+    position: relative;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-30px);
+}
+
+
+.signup-info-input input , .signup-info-input label{
+    flex-basis: 100%;
+}
+
+.signup-info-input label{
+    font-size: 0.9rem;
+    /* margin-top: 5px; */
+}
+
+.signup-info-input input{
+    border:0;
+    border-bottom: 2px solid #D0D0D0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.signup-info-input a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0.6rem 0 0 0;
+    text-decoration-line: underline;
+}
+
 .login-footer {
     display: flex;
     flex-flow: row wrap;
@@ -221,6 +274,10 @@ button{
     background-color: #FFCA00; 
 }
 
+#signupFooter {
+    position: relative;
+    top: -2rem;
+}
 
 /********************************************************************************************************/
 /********************************************************************************************************/
@@ -513,13 +570,13 @@ button{
     line-height: 1rem;
 }
 
-.btnApply {
+.dateApply, .priceApply {
     color: black;
     background-color: #F7BE00;
     margin: 0.3rem;
 }
 
-.btnCancel {
+.dateCancel, .priceCancel {
     color: white;
     background-color: #2ec4b3;
     margin: 0.3rem;
@@ -548,16 +605,19 @@ button{
     color: white;
 }
 
-.locationPopUp #cityBtn {
+.locationPopUp select {
     background-color: #2ec4b3;
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    /* justify-content: space-evenly; */
+    padding: 15px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+    /* justify-content: center; */
     align-items: center;
 }
 
-.locationPopUp #cityBtn p:first-of-type{
+.locationPopUp select option:first-of-type{
     justify-self: flex-start;
     word-wrap: none;    
 }
@@ -759,8 +819,8 @@ ul{
 }
 
 .secondary-nav  ul li a img{
-    max-width: 50px;
-    height: auto;
+    width: auto;
+    height: 50px;
     justify-content: flex-start;
 }
 
@@ -851,8 +911,12 @@ ul{
 }
 
 .event-filter img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: auto;
+}
+
+#btnPrice img{
+    margin-top: 1rem;
 }
 
 .event-filter a:nth-of-type(1) {
@@ -927,7 +991,16 @@ li a p {
     background-color: #32D9C6;
 }
 
-.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p{
+.sports-fitness.active {
+    background-color: #0088fd;
+}
+
+.fashion-lifestyle.active{
+    background-color: #FFCA00;
+}
+
+
+.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p, .sports-fitness.active p, .fashion-lifestyle.active p{
     color: #fff;
 }
 
@@ -1217,6 +1290,138 @@ hr {
     flex-basis: 100%;
     align-self: flex-end;
 }
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                           Events Page                                                */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.event-header img{
+    position: relative;
+    /* border-radius: 1rem; */
+}
+
+.event-main {   
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    position: relative;
+    top: -1rem;
+    padding: 0.05rem;     
+    background-color: white;  
+    margin: 0;  
+    margin-bottom: 3rem;
+}
+
+.event-heading {  
+    /* position: relative; */
+    /* top: 5rem; */
+    background-color: white;
+    /* border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; */
+    padding: 1.1rem 1rem;  
+    display: flex;
+    flex-flow: row nowrap; 
+    justify-content: space-between;
+    border-radius: 2rem;
+
+}
+
+.event-heading h2{
+    color: #2ec4b3;
+    margin: 0;
+    padding: 0;
+}
+
+.event-heading a{
+    color: #F7BE00;
+    text-align: right;
+}
+
+.event-info {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid #909090;
+}
+
+
+.event-time , .event-price {
+    flex-basis: 50%;
+}
+
+.event-time , .event-price , .event-location {
+    margin: 0.3rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.event-time .tag, 
+.event-price .tag ,
+.event-location .tag {
+    flex-basis: 50%;
+    margin: 0;
+    padding: 0 0.3rem;
+}
+
+.event-time img, 
+.event-price img , 
+.event-location img{
+    width: 30px;
+    height: auto;
+}
+
+.event-time .date , 
+.event-price .price , 
+.event-location .location {
+    flex-basis: 100%;
+    margin: 0.3rem  0;
+    padding: 0;
+}
+
+.event-location {
+    flex-basis: 100%;
+}
+
+.event-info .tag {
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.date,.price, .location {
+    font-size: 1.1rem;
+    color: #0088fd;
+    font-weight: bold;
+}
+
+.event-content {
+    font-size: 0.9rem;
+    color: #909090;
+    padding: 0 1rem;
+}
+
+.event-content a:not(:last-child) {
+    text-decoration: #0A1943;
+}
+
+
+#backBtn {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+
+#directionBtn {
+    background-color: #F7BE00;
+    color: #0A1943;
+    margin-top: 2rem;
+}
+
 
 /********************************************************************************************************/
 /********************************************************************************************************/

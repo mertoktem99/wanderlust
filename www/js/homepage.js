@@ -16,7 +16,8 @@ var loadedEventItems = 0;
 
 // Filters
 var dateFilter = new Date();
-var priceFilter = 0;
+var priceFilterMin = 0;
+var priceFilterMax = 999;
 var locationFilter;
 
 // Categories 
@@ -71,7 +72,8 @@ getEventsAccordingToUserPrefs = () => {
             if (loadedEventItems < loadEventItems &&
                 doc.data().date.toDate() > currentDate &&
                 doc.data().date.toDate() > dateFilter &&
-                doc.data().price >= priceFilter &&
+                doc.data().price >= priceFilterMin &&
+                doc.data().price <= priceFilterMax &&
                 doc.data().city == locationFilter) {
                     if (filmChoice == true && 
                         `${doc.data().category}` == "Film&Media" &&
@@ -175,12 +177,9 @@ getEventsAccordingToUserPrefs = () => {
                             </li>`);
                     }
 
-        }
-
-        
-        console.log(loadedEventItems);
-        var articles = document.querySelectorAll("article");
-        articles.forEach(article => article.addEventListener('click', gotoItem ));
+        }       
+        var events = document.querySelectorAll(".content-child");
+        events.forEach(event => event.addEventListener('click', gotoItem ));
         })
     });
 }
@@ -188,8 +187,8 @@ getEventsAccordingToUserPrefs = () => {
 function gotoItem( event ){
     let target = event.target ;   
 
-    var url = "eventdetails.html";    
-    url += (url.indexOf('?') > -1)?"&":"?" + "event=" + encodeURIComponent(target.closest('article').dataset.name );
+    var url = "EventDescription-1.html";    
+    url += (url.indexOf('?') > -1)?"&":"?" + "event=" + encodeURIComponent(target.closest('.content-child').dataset.name );
     window.location.href = url;
 }
 
@@ -224,7 +223,7 @@ $('#btnLoadMore').click(loadMoreItems)
 
 
 
-
+// CATEGORIES
 travelCategory = () => {
     if (selectedCategory != "Travel") { 
         selectedCategory = "Travel"
@@ -297,15 +296,24 @@ $('.music').click(musicCategory);
 $('.food-drinks').click(foodCategory);
 $('.sports-fitness').click(sportsCategory);
 $('.fashion-lifestyle').click(fashionCategory);
+// END CATEGORIES
+
+// FILTERS
+
+// setGetDateFilter = () => {
+//     dateFilter = document.querySelector('#date').value;
+//     alert(dateFilter);
+//     getEventsAccordingToUserPrefs();
+// }
+
+//priceFilter = 0;
+//locationFilter = 
 
 
-//FILTERS
+// $('#btnApply.dateApply').click(setGetDateFilter);
 
 
-
-
-$('.sports-fitness').click(sportsCategory);
-$('.fashion-lifestyle').click(fashionCategory);
+// END FILTERS
 
 
 // PROFILE PAGE
