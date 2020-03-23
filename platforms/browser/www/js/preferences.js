@@ -73,12 +73,12 @@ addData = () => {
 
             // Send it
             docRef.set(o).then(function(o) {
-                if (thisDoc.data().location != undefined) {
-                    window.location.href = "frontPage.html";
-                }
-                else {
+                // if (thisDoc.data().location != undefined) {
+                //     window.location.href = "frontPage.html";
+                // }
+                // else {
                     window.location.href = "LocationPage.html";
-                } 
+                // } 
             });
         }
     });

@@ -38,7 +38,6 @@ function getMap(latitude, longitude) {
 // Success callback for watching your changing position
 
 var onMapWatchSuccess = function (position) {
-    alert("successs");
     var updatedLatitude = position.coords.latitude;
     var updatedLongitude = position.coords.longitude;
 
@@ -66,7 +65,6 @@ function watchMapPosition() {
 // AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w
 
 function getCity() {
-    alert("yay");
     var latlng;
     latlng = new google.maps.LatLng(Latitude, Longitude);
 
@@ -111,7 +109,6 @@ function getCity() {
             }
         }
     });
-    alert(city);
 }
 
 addLocationData = () => {
@@ -129,7 +126,6 @@ addLocationData = () => {
             }
         }
     });
-    alert(city);
 }
 
 
@@ -146,7 +142,6 @@ confirm = () => {
             docRef.update(o);
         }
     })
-    alert(city);
 }
 
 
