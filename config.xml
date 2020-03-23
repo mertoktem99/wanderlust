@@ -104,4 +104,14 @@
     <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
     <plugin name="cordova-plugin-network-information" spec="~1.3.3" />
     <plugin name="cordova-plugin-vibration" spec="~2.1.5" />
+    <?xml version="1.0" encoding="utf-8"?>
+    <phonegap>
+    <access origin="http://127.0.0.1*"/>
+    <access origin="http://devgeeks.org"/>
+    <access origin="https://www.gstatic.com*"/>
+    <access origin="http://*.phonegap.com"/>
+    <access origin="https://fonts*"/>
+
+    <log level="DEBUG"/>
+</phonegap>
 </widget>
