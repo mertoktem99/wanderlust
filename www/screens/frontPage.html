@@ -13,6 +13,8 @@
 
     <script src="../js/connectFirebase.js" defer></script>
     <script src="../js/homepage.js" defer></script>
+    <script src="../js/location.js" defer></script>
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     <title>Home Categories</title>
@@ -120,15 +122,15 @@
             <main class="filter-main">
                 <main class="home-main">
                     <div class="event-filter">
-                        <a id="btnDate">
+                        <a class="btnDate">
                             <img src="../icons/Icon-05.png" alt="">
                             <p>Date</p>
                         </a>
-                        <a id="btnPrice">
+                        <a class="btnPrice">
                             <img src="../icons/Icon-04.png" alt="">
                             <p>Price</p>
                         </a>
-                        <a id="btnLocation">
+                        <a class="btnLocation">
                             <img src="../icons/Icon-03.png" alt="">
                             <p>Location</p>
                         </a>
@@ -215,7 +217,12 @@
                     <input type="date" id="retrieveUserDob">
 
                     <label for="retrieveUserGender">Gender</label>
-                    <input type="text" id="retrieveUserGender">
+                    <select id="gender" name="gender">
+                        <option value="gender">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="none">Prefer not to say</option>
+                    </select>
 
                     <!-- <div class="profile-buttons"> -->
                     <button id="btn-edit-profile">Edit</button>
@@ -235,19 +242,19 @@
 
                 <main class="settings-main">
                     <div class="settings-block">
-                        <a>
+                        <a class="preferenceButton">
                             <div class="settings-options">
                                 <img src="../icons/Icon-31.png" alt="">
                                 <h3>PREFERENCE SETTINGS</h3>
                             </div>
                         </a>
-                        <a>
+                        <a class="contact-button">
                             <div class="settings-options">
                                 <img src="../icons/Icon-32.png" alt="">
                                 <h3>CONTACT US</h3>
                             </div>
                         </a>
-                        <a href="ContactUs.html">
+                        <a class="faq-button">
                             <div class="settings-options">
                                 <img src="../icons/Icon-33.png" alt="">
                                 <h3>FAQ</h3>
@@ -260,6 +267,141 @@
                         </a>
                     </div>
                 </main>
+            </main>
+
+            <!-- *********** CONTACT PAGE ************ -->
+            <main class="contact-page">
+
+                <header>
+                    <div class="contact-header">
+                        <div class="contact-heading">
+                            <h3>Contact Us</h3>
+                        </div>
+
+                        <div class="contact-message">
+                            <p>WE WOULD LIKE TO HEAR MORE FROM YOU</p>
+                        </div>
+                    </div>
+                </header>
+
+
+                <main class="contact-main">
+
+                    <div class="contact-info">
+                        <label for="retrievename">Name</label>
+                        <input type="text" id="retrievename">
+
+                        <label for="retrieveEmail">Email</label>
+                        <input type="email" id="retrieveEmail">
+
+                        <label for="retrieveMobile">Mobile</label>
+                        <input type="tel" id="retrieveMobile">
+
+                        <label for="retrieveSubject">Subject</label>
+                        <input type="text" id="retrieveSubject">
+
+                        <label for="retrieveMessage">Message</label>
+                        <input type="text" id="retrieveMessage">
+
+                        <!-- <div class="contact-buttons"> -->
+                        <button id="btn-send-contact">Send</button>
+                        <!-- </div> -->
+                    </div>
+
+                </main>
+
+
+                <!-- <main class="faq-page">
+                    <header>
+                        <div class="faqs-header">
+                            <div class="faqs-heading">
+                                <h3>FAQs</h3>
+                            </div>
+
+                            <div class="faqs-message">
+                                <p>ANY QUESTIONS ?</p>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <main class="faqs-main">
+
+                        <div class="question-section section-1">
+                            <div class="question">
+                                <p>
+                                    What exactly is WanderLust ?
+                                </p>
+                                <a href="#"> <button id="expand1"> &#8744 </button></a>
+                            </div>
+                            <div class="answer answer-1">
+
+                            </div>
+                        </div>
+
+                        <div class="question-section section-2">
+                            <div class="question">
+                                <p>
+                                    Is Wanderlust free?
+                                </p>
+                                <a href="#"> <button id="expand2">&#8744</button> </a>
+                            </div>
+                            <div class="answer answer-2">
+
+                            </div>
+                        </div>
+
+                        <div class="question-section section-3">
+                            <div class="question">
+                                <p>
+                                    What kind of activity suggestions can I get on Wanderlust?
+                                </p>
+                                <a href="#"> <button id="expand3">&#8744</button> </a>
+                            </div>
+                            <div class="answer answer-3">
+
+                            </div>
+                        </div>
+
+                        <div class="question-section section-4">
+                            <div class="question">
+                                <p>
+                                    How can I use Wanderlust?
+                                </p>
+                                <a href="#"> <button id="expand4">&#8744</button> </a>
+                            </div>
+                            <div class="answer answer-4">
+
+                            </div>
+                        </div>
+
+                        <div class="question-section section-5">
+                            <div class="question">
+                                <p>
+                                    Can I change my preferences on Wanderlust?
+                                </p>
+                                <a href="#"> <button id="expand5">&#8744 </button></a>
+                            </div>
+                            <div class="answer answer-5">
+
+                            </div>
+                        </div>
+
+                        <div class="question-section section-6">
+                            <div class="question">
+                                <p>
+                                    How can I contact Wanderlust for business inquiries?
+                                </p>
+                                <a href="#"> <button id="expand6">&#8744 </button></a>
+                            </div>
+                            <div class="answer answer-6">
+
+                            </div>
+                        </div>
+
+                    </main>
+                </main> -->
+
             </main>
 
             <footer class="settings-footer">

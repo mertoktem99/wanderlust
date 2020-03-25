@@ -1,10 +1,6 @@
 
-
-logOutButton = () => {
-    firebase.auth().signOut().then(() => {
-        window.location.replace("index.html");
-    });
-};
+var latitude;
+var longitude;
 
 homeButton = () => {
         window.location.replace("homepage.html");
@@ -25,27 +21,79 @@ function getParameterByName(name, url) {
 
 
 getEventDetails = () => {
-    var eventshow = $("#eventshow");
 
     db.collection("events").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             if (event == `${doc.data().name}`) {
-                eventshow.append(`<article data-name='${doc.data().name}'  > 
-                <h2> Event Name: ${doc.data().name} </h2>
-                <p> Description: ${doc.data().description} </p>
-                <p> Category: ${doc.data().category} </p> 
-                <p> Address: ${doc.data().address} </p>
-                <img href='${doc.data().image}'>
-                <p> Date: ${doc.data().date.toDate()} </p>
-                <p> Time: ${doc.data().date.toDate().getTime()} </p> 
-                <p> Price: $${doc.data().price} </p> 
-                <p> City: ${doc.data().city} </p> </article>`);
+                document.querySelector('.headerimage').src = doc.data().image;
+                document.querySelector('.event-name').innerHTML = doc.data().name;
+                document.querySelector('.date').innerHTML = TimeConverter(doc.data().date.toDate());
+                document.querySelector('.location').innerHTML = doc.data().city;
+                document.querySelector('.price').innerHTML = doc.data().price + '$';
+                document.querySelector('.eventdescription').innerHTML = doc.data().description;
+                latitude = doc.data().location.latitude;
+                longitude = doc.data().location.longitude;
             }
         })
     });
 }
+
+
+function TimeConverter(UNIX_timestamp){
+    var a = UNIX_timestamp;
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':0' + min;
+    return time;
+  }
+
+
+
+backButton = () => {
+    window.location.replace("frontPage.html");
+}
+
+directionButton = () => {
+    var mapOptions = {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 1,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    map = new google.maps.Map
+    (document.getElementById("map"), mapOptions);
+
+
+    var latLong = new google.maps.LatLng(latitude, longitude);
+
+    var marker = new google.maps.Marker({
+        position: latLong
+    });
+
+    marker.setMap(map);
+    map.setZoom(15);
+    map.setCenter(marker.getPosition());
+
+}
+
+// Initialize and add the map
+function initMap() {
+    // The location of Uluru
+    var uluru = {lat: -25.344, lng: 131.036};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: uluru, map: map});
+  }
+
+$('#backBtn').click(backButton);
+$('#directionBtn').click(directionButton);
+
+
 var event = getParameterByName('event');
 getEventDetails();
-
-$('#homebutton').click(homeButton);
-$('#logoutbutton').click(logOutButton);

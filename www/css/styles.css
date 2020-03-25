@@ -35,7 +35,7 @@ li{
     /* padding-bottom: 0; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border-bottom: 2px solid #32D9C6;
+    border-bottom: 2px solid #2ec4b3;
 }
 
 
@@ -46,7 +46,7 @@ li{
 }
 
 .loginMenu-options a.active{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 
@@ -71,7 +71,7 @@ li{
     /* padding-bottom: 0; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border-bottom: 2px solid #32D9C6;
+    border-bottom: 2px solid #2ec4b3;
 }
 
 
@@ -82,7 +82,7 @@ li{
 }
 
 .menu-options a.active{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 
@@ -98,7 +98,7 @@ li{
 }
 
 #loginOption , #signupOption{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 .login-info-input{
@@ -152,6 +152,59 @@ li{
     text-decoration-line: underline;
 }
 
+.signup-info-input{
+    display: flex;
+    flex-flow: row wrap;
+    flex-grow: 1;
+    padding-left: 30px;
+    padding-right: 30px ;
+    padding-top: 0;
+   justify-content: center;
+   top: -4rem;
+   position: relative;
+}
+
+.signup-info-input .signup-heading{
+    color: #0088fd;
+    font-size: 1.7rem;
+    top: 1rem;
+    position: relative;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-30px);
+}
+
+
+.signup-info-input input , .signup-info-input label{
+    flex-basis: 100%;
+}
+
+.signup-info-input label{
+    font-size: 0.9rem;
+    /* margin-top: 5px; */
+}
+
+.signup-info-input input{
+    border:0;
+    border-bottom: 2px solid #D0D0D0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.signup-info-input a{
+    color: black;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0.6rem 0 0 0;
+    text-decoration-line: underline;
+}
+
 .login-footer {
     display: flex;
     flex-flow: row wrap;
@@ -186,14 +239,14 @@ button{
 }
 
 .login-footer #login{
-    background-color: #FFCA00; 
+    background-color: #F7BE00; 
     color: #0A1943; 
 }
 
 .login-footer #google-login{
     display: flex;
     flex-wrap: nowrap;
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
     color: white; 
     align-items: center;  
     /* padding: 0;    */
@@ -218,9 +271,13 @@ button{
 }
 
 .login-footer #signUp{
-    background-color: #FFCA00; 
+    background-color: #F7BE00; 
 }
 
+#signupFooter {
+    position: relative;
+    top: -2rem;
+}
 
 /********************************************************************************************************/
 /********************************************************************************************************/
@@ -261,7 +318,7 @@ button{
 
 .profile-message{
     flex-basis: 100%;
-    background-color: #FFCA00;
+    background-color: #F7BE00;
     color: #0A1943;
     font-weight: bolder;
     border-bottom-left-radius: 15px;
@@ -317,13 +374,13 @@ button{
 
 #btn-edit-profile{
     flex-basis: 100%;
-    background-color: #FFCA00;
+    background-color: #F7BE00;
     color: #0A1943;
 }
 
 #btn-save-profile{
     flex-basis: 100%;
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
     color: white;  
     margin: 0;  
 }
@@ -391,7 +448,7 @@ button{
 }
 
 .settings-block a:nth-of-type(1) {
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 .settings-block a:nth-of-type(1) h3{
@@ -400,7 +457,7 @@ button{
 }
 
 .settings-block a:nth-of-type(2) {
-    background-color: #FFCA00;
+    background-color: #F7BE00;
 }
 
 .settings-block a:nth-of-type(3) {
@@ -412,10 +469,12 @@ button{
 }
 
 #btnLogout {
-    background-color: #ffca00;
+    background-color: #F7BE00;
     margin-top: 2rem;
     margin-bottom: 6rem;
 }
+
+
 
 
 /***************************************************************/
@@ -513,13 +572,13 @@ button{
     line-height: 1rem;
 }
 
-.btnApply {
+.dateApply, .priceApply, .locApply {
     color: black;
     background-color: #F7BE00;
     margin: 0.3rem;
 }
 
-.btnCancel {
+.dateCancel, .priceCancel, .locCancel {
     color: white;
     background-color: #2ec4b3;
     margin: 0.3rem;
@@ -548,16 +607,21 @@ button{
     color: white;
 }
 
-.locationPopUp #cityBtn {
+.locationPopUp select {
     background-color: #2ec4b3;
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    /* justify-content: space-evenly; */
+    padding: 15px;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    /* justify-content: center; */
     align-items: center;
 }
 
-.locationPopUp #cityBtn p:first-of-type{
+.locationPopUp select option:first-of-type{
     justify-self: flex-start;
     word-wrap: none;    
 }
@@ -567,6 +631,22 @@ button{
     text-align: flex-end;
 }
 
+
+.btnDate.active {
+    background-color: #2ec4b3;
+}
+
+.btnPrice.active {
+    background-color: #F7BE00;
+}
+
+.btnLocation.active {
+    background-color: #0088fd;
+}
+
+.btnDate.active p, .btnPrice.active p, .btnLocation.active p{
+    color: white;
+}
 
 /***************************************************************/
 /******************** Preference Pop-Up ************************/
@@ -648,7 +728,7 @@ body, img{
 }
 
 .filterOption.active, .categoryOption.active {
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 .header-image{
@@ -701,7 +781,7 @@ ul{
     /* padding-bottom: 0; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border-bottom: 2px solid #32D9C6;
+    border-bottom: 2px solid #2ec4b3;
 }
 
 .home-menu-options a{
@@ -711,7 +791,7 @@ ul{
 }
 
 .home-menu-options a.active{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 
@@ -759,8 +839,8 @@ ul{
 }
 
 .secondary-nav  ul li a img{
-    max-width: 50px;
-    height: auto;
+    width: auto;
+    height: 50px;
     justify-content: flex-start;
 }
 
@@ -790,11 +870,11 @@ ul{
 }
 
 .content-child1 h3 {
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 .content-child2 h3 {
-    background-color: #ffca00;
+    background-color: #F7BE00;
 }
 
 .content-child3 h3 {
@@ -803,7 +883,7 @@ ul{
 
 
 #btnLoadMore {
-    background-color: #ffca00;
+    background-color: #F7BE00;
     color: #0A1943;
 }
 
@@ -851,16 +931,20 @@ ul{
 }
 
 .event-filter img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: auto;
+}
+
+.btnPrice img{
+    margin-top: 1rem;
 }
 
 .event-filter a:nth-of-type(1) {
-    color: #32D9C6 ;
+    color: #2ec4b3 ;
 }
 
 .event-filter a:nth-of-type(2) {
-    color: #ffca00;
+    color: #F7BE00;
 }
 
 .event-filter a:nth-of-type(3) {
@@ -869,7 +953,7 @@ ul{
 
 .event-filter a:first-of-type a.active {
     color:white;
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 
@@ -888,7 +972,7 @@ ul{
 }
 
 .film-media a {
-    color: #FFCA00;
+    color: #F7BE00;
 }
 
 .music a{
@@ -896,7 +980,7 @@ ul{
 }
 
 .food-drinks a {
-    color: #32D9C6;
+    color: #2ec4b3;
 }
 
 .sports-fitness a{
@@ -904,7 +988,7 @@ ul{
 }
 
 .fashion-lifestyle a {
-    color: #FFCA00;
+    color: #F7BE00;
 }
 
 li a p {
@@ -916,7 +1000,7 @@ li a p {
 }
 
 .film-media.active{
-    background-color: #FFCA00;
+    background-color: #F7BE00;
 }
 
 .music.active {
@@ -924,10 +1008,19 @@ li a p {
 }
 
 .food-drinks.active {
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
-.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p{
+.sports-fitness.active {
+    background-color: #0088fd;
+}
+
+.fashion-lifestyle.active{
+    background-color: #F7BE00;
+}
+
+
+.travel-outdoors.active p, .film-media.active p, .music.active p, .food-drinks.active p, .sports-fitness.active p, .fashion-lifestyle.active p{
     color: #fff;
 }
 
@@ -1010,7 +1103,7 @@ li a p {
 .preferences-tag4.active img,
 .preferences-tag5.active img,
 .preferences-tag6.active img {
-    border: 5px solid #32D9C6;
+    border: 5px solid #2ec4b3;
 }
 
 .btnDone, .btnBack {
@@ -1020,17 +1113,12 @@ li a p {
 }
 
 .btnDone {
-    background-color: #FFCA00;
+    background-color: #F7BE00;
     margin-top: 5rem;
-}
-
-.btnBack {
-    background-color: #32D9C6;
-    color: #fff;
-    padding: 15px;
-    margin-top: 1rem;
     margin-bottom: 4rem;
 }
+
+
 
 
 /* **************************************** */
@@ -1052,7 +1140,7 @@ hr {
 .location-header img {    
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    background: rgba(0, 0, 0, 1)
+    background: rgba(0, 0, 0, 1);
     /* position: relative; */
 }
 
@@ -1105,13 +1193,24 @@ hr {
     color: white;
 }
 
-#cityBtn {
+
+
+.location-set-main select {
     background-color: #2ec4b3;
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    padding: 15px;
+    width: 100%;
+    border-radius: 0.7rem;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+
+    /* justify-content: space-evenly; */
+    align-items: center;
+
 }
+
 
 #cityBtn a{
     text-align: center;
@@ -1220,6 +1319,138 @@ hr {
 
 /********************************************************************************************************/
 /********************************************************************************************************/
+/*                                           Events Page                                                */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.event-header img{
+    position: relative;
+    /* border-radius: 1rem; */
+}
+
+.event-main {   
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem; 
+    position: relative;
+    top: -1rem;
+    padding: 0.05rem;     
+    background-color: white;  
+    margin: 0;  
+    margin-bottom: 3rem;
+}
+
+.event-heading {  
+    /* position: relative; */
+    /* top: 5rem; */
+    background-color: white;
+    /* border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; */
+    padding: 1.1rem 1rem;  
+    display: flex;
+    flex-flow: row nowrap; 
+    justify-content: space-between;
+    border-radius: 2rem;
+
+}
+
+.event-heading h2{
+    color: #2ec4b3;
+    margin: 0;
+    padding: 0;
+}
+
+.event-heading a{
+    color: #F7BE00;
+    text-align: right;
+}
+
+.event-info {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid #909090;
+}
+
+
+.event-time , .event-price {
+    flex-basis: 50%;
+}
+
+.event-time , .event-price , .event-location {
+    margin: 0.3rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.event-time .tag, 
+.event-price .tag ,
+.event-location .tag {
+    flex-basis: 50%;
+    margin: 0;
+    padding: 0 0.3rem;
+}
+
+.event-time img, 
+.event-price img , 
+.event-location img{
+    width: 30px;
+    height: auto;
+}
+
+.event-time .date , 
+.event-price .price , 
+.event-location .location {
+    flex-basis: 100%;
+    margin: 0.3rem  0;
+    padding: 0;
+}
+
+.event-location {
+    flex-basis: 100%;
+}
+
+.event-info .tag {
+    color: #909090;
+    font-size: 0.9rem;
+}
+
+.date,.price, .location {
+    font-size: 1.1rem;
+    color: #0088fd;
+    font-weight: bold;
+}
+
+.event-content {
+    font-size: 0.9rem;
+    color: #909090;
+    padding: 0 1rem;
+}
+
+.event-content a:not(:last-child) {
+    text-decoration: #0A1943;
+}
+
+
+#backBtn {
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+
+
+#directionBtn {
+    background-color: #F7BE00;
+    color: #0A1943;
+    margin-top: 2rem;
+}
+
+
+/********************************************************************************************************/
+/********************************************************************************************************/
 /*                                           Contact Page                                                */
 /********************************************************************************************************/
 /********************************************************************************************************/
@@ -1316,3 +1547,57 @@ hr {
     height: 10rem;
     width: 12rem;
 }
+
+#gender {
+    height: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    border: 1px solid #D0D0D0;
+
+}
+
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                          FAQs Page                                                   */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.faqs-main{
+    padding: 2rem;
+}
+
+.question {
+    color: #0088fd;
+    font-weight: bold;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+.question p{
+    justify-self: flex-start;
+    width: max-content;
+}
+
+.question a {
+    justify-self: flex-end;
+    color: #0088fd;
+    margin: 1rem;
+    padding: 0;
+}
+
+.answer p{
+    text-align: start;
+    border-bottom: 1px solid #D0D0D0;
+    padding-bottom: 1rem;
+}
+
+#expand1 , #expand2 , #expand3 , 
+#expand4 , #expand5 , #expand6 {
+    background-color: white;
+    border: 0;
+    color: #0088fd;
+}
+

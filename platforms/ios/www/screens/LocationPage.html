@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Location Page</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <script src="../js/location.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../js/connectFirebase.js" defer></script>
+
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <header class="location-Set-header">
+
+        <div class="header-image location-header">
+            <img src="../img/Location-01.jpg" alt="feature-image"> <!-- Photo by Alexander Popov on Unsplash -->
+            <h2>LET'S SET UP<br>YOUR LOCATION</h2>
+        </div>
+        <!-- 8744	2228 -->
+    </header>
+
+    <main class="location-set-main">
+        <div class="location-select">
+            <a><button id="currentLocationBtn">Use Your Location</button></a>
+
+            <p></p>
+
+            <a><button id="cityBtn">Select a City &#8744;</button></a>
+        </div>
+
+        <div class="location-set-footer">
+            <a><button id="confirmBtn">Confirm</button></a>
+        </div>
+
+    </main>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w&callback="></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+
+
+
+</body>
+
+</html>

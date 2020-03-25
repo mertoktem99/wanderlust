@@ -8,6 +8,9 @@
     <title>Location Page</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800,900&display=swap" rel="stylesheet">
+    <script src="../js/location.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="../js/connectFirebase.js" defer></script>
 
 </head>
 
@@ -17,7 +20,7 @@
     <header class="location-Set-header">
 
         <div class="header-image location-header">
-            <img src="../img/Location-01.jpeg" alt="feature-image"> <!-- Photo by Alexander Popov on Unsplash -->
+            <img src="../img/Location-01.jpg" alt="feature-image"> <!-- Photo by Alexander Popov on Unsplash -->
             <h2>LET'S SET UP<br>YOUR LOCATION</h2>
         </div>
         <!-- 8744	2228 -->
@@ -25,19 +28,38 @@
 
     <main class="location-set-main">
         <div class="location-select">
-            <a href=""><button id="currentLocationBtn">Use Your Location</button></a>
+            <a><button id="currentLocationBtn">Use Your Location</button></a>
 
             <p></p>
 
-            <a href=""><button id="cityBtn">Select a City &#8744;</button></a>
+            <select id="city" name="city">
+                <option value="location">Choose Location</option>
+                <option value="Vancouver"><a href="#">Vancouver</a></option>
+                <option value="Surrey"><a href="#">Surrey</a></option>
+                <option value="Richmond"><a href="#">Richmond</a></option>
+                <option value="Delta"><a href="#">Delta</a></option>
+            </select>
         </div>
 
         <div class="location-set-footer">
-            <a href=""><button id="confirmBtn">Confirm</button></a>
+            <a><button id="confirmBtn">Confirm</button></a>
         </div>
 
     </main>
 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w&callback="></script>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
 
 
 

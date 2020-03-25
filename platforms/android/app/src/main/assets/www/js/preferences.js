@@ -49,11 +49,17 @@ addData = () => {
             o.food = foodChoice;
             o.fashion = fashionChoice;
             o.email = useremail;
-            
-            docRef.update(o).then(function(thisDoc) {
-                window.location.href = "frontPage.html";
+
+            docRef.update(o).then(function(o) {
+                // if (document.getBoolean("location") == true) {
+                //     window.location.href = "frontPage.html";
+                // }
+                // else {
+                    window.location.href = "LocationPage.html";
+                // }
             });
         }
+
         else {
             //new user
             o.uid = docRef;
@@ -66,8 +72,13 @@ addData = () => {
             o.fashion = fashionChoice;
 
             // Send it
-            docRef.set(o).then(function(thisDoc) {
-                window.location.href = "frontPage.html";
+            docRef.set(o).then(function(o) {
+                // if (thisDoc.data().location != undefined) {
+                //     window.location.href = "frontPage.html";
+                // }
+                // else {
+                    window.location.href = "LocationPage.html";
+                // } 
             });
         }
     });
