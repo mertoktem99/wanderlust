@@ -35,7 +35,7 @@ li{
     /* padding-bottom: 0; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border-bottom: 2px solid #32D9C6;
+    border-bottom: 2px solid #2ec4b3;
 }
 
 
@@ -46,7 +46,7 @@ li{
 }
 
 .loginMenu-options a.active{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 
@@ -71,7 +71,7 @@ li{
     /* padding-bottom: 0; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border-bottom: 2px solid #32D9C6;
+    border-bottom: 2px solid #2ec4b3;
 }
 
 
@@ -82,7 +82,7 @@ li{
 }
 
 .menu-options a.active{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 
@@ -98,7 +98,7 @@ li{
 }
 
 #loginOption , #signupOption{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 .login-info-input{
@@ -239,14 +239,14 @@ button{
 }
 
 .login-footer #login{
-    background-color: #FFCA00; 
+    background-color: #F7BE00; 
     color: #0A1943; 
 }
 
 .login-footer #google-login{
     display: flex;
     flex-wrap: nowrap;
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
     color: white; 
     align-items: center;  
     /* padding: 0;    */
@@ -271,7 +271,7 @@ button{
 }
 
 .login-footer #signUp{
-    background-color: #FFCA00; 
+    background-color: #F7BE00; 
 }
 
 #signupFooter {
@@ -318,7 +318,7 @@ button{
 
 .profile-message{
     flex-basis: 100%;
-    background-color: #FFCA00;
+    background-color: #F7BE00;
     color: #0A1943;
     font-weight: bolder;
     border-bottom-left-radius: 15px;
@@ -374,13 +374,13 @@ button{
 
 #btn-edit-profile{
     flex-basis: 100%;
-    background-color: #FFCA00;
+    background-color: #F7BE00;
     color: #0A1943;
 }
 
 #btn-save-profile{
     flex-basis: 100%;
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
     color: white;  
     margin: 0;  
 }
@@ -448,7 +448,7 @@ button{
 }
 
 .settings-block a:nth-of-type(1) {
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 .settings-block a:nth-of-type(1) h3{
@@ -457,7 +457,7 @@ button{
 }
 
 .settings-block a:nth-of-type(2) {
-    background-color: #FFCA00;
+    background-color: #F7BE00;
 }
 
 .settings-block a:nth-of-type(3) {
@@ -469,10 +469,12 @@ button{
 }
 
 #btnLogout {
-    background-color: #ffca00;
+    background-color: #F7BE00;
     margin-top: 2rem;
     margin-bottom: 6rem;
 }
+
+
 
 
 /***************************************************************/
@@ -570,13 +572,13 @@ button{
     line-height: 1rem;
 }
 
-.dateApply, .priceApply {
+.dateApply, .priceApply, .locApply {
     color: black;
     background-color: #F7BE00;
     margin: 0.3rem;
 }
 
-.dateCancel, .priceCancel {
+.dateCancel, .priceCancel, .locCancel {
     color: white;
     background-color: #2ec4b3;
     margin: 0.3rem;
@@ -613,6 +615,8 @@ button{
     padding: 15px;
     font-family: "Montserrat",sans-serif;
     font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     /* justify-content: center; */
     align-items: center;
 }
@@ -627,6 +631,22 @@ button{
     text-align: flex-end;
 }
 
+
+.btnDate.active {
+    background-color: #2ec4b3;
+}
+
+.btnPrice.active {
+    background-color: #F7BE00;
+}
+
+.btnLocation.active {
+    background-color: #0088fd;
+}
+
+.btnDate.active p, .btnPrice.active p, .btnLocation.active p{
+    color: white;
+}
 
 /***************************************************************/
 /******************** Preference Pop-Up ************************/
@@ -708,7 +728,7 @@ body, img{
 }
 
 .filterOption.active, .categoryOption.active {
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 .header-image{
@@ -761,7 +781,7 @@ ul{
     /* padding-bottom: 0; */
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border-bottom: 2px solid #32D9C6;
+    border-bottom: 2px solid #2ec4b3;
 }
 
 .home-menu-options a{
@@ -771,7 +791,7 @@ ul{
 }
 
 .home-menu-options a.active{
-    border-bottom: 5px solid #32D9C6;
+    border-bottom: 5px solid #2ec4b3;
 }
 
 
@@ -850,11 +870,11 @@ ul{
 }
 
 .content-child1 h3 {
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 .content-child2 h3 {
-    background-color: #ffca00;
+    background-color: #F7BE00;
 }
 
 .content-child3 h3 {
@@ -863,7 +883,7 @@ ul{
 
 
 #btnLoadMore {
-    background-color: #ffca00;
+    background-color: #F7BE00;
     color: #0A1943;
 }
 
@@ -915,16 +935,16 @@ ul{
     height: auto;
 }
 
-#btnPrice img{
+.btnPrice img{
     margin-top: 1rem;
 }
 
 .event-filter a:nth-of-type(1) {
-    color: #32D9C6 ;
+    color: #2ec4b3 ;
 }
 
 .event-filter a:nth-of-type(2) {
-    color: #ffca00;
+    color: #F7BE00;
 }
 
 .event-filter a:nth-of-type(3) {
@@ -933,7 +953,7 @@ ul{
 
 .event-filter a:first-of-type a.active {
     color:white;
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 
@@ -952,7 +972,7 @@ ul{
 }
 
 .film-media a {
-    color: #FFCA00;
+    color: #F7BE00;
 }
 
 .music a{
@@ -960,7 +980,7 @@ ul{
 }
 
 .food-drinks a {
-    color: #32D9C6;
+    color: #2ec4b3;
 }
 
 .sports-fitness a{
@@ -968,7 +988,7 @@ ul{
 }
 
 .fashion-lifestyle a {
-    color: #FFCA00;
+    color: #F7BE00;
 }
 
 li a p {
@@ -980,7 +1000,7 @@ li a p {
 }
 
 .film-media.active{
-    background-color: #FFCA00;
+    background-color: #F7BE00;
 }
 
 .music.active {
@@ -988,7 +1008,7 @@ li a p {
 }
 
 .food-drinks.active {
-    background-color: #32D9C6;
+    background-color: #2ec4b3;
 }
 
 .sports-fitness.active {
@@ -996,7 +1016,7 @@ li a p {
 }
 
 .fashion-lifestyle.active{
-    background-color: #FFCA00;
+    background-color: #F7BE00;
 }
 
 
@@ -1083,7 +1103,7 @@ li a p {
 .preferences-tag4.active img,
 .preferences-tag5.active img,
 .preferences-tag6.active img {
-    border: 5px solid #32D9C6;
+    border: 5px solid #2ec4b3;
 }
 
 .btnDone, .btnBack {
@@ -1093,17 +1113,12 @@ li a p {
 }
 
 .btnDone {
-    background-color: #FFCA00;
+    background-color: #F7BE00;
     margin-top: 5rem;
-}
-
-.btnBack {
-    background-color: #32D9C6;
-    color: #fff;
-    padding: 15px;
-    margin-top: 1rem;
     margin-bottom: 4rem;
 }
+
+
 
 
 /* **************************************** */
@@ -1125,7 +1140,7 @@ hr {
 .location-header img {    
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    background: rgba(0, 0, 0, 1)
+    background: rgba(0, 0, 0, 1);
     /* position: relative; */
 }
 
@@ -1178,13 +1193,24 @@ hr {
     color: white;
 }
 
-#cityBtn {
+
+
+.location-set-main select {
     background-color: #2ec4b3;
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-evenly;
+    padding: 15px;
+    width: 100%;
+    border-radius: 0.7rem;
+    font-family: "Montserrat",sans-serif;
+    font-size: 1rem;
+
+    /* justify-content: space-evenly; */
+    align-items: center;
+
 }
+
 
 #cityBtn a{
     text-align: center;
@@ -1521,3 +1547,57 @@ hr {
     height: 10rem;
     width: 12rem;
 }
+
+#gender {
+    height: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    border: 1px solid #D0D0D0;
+
+}
+
+
+/********************************************************************************************************/
+/********************************************************************************************************/
+/*                                          FAQs Page                                                   */
+/********************************************************************************************************/
+/********************************************************************************************************/
+
+.faqs-main{
+    padding: 2rem;
+}
+
+.question {
+    color: #0088fd;
+    font-weight: bold;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #D0D0D0;
+}
+
+.question p{
+    justify-self: flex-start;
+    width: max-content;
+}
+
+.question a {
+    justify-self: flex-end;
+    color: #0088fd;
+    margin: 1rem;
+    padding: 0;
+}
+
+.answer p{
+    text-align: start;
+    border-bottom: 1px solid #D0D0D0;
+    padding-bottom: 1rem;
+}
+
+#expand1 , #expand2 , #expand3 , 
+#expand4 , #expand5 , #expand6 {
+    background-color: white;
+    border: 0;
+    color: #0088fd;
+}
+

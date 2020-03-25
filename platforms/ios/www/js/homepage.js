@@ -81,7 +81,7 @@ getEventsAccordingToUserPrefs = () => {
                         {
                         appendChildCount();
                         openingDisplay.append(`
-                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                            <li class='eventitem content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='${doc.data().image}' alt='Anime Cosplay Fest'>
                                     <h3> 
@@ -98,7 +98,7 @@ getEventsAccordingToUserPrefs = () => {
                         {
                         appendChildCount();
                         openingDisplay.append(`
-                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                            <li class='eventitem content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='${doc.data().image}' alt='Anime Cosplay Fest'>
                                     <h3> 
@@ -115,7 +115,7 @@ getEventsAccordingToUserPrefs = () => {
                         {
                         appendChildCount();
                         openingDisplay.append(`
-                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                            <li class='eventitem content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='${doc.data().image}' alt='Anime Cosplay Fest'>
                                     <h3> 
@@ -132,7 +132,7 @@ getEventsAccordingToUserPrefs = () => {
                         {
                         appendChildCount();
                         openingDisplay.append(`
-                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                            <li class='eventitem content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='${doc.data().image}' alt='Anime Cosplay Fest'>
                                     <h3> 
@@ -149,7 +149,7 @@ getEventsAccordingToUserPrefs = () => {
                         {
                         appendChildCount();
                         openingDisplay.append(`
-                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                            <li class='eventitem content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='${doc.data().image}' alt='Anime Cosplay Fest'>
                                     <h3> 
@@ -166,7 +166,7 @@ getEventsAccordingToUserPrefs = () => {
                         {
                         appendChildCount();
                         openingDisplay.append(`
-                            <li class='content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
+                            <li class='eventitem content-child content-child${childCount.toString()}' data-name='${doc.data().name}'>
                                 <a>
                                     <img src='${doc.data().image}' alt='Anime Cosplay Fest'>
                                     <h3> 
@@ -176,9 +176,13 @@ getEventsAccordingToUserPrefs = () => {
                                 </a>
                             </li>`);
                     }
+            // else {
+            //     openingDisplay.empty();
+            //     openingDisplay.append("<h1> Nothing to show </h1>");
+            // }
 
         }       
-        var events = document.querySelectorAll(".content-child");
+        var events = document.querySelectorAll(".eventitem");
         events.forEach(event => event.addEventListener('click', gotoItem ));
         })
     });
@@ -302,7 +306,7 @@ $('.fashion-lifestyle').click(fashionCategory);
 
 cityChanged = () => {
     locationFilter = document.getElementById("city").value;
-    console.log(locationFilter);
+    
     locationOuter.classList.remove('active');
 
     getEventsAccordingToUserPrefs();
@@ -377,7 +381,6 @@ getUserProfileData = () => {
             //user is already there, write only last login
             //$("#retrieveUsername").placeholder = thisDoc.data().username;
             $("#displayUsername").text(thisDoc.data().email);
-            console.log($("#displayUsername"));
             $("#retrieveUsername").attr('placeholder',thisDoc.data().username);
             $("#retrieveUserEmail").attr('placeholder',thisDoc.data().email);
             $("#retrieveUserPwd").attr('placeholder',thisDoc.data().email);

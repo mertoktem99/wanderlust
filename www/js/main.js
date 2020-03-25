@@ -152,7 +152,6 @@ function applyPrice() {
         priceFilterMax = 20;
 
     }
-    alert(priceFilterMin);
     getEventsAccordingToUserPrefs();
 
     price.innerHTML = `

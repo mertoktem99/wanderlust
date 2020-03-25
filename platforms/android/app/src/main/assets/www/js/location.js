@@ -108,6 +108,13 @@ function getCity() {
                 console.log("City: " + city + ", City2: " + cityAlt + ", Country: " + country + ", Country Code: " + countryCode);
             }
         }
+        var opts = document.getElementById("city").options;
+        for (var opt, j = 0; opt = opts[j]; j++) {
+          if (opt.value == val) {
+            document.getElementById("city").selectedIndex = j;
+            break;
+          }
+        }
     });
 }
 
@@ -118,8 +125,8 @@ addLocationData = () => {
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
-            if (city != null) {
-                o.location = city;
+            if (document.getElementById("city").value != "location") {
+                o.location = document.getElementById("city").value;
                 docRef.update(o).then(function(thisDoc){
                     window.location.replace("../index.html");
                 });
@@ -130,13 +137,16 @@ addLocationData = () => {
 
 
 confirm = () => {
-    // Add Data    
+    // Add Data  
+  
     var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
     var o = {};
+
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
             if (city != null) {
+
                 o.location = city;
             }
             docRef.update(o);

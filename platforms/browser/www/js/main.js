@@ -10,6 +10,8 @@ const settingsPage = document.querySelector('.settings-page');
 const filterBtn = document.querySelector('.filterOption');
 const categoryBtn = document.querySelector('.categoryOption');
 const header = document.querySelector('.app-header');
+const contactBtn = document.querySelector('.contact-button');
+const contactPage = document.querySelector('.contact-page');
 // const travelContent = document.querySelector('.travelContent');
 // const filmContent = document.querySelector('.filmMediaContent');
 // const musicContent = document.querySelector('.musicContent');
@@ -28,6 +30,7 @@ settingsPage.style.display = 'none';
 // musicContent.style.display = 'none';
 // foodDrinksContent.style.display = 'none';
 categoryNav.style.display = 'none';
+contactPage.style.display = 'none';
 
 
 
@@ -45,7 +48,7 @@ console.log(home, profile, settings, homePage);
 
 //============================ Date ================================
 
-const date = document.querySelector('#btnDate');
+const date = document.querySelector('.btnDate');
 const dateOuter = document.querySelector('.date-outer');
 const dateInner = document.querySelector('.date-inner');
 
@@ -82,6 +85,13 @@ function applydate() {
     getEventsAccordingToUserPrefs();
 
     dateOuter.classList.remove('active');
+
+    date.innerHTML = `
+        <img src="../icons/Icon-12.png" alt="">
+        <p>Date</p>
+    `;
+
+    date.classList.add('active');
 }
 
 function closedate() {
@@ -94,7 +104,7 @@ function closedate() {
 
 //============================ Price ================================
 
-const price = document.querySelector('#btnPrice');
+const price = document.querySelector('.btnPrice');
 const priceOuter = document.querySelector('.price-outer');
 const priceInner = document.querySelector('.price-inner');
 
@@ -142,8 +152,14 @@ function applyPrice() {
         priceFilterMax = 20;
 
     }
-    alert(priceFilterMin);
     getEventsAccordingToUserPrefs();
+
+    price.innerHTML = `
+        <img src="../icons/Icon-11.png" alt="">
+        <p>Price</p>
+    `;
+
+    price.classList.add('active');
 
     priceOuter.classList.remove('active');
 };
@@ -157,7 +173,7 @@ function closeprice() {
 
 //============================ Location ================================
 
-const locationButton = document.querySelector('#btnLocation');
+const locationButton = document.querySelector('.btnLocation');
 const locationOuter = document.querySelector('.location-outer');
 const locationInner = document.querySelector('.location-inner');
 
@@ -171,16 +187,35 @@ function locationPopUp() {
         <p></p>
         <select id="city" name="city">
             <option value="location">Choose Location</option>
-            <option value="Vancouver"><a href="#">Vancouver</a></option>
-            <option value="Surrey"><a href="#">Surrey</a></option>
-            <option value="Richmond"><a href="#">Richmond</a></option>
-            <option value="Delta"><a href="#">Delta</a></option>
-        </select>     
+            <option value="Vancouver">Vancouver</option>
+            <option value="Surrey">Surrey</option>
+            <option value="Richmond">Richmond</option>
+            <option value="Delta">Delta</option>
+        </select>
+
+        <button id="btnApply" class="locApply">Apply</button>
+        <button id="btnCancel" class="locCancel">Cancel</button>
              
     </div>
     `;
-    $('#currentLocationBtn').click(getCurrentLocation);
-    document.querySelector("#city").addEventListener("change", cityChanged);
+
+    const cancel = document.querySelector('.locCancel');
+    cancel.addEventListener('click', () => {
+        
+        locationOuter.classList.remove('active');
+    });
+    const apply = document. querySelector('.locApply');
+    apply.addEventListener('click', () => {
+        locationButton.innerHTML = `
+        <img src="../icons/Icon-14.png" alt="">
+        <p>Location</p>
+        `;
+
+        locationButton.classList.add('active');
+
+        locationOuter.classList.remove('active');
+    });
+
     locationOuter.classList.add('active');
 };
 
@@ -236,6 +271,7 @@ home.addEventListener('click', () => {
 
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
+    contactPage.style.display = 'none';
 })
 
 filterBtn.addEventListener('click', () => {
@@ -253,6 +289,7 @@ filterBtn.addEventListener('click', () => {
     categoryNav.style.display = 'none';
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
+    contactPage.style.display = 'none';
 
 })
 
@@ -271,6 +308,7 @@ categoryBtn.addEventListener('click', () => {
     filterNav.style.display = 'none';
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
+    contactPage.style.display = 'none';
 
 
 })
@@ -1088,7 +1126,7 @@ profile.addEventListener('click', () => {
 
     settingsPage.style.display = 'none';
     categoryNav.style.display = 'none';
-
+    contactPage.style.display = 'none';
     profilePage.classList.add('active');
 })
 
@@ -1143,9 +1181,26 @@ settings.addEventListener('click', () => {
     categoryNav.style.display = 'none';
 
     settingsPage.style.display = 'initial';
+    contactPage.style.display = 'none';
 
     settingsPage.classList.add('active');
 })
+
+
+contactBtn.addEventListener('click', () => {
+    filterNav.style.display = 'none';
+    header.style.display = 'none';
+
+    //homePage.style.display = 'none';
+    frontPage.style.display = 'none';
+    loadMoreButton.style.display = 'none';
+    profilePage.style.display = 'none';
+    categoryNav.style.display = 'none';
+
+    settingsPage.style.display = 'none';
+    contactPage.style.display = 'initial';
+})
+
 
 
 
