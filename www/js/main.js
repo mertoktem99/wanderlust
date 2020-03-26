@@ -11,7 +11,12 @@ const filterBtn = document.querySelector('.filterOption');
 const categoryBtn = document.querySelector('.categoryOption');
 const header = document.querySelector('.app-header');
 const contactBtn = document.querySelector('.contact-button');
+const faqBtn = document.querySelector('.faq-button');
 const contactPage = document.querySelector('.contact-page');
+const faqPage = document.querySelector('.faq-page');
+const clearFilter = document.querySelector('#clearFilter');
+
+
 // const travelContent = document.querySelector('.travelContent');
 // const filmContent = document.querySelector('.filmMediaContent');
 // const musicContent = document.querySelector('.musicContent');
@@ -31,6 +36,7 @@ settingsPage.style.display = 'none';
 // foodDrinksContent.style.display = 'none';
 categoryNav.style.display = 'none';
 contactPage.style.display = 'none';
+faqPage.style.display = 'none';
 
 
 
@@ -76,6 +82,7 @@ function datePopUp() {
     dateOuter.classList.add('active');
     const cancel = document.querySelector('.dateCancel');
     cancel.addEventListener('click', closedate);
+    
     const apply = document. querySelector('.dateApply');
     apply.addEventListener('click', applydate);
 };
@@ -92,7 +99,7 @@ function applydate() {
     `;
 
     date.classList.add('active');
-}
+};
 
 function closedate() {
     dateOuter.classList.remove('active');
@@ -265,14 +272,14 @@ home.addEventListener('click', () => {
     `;
 
     header.style.display = 'initial';
-
+    loadMoreButton.style.display = 'initial';
     homePage.style.display = 'initial';
     frontPage.style.display = 'initial';
 
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
-})
+});
 
 filterBtn.addEventListener('click', () => {
     filterBtn.classList.toggle('active');
@@ -291,9 +298,69 @@ filterBtn.addEventListener('click', () => {
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
 
+
+    date.classList.remove('active');
+
+    date.innerHTML = `
+    <img src="../icons/Icon-05.png" alt="">
+    <p>Date</p>
+    `;
+
+
+    price.classList.remove('active');
+
+    price.innerHTML = `
+    <img src="../icons/Icon-04.png" alt="">
+    <p>Date</p>
+    `;
+
+
+    locationButton.classList.remove('active');
+
+    locationButton.innerHTML = `
+    <img src="../icons/Icon-03.png" alt="">
+    <p>Date</p>
+    `;
+
+});
+
+clearFilter.addEventListener('click', () => {
+    date.classList.remove('active');
+
+    date.innerHTML = `
+    <img src="../icons/Icon-05.png" alt="">
+    <p>Date</p>
+    `;
+
+
+    price.classList.remove('active');
+
+    price.innerHTML = `
+    <img src="../icons/Icon-04.png" alt="">
+    <p>Date</p>
+    `;
+
+
+    locationButton.classList.remove('active');
+
+    locationButton.innerHTML = `
+    <img src="../icons/Icon-03.png" alt="">
+    <p>Date</p>
+    `;
 })
 
+
+const travelOutdoors = document.querySelector('.travel-outdoors');
+const filmMedia = document.querySelector('.film-media');
+const music = document.querySelector('.music');
+const food = document.querySelector('.food-drinks');
+const sportsFitness = document.querySelector('.sports-fitness');
+const fashionLifestyle = document.querySelector('.fashion-lifestyle');
+
+
 categoryBtn.addEventListener('click', () => {
+
+    
     filterBtn.classList.remove('active');
     categoryBtn.classList.toggle('active');
 
@@ -310,16 +377,11 @@ categoryBtn.addEventListener('click', () => {
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
 
+    
 
-})
 
 
-const travelOutdoors = document.querySelector('.travel-outdoors');
-const filmMedia = document.querySelector('.film-media');
-const music = document.querySelector('.music');
-const food = document.querySelector('.food-drinks');
-const sportsFitness = document.querySelector('.sports-fitness');
-const fashionLifestyle = document.querySelector('.fashion-lifestyle');
+});
 
 
 
@@ -331,24 +393,37 @@ const fashionLifestyle = document.querySelector('.fashion-lifestyle');
 
 travelOutdoors.addEventListener('click', () => {
 
-
+    travelOutdoors.classList.toggle('active');
 
     // Travel and Outdoors **********************
 
     const travelIcon = travelOutdoors.querySelector('img');
     const travelIconSrc = travelIcon.src;
-    const replaceTravelIcon = travelIconSrc.replace('Icon-19', 'Icon-23');
+    const replaceTravelIcon1 = travelIconSrc.replace('Icon-19', 'Icon-23');
+    const replaceTravelIcon2 = travelIconSrc.replace('Icon-23', 'Icon-19');
 
-    console.log(travelIcon, travelIconSrc, replaceTravelIcon);
+    console.log(travelIcon, travelIconSrc, replaceTravelIcon1);
 
-    travelOutdoors.innerHTML = `
+    if(travelOutdoors.classList.contains('active')) {
+        travelOutdoors.innerHTML = `
         <a>
-            <img src="${replaceTravelIcon}" alt="Icon-23">
+            <img src="${replaceTravelIcon1}" alt="Icon-23">
             <p>
                 Travel & Outdoor
             </p>
         </a>
     `;
+    }else{
+        travelOutdoors.innerHTML = `
+        <a>
+            <img src="${replaceTravelIcon2}" alt="Icon-23">
+            <p>
+                Travel & Outdoor
+            </p>
+        </a>
+    `;
+    };
+    
 
     // Film and Media **********************
 
@@ -367,7 +442,7 @@ travelOutdoors.addEventListener('click', () => {
         </a>
     `;
 
-    travelOutdoors.classList.add('active');
+    
     filmMedia.classList.remove('active');
     music.classList.remove('active');
     food.classList.remove('active');
@@ -451,7 +526,7 @@ travelOutdoors.addEventListener('click', () => {
     // filmContent.style.display = 'none';
     // musicContent.style.display = 'none';
     // foodDrinksContent.style.display = 'none';
-})
+});
 
 
 
@@ -484,21 +559,34 @@ filmMedia.addEventListener('click', () => {
 
     const filmIcon = filmMedia.querySelector('img');
     const filmIconSrc = filmIcon.src;
-    const replaceFilmIcon = filmIconSrc.replace('Icon-20', 'Icon-25');
+    const replaceFilmIcon1 = filmIconSrc.replace('Icon-20', 'Icon-25');
+    const replaceFilmIcon2 = filmIconSrc.replace('Icon-25', 'Icon-20');
 
-    console.log(filmIcon, filmIconSrc, replaceFilmIcon);
+    filmMedia.classList.toggle('active');
 
-    filmMedia.innerHTML = `
+    console.log(filmIcon, filmIconSrc, replaceFilmIcon1);
+    if(filmMedia.classList.contains('active')) {
+        filmMedia.innerHTML = `
         <a>
-            <img src="${replaceFilmIcon}" alt="Icon-25">
+            <img src="${replaceFilmIcon1}" alt="Icon-25">
             <p>
                 Film & Media
             </p>
         </a>
-    `;
+        `;
+    } else {
+        filmMedia.innerHTML = `
+            <a>
+                <img src="${replaceFilmIcon2}" alt="Icon-25">
+                <p>
+                    Film & Media
+                </p>
+            </a>
+        `;
+    };
 
     travelOutdoors.classList.remove('active');
-    filmMedia.classList.add('active');
+    
     music.classList.remove('active');
     food.classList.remove('active');
     sportsFitness.classList.remove('active');
@@ -577,7 +665,7 @@ filmMedia.addEventListener('click', () => {
     // filmContent.style.display = 'initial';
     // musicContent.style.display = 'none';
     // foodDrinksContent.style.display = 'none';
-})
+});
 
 
 // **************************
@@ -622,27 +710,39 @@ music.addEventListener('click', () => {
         </a>
     `;
 
+    music.classList.toggle('active');
 
     // Music **********************
 
     const musicIcon = music.querySelector('img');
     const musicIconSrc = musicIcon.src;
-    const replaceMusicIcon = musicIconSrc.replace('Icon-21', 'Icon-24');
+    const replaceMusicIcon1 = musicIconSrc.replace('Icon-21', 'Icon-24');
+    const replaceMusicIcon2 = musicIconSrc.replace('Icon-24', 'Icon-21');
 
-    console.log(musicIcon, musicIconSrc, replaceMusicIcon);
+    console.log(musicIcon, musicIconSrc, replaceMusicIcon1);
 
-    music.innerHTML = `
+    if(music.classList.contains('active')) {
+        music.innerHTML = `
+            <a>
+                <img src="${replaceMusicIcon1}" alt="Icon-24">
+                <p>
+                    Music
+                </p>
+            </a>
+        `;
+    } else {
+        music.innerHTML = `
         <a>
-            <img src="${replaceMusicIcon}" alt="Icon-24">
+            <img src="${replaceMusicIcon2}" alt="Icon-24">
             <p>
                 Music
             </p>
         </a>
     `;
+    }
 
     travelOutdoors.classList.remove('active');
     filmMedia.classList.remove('active');
-    music.classList.add('active');
     food.classList.remove('active');
     sportsFitness.classList.remove('active');
     fashionLifestyle.classList.remove('active');
@@ -704,7 +804,7 @@ music.addEventListener('click', () => {
     // filmContent.style.display = 'none';
     // musicContent.style.display = 'initial';
     // foodDrinksContent.style.display = 'none';
-})
+});
 
 
 
@@ -767,23 +867,36 @@ food.addEventListener('click', () => {
         </a>
     `;
 
+
+
+    food.classList.toggle('active');
     // Food and Drinks **********************
 
     const foodIcon = food.querySelector('img');
     const foodIconSrc = foodIcon.src;
-    const replaceFoodIcon = foodIconSrc.replace('Icon-22', 'Icon-26');
+    const replaceFoodIcon1 = foodIconSrc.replace('Icon-22', 'Icon-26');
+    const replaceFoodIcon2 = foodIconSrc.replace('Icon-26', 'Icon-22');
 
-    console.log(foodIcon, foodIconSrc, replaceFoodIcon);
-
-    food.innerHTML = `
+    console.log(foodIcon, foodIconSrc, replaceFoodIcon1);
+    if(food.classList.contains('active')) {
+        food.innerHTML = `
+            <a>
+                <img src="${replaceFoodIcon1}" alt="Icon-26">
+                <p>
+                    Food & Drinks
+                </p>
+            </a>
+        `;
+    } else {
+        food.innerHTML = `
         <a>
-            <img src="${replaceFoodIcon}" alt="Icon-26">
+            <img src="${replaceFoodIcon2}" alt="Icon-26">
             <p>
                 Food & Drinks
             </p>
         </a>
     `;
-
+    }
     // Sports and Fitness **********************
 
     const sportsIcon = sportsFitness.querySelector('img');
@@ -822,7 +935,6 @@ food.addEventListener('click', () => {
     travelOutdoors.classList.remove('active');
     filmMedia.classList.remove('active');
     music.classList.remove('active');
-    food.classList.add('active');
     sportsFitness.classList.remove('active');
     fashionLifestyle.classList.remove('active');
 
@@ -832,7 +944,7 @@ food.addEventListener('click', () => {
     // filmContent.style.display = 'none';
     // musicContent.style.display = 'none';
     // foodDrinksContent.style.display = 'initial';
-})
+});
 
 
 // **************************
@@ -883,7 +995,7 @@ sportsFitness.addEventListener('click', () => {
     filmMedia.classList.remove('active');
     music.classList.remove('active');
     food.classList.remove('active');
-    sportsFitness.classList.add('active');
+    sportsFitness.classList.toggle('active');
     fashionLifestyle.classList.remove('active');
 
 
@@ -925,18 +1037,30 @@ sportsFitness.addEventListener('click', () => {
 
     const sportsIcon = sportsFitness.querySelector('img');
     const sportsIconSrc = sportsIcon.src;
-    const replaceSportsIcon = sportsIconSrc.replace('Icon-27', 'Icon-28');
+    const replaceSportsIcon1 = sportsIconSrc.replace('Icon-27', 'Icon-28');
+    const replaceSportsIcon2 = sportsIconSrc.replace('Icon-28', 'Icon-27');
 
-    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon);
+    console.log(sportsIcon, sportsIconSrc, replaceSportsIcon1);
 
-    sportsFitness.innerHTML = `
+    if(sportsFitness.classList.contains('active')) {
+        sportsFitness.innerHTML = `
+            <a>
+                <img src="${replaceSportsIcon1}" alt="Icon-22">
+                <p>
+                    Sports & Fitness
+                </p>
+            </a>
+        `;
+    } else {
+        sportsFitness.innerHTML = `
         <a>
-            <img src="${replaceSportsIcon}" alt="Icon-22">
+            <img src="${replaceSportsIcon2}" alt="Icon-22">
             <p>
                 Sports & Fitness
             </p>
         </a>
     `;
+    }
 
     // Fashion and Lifestyle **********************
 
@@ -955,7 +1079,7 @@ sportsFitness.addEventListener('click', () => {
         </a>
     `;
 
-})
+});
 
 // **************************
 //   Fashion & Lifestyle
@@ -1006,7 +1130,7 @@ fashionLifestyle.addEventListener('click', () => {
     music.classList.remove('active');
     food.classList.remove('active');
     sportsFitness.classList.remove('active');
-    fashionLifestyle.classList.add('active');
+    fashionLifestyle.classList.toggle('active');
 
     // Music **********************
 
@@ -1063,18 +1187,96 @@ fashionLifestyle.addEventListener('click', () => {
 
     const fashionIcon = fashionLifestyle.querySelector('img');
     const fashionIconSrc = fashionIcon.src;
-    const replaceFashionIcon = fashionIconSrc.replace('Icon-30', 'Icon-29');
+    const replaceFashionIcon1 = fashionIconSrc.replace('Icon-30', 'Icon-29');
+    const replaceFashionIcon2 = fashionIconSrc.replace('Icon-29', 'Icon-30');
 
-    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon1);
 
-    fashionLifestyle.innerHTML = `
+    if(fashionLifestyle.classList.contains('active')) {
+        fashionLifestyle.innerHTML = `
+            <a>
+                <img src="${replaceFashionIcon1}" alt="Icon-22">
+                <p>
+                    Fashion & Lifestyle
+                </p>
+            </a>
+        `;
+    } else {
+        fashionLifestyle.innerHTML = `
         <a>
-            <img src="${replaceFashionIcon}" alt="Icon-22">
+            <img src="${replaceFashionIcon2}" alt="Icon-22">
             <p>
                 Fashion & Lifestyle
             </p>
         </a>
     `;
+    }
+
+});
+
+categoryBtn.addEventListener('click', () => {
+    travelOutdoors.classList.remove('active');
+    filmMedia.classList.remove('active');
+    music.classList.remove('active');
+    food.classList.remove('active');
+    sportsFitness.classList.remove('active');
+    fashionLifestyle.classList.remove('active');
+
+
+    travelOutdoors.innerHTML = `
+        <a>
+            <img src="../icons/Icon-19.png" alt="Icon-19">
+            <p>
+                Travel & Outdoor
+            </p>
+        </a>
+        `;
+
+    filmMedia.innerHTML = `
+        <a>
+            <img src="../icons/Icon-20.png" alt="Icon-25">
+            <p>
+                Film & Media
+            </p>
+        </a>
+        `;
+
+    music.innerHTML = `
+        <a>
+            <img src="../icons/Icon-21.png" alt="Icon-25">
+            <p>
+                Music
+            </p>
+        </a>
+        `;
+
+    food.innerHTML = `
+        <a>
+            <img src="../icons/Icon-22.png" alt="Icon-25">
+            <p>
+                Food & Drinks
+            </p>
+        </a>
+        `;
+
+    sportsFitness.innerHTML = `
+        <a>
+            <img src="../icons/Icon-27.png" alt="Icon-25">
+            <p>
+                Sports & Fitness
+            </p>
+        </a>
+        `;
+
+    fashionLifestyle.innerHTML = `
+        <a>
+            <img src="../icons/Icon-30.png" alt="Icon-25">
+            <p>
+                Fashion & Lifestyle
+            </p>
+        </a>
+        `;
+
 
 })
 
@@ -1128,7 +1330,7 @@ profile.addEventListener('click', () => {
     categoryNav.style.display = 'none';
     contactPage.style.display = 'none';
     profilePage.classList.add('active');
-})
+});
 
 
 
@@ -1184,7 +1386,7 @@ settings.addEventListener('click', () => {
     contactPage.style.display = 'none';
 
     settingsPage.classList.add('active');
-})
+});
 
 
 contactBtn.addEventListener('click', () => {
@@ -1199,9 +1401,33 @@ contactBtn.addEventListener('click', () => {
 
     settingsPage.style.display = 'none';
     contactPage.style.display = 'initial';
-})
+    faqPage.style.display = 'none';
+});
+
+
+faqBtn.addEventListener('click', () => {
+    filterNav.style.display = 'none';
+    header.style.display = 'none';
+
+    //homePage.style.display = 'none';
+    frontPage.style.display = 'none';
+    loadMoreButton.style.display = 'none';
+    profilePage.style.display = 'none';
+    categoryNav.style.display = 'none';
+
+    settingsPage.style.display = 'none';
+    contactPage.style.display = 'none';
+    faqPage.style.display = 'initial';
+});
 
 
 
+
+
+// ***************************************************************************
+// ***************************************************************************
+//                             Event Description
+// ***************************************************************************
+// ***************************************************************************
 
 
