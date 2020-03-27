@@ -58,15 +58,17 @@ getUserPrefsData = () => {
 }
 
 getEventsAccordingToUserPrefs = () => {
-    console.log(selectedCategory);
+
     var openingDisplay = $(".opening-display");
     openingDisplay.empty();
+    openingDisplay.append(`
+    <h1> Loading...</h1>`);
 
     const currentDate = new Date();
     loadedEventItems = 0;
 
     db.collection("events").get().then((querySnapshot) => {
-
+        openingDisplay.empty();
         querySnapshot.forEach((doc) => {
 
             if (loadedEventItems < loadEventItems &&
@@ -363,11 +365,11 @@ var gender;
 
 
 savePrefs = () => {
-    username = $("#retrieveUsername").val()
-    email = $("#retrieveUserEmail").val()
+    username = $("#retrieveUsername").val();
+    email = $("#retrieveUserEmail").val();
     password = $("#retrieveUserPwd").val();
     dob = $("#retrieveUserDob").val();
-    gender = $("#retrieveUserGender").val();
+    gender = $("#gender option:selected").html();
     addData();
 };
 
@@ -379,12 +381,11 @@ addData = () => {
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
-            o.username = $("#retrieveUsername").val();
-            o.email = $("#retrieveUserEmail").val();
-            o.password = $("#retrieveUserPwd").val();
-            o.dob = $("#retrieveUserDob").val();
-            o.gender = $("#retrieveUserGender").val();
-            
+            o.username = username;
+            o.email = email;
+            o.password = password;
+            o.dob = dob;
+            o.gender = gender;
             docRef.update(o).then(function(thisDoc) {
                 window.location.href = "frontPage.html";
             });
@@ -406,16 +407,36 @@ getUserProfileData = () => {
             //user is already there, write only last login
             //$("#retrieveUsername").placeholder = thisDoc.data().username;
             $("#displayUsername").text(thisDoc.data().email);
+
             $("#retrieveUsername").attr('placeholder',thisDoc.data().username);
+            $("#retrieveUsername").val(thisDoc.data().username); 
             $("#retrieveUserEmail").attr('placeholder',thisDoc.data().email);
+            $("#retrieveUserEmail").val(thisDoc.data().email);
+
             $("#retrieveUserPwd").attr('placeholder',thisDoc.data().email);
+            $("#retrieveUserPwd").val(thisDoc.data().password);
+
             $("#retrieveUserDob").attr('placeholder',thisDoc.data().dob);
-            $("#retrieveUserGender").attr('placeholder',thisDoc.data().gender);
+            $("#retrieveUserDob").val(thisDoc.data().dob);
+
+            setSelectByText("gender", thisDoc.data().gender);
         }
     });
 }
 
-$('.btnDone').click(addData);
+
+function setSelectByText(eID,text)
+{ //Loop through sequentially//
+  var ele=document.getElementById(eID);
+  for(var ii=0; ii<ele.length; ii++)
+    if(ele.options[ii].text==text) { //Found!
+      ele.options[ii].selected=true;
+      return true;
+    }
+  return false;
+}
+
+$('.btnDone').click(savePrefs);
 
 $('#btn-save-profile').click(savePrefs);
 
@@ -441,8 +462,9 @@ logOutButton = () => {
 
 $('#btnLogout').click(logOutButton);
 
-
-
+/* ///////////////////////
+// Contact Us
+////////////////////////*/
 $(document).ready(function() {
     var form = $('form'),
         name = $('#name')
@@ -456,26 +478,15 @@ $(document).ready(function() {
       $(this).css('border-color', '');
       info.html('').slideUp();
     });
-    console.log(submit);
     submit.on('click', function(e) {
-      e.preventDefault();
-      if(validate()) {
-        $.ajax({
-          type: "POST",
-          url: "localhost:3000/php/handler.php",
-          data: form.serialize(),
-          dataType: "json"
-        }).done(function(data) {
-          if(data.success) {
-            email.val('');
-            subject.val('');
-            message.val('');
-            info.html('Message sent!').css('color', 'green').slideDown();
-          } else {
+        e.preventDefault();
+        if(validate()) {
+            addContactData();
+        }
+        else {
             info.html('Could not send mail! Sorry!').css('color', 'red').slideDown();
-          }
-        });
-      }
+
+        }
     });
     
     function validate() {
@@ -506,6 +517,30 @@ $(document).ready(function() {
   
   });
 
+
+addContactData = () => {
+    // Add Data    
+    var docRef = firebase.firestore().collection("contact").doc(firebase.auth().currentUser.uid);
+    var o = {};
+    docRef.get().then(function(thisDoc) {
+            //new user
+            o.uid = docRef;
+            o.name = name.val();
+            o.email = email.val();
+            o.subject = subject.val();
+            o.message = message.val();
+
+            // Send it
+            docRef.set(o).then(function(o) {
+                email.val('');
+                subject.val('');
+                message.val('');
+                info.html('Message sent!').css('color', 'green').slideDown();
+            });
+        });
+}
+
+  // Search
 
   $("#search").change(function(){
     searchFilter = $("#search").val()
