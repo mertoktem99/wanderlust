@@ -130,7 +130,7 @@ addLocationData = () => {
             if (document.getElementById("city").value != "location") {
                 o.location = document.getElementById("city").value;
                 docRef.update(o).then(function(thisDoc){
-                    window.location.replace("../index.html");
+                    window.location.replace("../screens/frontPage.html");
                 });
             }
         }

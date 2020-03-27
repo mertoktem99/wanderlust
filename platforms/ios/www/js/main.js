@@ -512,7 +512,7 @@ travelOutdoors.addEventListener('click', () => {
     const fashionIconSrc = fashionIcon.src;
     const replaceFashionIcon = fashionIconSrc.replace('Icon-29', 'Icon-30');
 
-    console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
+    //console.log(fashionIcon, fashionIconSrc, replaceFashionIcon);
 
     fashionLifestyle.innerHTML = `
         <a>
@@ -531,6 +531,7 @@ travelOutdoors.addEventListener('click', () => {
     // filmContent.style.display = 'none';
     // musicContent.style.display = 'none';
     // foodDrinksContent.style.display = 'none';
+
 });
 
 
@@ -680,7 +681,7 @@ filmMedia.addEventListener('click', () => {
 
 
 music.addEventListener('click', () => {
-
+    
     // Travel and Outdoors **********************
 
     const travelIcon = travelOutdoors.querySelector('img');

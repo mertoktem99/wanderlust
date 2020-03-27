@@ -18,6 +18,7 @@ var loadedEventItems = 0;
 var priceFilterMin = 0;
 var priceFilterMax = 999;
 var locationFilter;
+var searchFilter = "";
 
 // Categories 
 var selectedCategory = null;
@@ -57,6 +58,7 @@ getUserPrefsData = () => {
 }
 
 getEventsAccordingToUserPrefs = () => {
+    console.log(selectedCategory);
     var openingDisplay = $(".opening-display");
     openingDisplay.empty();
 
@@ -66,15 +68,19 @@ getEventsAccordingToUserPrefs = () => {
     db.collection("events").get().then((querySnapshot) => {
 
         querySnapshot.forEach((doc) => {
+
             if (loadedEventItems < loadEventItems &&
                 doc.data().date.toDate() > currentDate &&
                 doc.data().date.toDate() > dateFilter &&
                 doc.data().price >= priceFilterMin &&
                 doc.data().price <= priceFilterMax &&
-                doc.data().city == locationFilter) {
+                doc.data().city == locationFilter &&
+                (`${doc.data().category}`.toUpperCase().includes(searchFilter.toUpperCase()) || `${doc.data().name}`.toUpperCase().includes(searchFilter.toUpperCase()))
+                ) {
                     if (filmChoice == true && 
                         `${doc.data().category}` == "Film&Media" &&
-                        (selectedCategory == null || selectedCategory == "Film") )
+                        (selectedCategory == null || selectedCategory == "Film") 
+                        )
                         {
                         appendChildCount();
                         openingDisplay.append(`
@@ -142,7 +148,8 @@ getEventsAccordingToUserPrefs = () => {
                     else if (
                         foodChoice == true && 
                         `${doc.data().category}` == "Food&Drink" &&
-                        (selectedCategory == null || selectedCategory == "Food") )
+                        (selectedCategory == null || selectedCategory == "Food")
+                        )
                         {
                         appendChildCount();
                         openingDisplay.append(`
@@ -497,4 +504,10 @@ $(document).ready(function() {
       return valid;
     }
   
+  });
+
+
+  $("#search").change(function(){
+    searchFilter = $("#search").val()
+    getEventsAccordingToUserPrefs();
   });
