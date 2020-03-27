@@ -15,6 +15,7 @@ const faqBtn = document.querySelector('.faq-button');
 const contactPage = document.querySelector('.contact-page');
 const faqPage = document.querySelector('.faq-page');
 const clearFilter = document.querySelector('#clearFilter');
+var dateFilter = new Date();
 
 
 // const travelContent = document.querySelector('.travelContent');
@@ -89,6 +90,7 @@ function datePopUp() {
 
 function applydate() {
     dateFilter = new Date(document.querySelector('#date').value);
+    console.log(dateFilter);
     getEventsAccordingToUserPrefs();
 
     dateOuter.classList.remove('active');
@@ -190,7 +192,7 @@ function locationPopUp() {
     locationInner.innerHTML = `
     <div class = "locationPopUp"> 
            
-        <a><button id="currentLocationBtn">Use Your Location</button></a>
+        <button id="currentLocationBtn">Use Your Location</button>
         <p></p>
         <select id="city" name="city">
             <option value="location">Choose Location</option>
@@ -205,6 +207,9 @@ function locationPopUp() {
              
     </div>
     `;
+    
+    $('#currentLocationBtn').click(useYourLocation);
+
 
     const cancel = document.querySelector('.locCancel');
     cancel.addEventListener('click', () => {

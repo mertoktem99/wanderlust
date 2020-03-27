@@ -648,6 +648,7 @@ button{
     color: white;
 }
 
+
 /***************************************************************/
 /******************** Preference Pop-Up ************************/
 /***************************************************************/
@@ -810,13 +811,13 @@ ul{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin: 0;
+    margin: 0 1.7rem 0 1.7rem;
     padding: 0;
 }
 
 .secondary-nav ul li{
     flex-basis: 42%;
-    margin: 8px 0;
+    margin: 4px 0px;
     padding: 10px;
     border: 1px solid #D0D0D0;
     border-radius: 8px;
@@ -885,6 +886,8 @@ ul{
 #btnLoadMore {
     background-color: #F7BE00;
     color: #0A1943;
+    margin: 1rem 1.7rem;
+    width: 85%;
 }
 
 
@@ -955,6 +958,17 @@ ul{
     color:white;
     background-color: #2ec4b3;
 }
+
+
+
+#clearFilter {
+    height: 3rem;
+    max-width: 85%;
+    margin: 0 1.7rem;
+    color: white;
+    background-color: #2ec4b3;
+}
+
 
 
 .event-options{
@@ -1442,11 +1456,18 @@ hr {
 }
 
 
-#directionBtn {
+#directionBtn, #closeMap {
     background-color: #F7BE00;
     color: #0A1943;
     margin-top: 2rem;
 }
+
+.map.active{
+    position: absolute;
+}
+
+
+
 
 
 /********************************************************************************************************/

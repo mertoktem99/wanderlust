@@ -10,6 +10,7 @@
     <link href="../css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script src="../js/connectFirebase.js" defer></script>
     <script src="../js/homepage.js" defer></script>
@@ -290,24 +291,25 @@
                 <main class="contact-main">
 
                     <div class="contact-info">
-                        <label for="retrievename">Name</label>
-                        <input type="text" id="retrievename">
+                        <form action="" id="form">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe">
+                
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com">
+                
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Hello">
 
-                        <label for="retrieveEmail">Email</label>
-                        <input type="email" id="retrieveEmail">
 
-                        <label for="retrieveMobile">Mobile</label>
-                        <input type="tel" id="retrieveMobile">
+                            <label for="message">Message</label>
+                            <input type="text" id="message" name="message" placeholder="How is it going?">
+                            <label id="info"></label>
+                            <!-- <div class="contact-buttons"> -->
+                            <button id="btn-send-contact">Send</button>
+                            <!-- </div> -->
+                        </form>
 
-                        <label for="retrieveSubject">Subject</label>
-                        <input type="text" id="retrieveSubject">
-
-                        <label for="retrieveMessage">Message</label>
-                        <input type="text" id="retrieveMessage">
-
-                        <!-- <div class="contact-buttons"> -->
-                        <button id="btn-send-contact">Send</button>
-                        <!-- </div> -->
                     </div>
 
                 </main>
@@ -438,6 +440,7 @@
                 </div>
             </div>
 
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w&callback="></script>
 
             <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -450,6 +453,7 @@
             <!-- Add Firebase products that you want to use -->
             <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
             <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+
 
 </body>
 

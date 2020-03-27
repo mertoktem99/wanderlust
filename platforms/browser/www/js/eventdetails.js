@@ -1,4 +1,42 @@
 
+
+const eventPage = document.querySelector('.event-page');
+const mapPage = document.querySelector('.map');
+
+mapPage.style.display = 'none';
+
+const dirBtn = document.querySelector('#directionBtn');
+const closeMapBtn = document.querySelector('#closeMap');
+
+dirBtn.addEventListener('click', () => {
+
+    mapPage.classList.add('active');
+    
+    eventMap();
+    
+});
+
+closeMapBtn.addEventListener('click', () => {
+
+    mapPage.classList.remove('active');
+
+    eventMap();
+    
+})
+
+
+
+function eventMap() {
+    if(mapPage.classList.contains('active')){
+        eventPage.style.display = 'none';
+        mapPage.style.display = 'initial';
+    } else {
+        eventPage.style.display = 'initial';
+        mapPage.style.display = 'none';
+    }
+}
+
+
 var latitude;
 var longitude;
 
@@ -65,7 +103,7 @@ directionButton = () => {
     };
 
     map = new google.maps.Map
-    (document.getElementById("map"), mapOptions);
+    (document.querySelector(".map"), mapOptions);
 
 
     var latLong = new google.maps.LatLng(latitude, longitude);

@@ -108,6 +108,8 @@ function getCity() {
                 console.log("City: " + city + ", City2: " + cityAlt + ", Country: " + country + ", Country Code: " + countryCode);
             }
         }
+
+        val = city;
         var opts = document.getElementById("city").options;
         for (var opt, j = 0; opt = opts[j]; j++) {
           if (opt.value == val) {
@@ -138,7 +140,6 @@ addLocationData = () => {
 
 confirm = () => {
     // Add Data  
-  
     var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
     var o = {};
 
@@ -146,14 +147,12 @@ confirm = () => {
         if (thisDoc.exists) {
             //user is already there, write only last login
             if (city != null) {
-
                 o.location = city;
             }
             docRef.update(o);
         }
     })
 }
-
 
 
 $('#currentLocationBtn').click(getMapLocation);

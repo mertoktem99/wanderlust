@@ -103,7 +103,7 @@ directionButton = () => {
     };
 
     map = new google.maps.Map
-    (document.getElementById("map"), mapOptions);
+    (document.querySelector(".map"), mapOptions);
 
 
     var latLong = new google.maps.LatLng(latitude, longitude);

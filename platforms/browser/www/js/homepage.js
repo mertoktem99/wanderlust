@@ -15,7 +15,6 @@ var loadedEventItems = 0;
 
 
 // Filters
-var dateFilter = new Date();
 var priceFilterMin = 0;
 var priceFilterMax = 999;
 var locationFilter;
@@ -32,9 +31,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 getUserPrefsData = () => {
-    // Add Data 
-    var datashow = $("#data");
-    
+    // Get Data     
     var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
     var o = {};
     docRef.get().then(function(thisDoc) {
@@ -315,21 +312,37 @@ cityChanged = () => {
 
 getCurrentLocation = () => {
     getMapLocation();
-    getEventsAccordingToUserPrefs();
+
     locationOuter.classList.remove('active');
+
+    getEventsAccordingToUserPrefs();
 }
+
 
 filterOptionClicked = () => {
     // Filters
     var dateFilter = new Date();
     var priceFilterMin = 0;
     var priceFilterMax = 999;
+    console.log(dateFilter);
     getUserPrefsData();
 }
 
 
+useYourLocation = () => {
+    // Filters
+    getMapLocation();
+
+    getUserPrefsData();
+}
+
+
+
+
+
 $('.filterOption').click(filterOptionClicked);
 
+$('#clearFilter').click(filterOptionClicked);
 
 // END FILTERS
 
@@ -372,6 +385,11 @@ addData = () => {
     });
 }
 
+function isNotEmpty(value) {
+    if (value == null || typeof value == 'undefined' || value.length == 0) return false;
+    return (value);
+}
+
 getUserProfileData = () => {
     // Add Data     
     var docRef = firebase.firestore().collection("users").doc(firebase.auth().currentUser.uid);
@@ -391,8 +409,6 @@ getUserProfileData = () => {
 }
 
 $('.btnDone').click(addData);
-
-
 
 $('#btn-save-profile').click(savePrefs);
 
@@ -417,3 +433,68 @@ logOutButton = () => {
 
 
 $('#btnLogout').click(logOutButton);
+
+
+
+$(document).ready(function() {
+    var form = $('form'),
+        name = $('#name')
+        email = $('#email'),
+        subject = $('#subject'),
+        message = $('#message'),
+        info = $('#info'),
+        submit = $("#btn-send-contact");
+    
+    form.on('input', '#name, #email, #subject, #message', function() {
+      $(this).css('border-color', '');
+      info.html('').slideUp();
+    });
+    console.log(submit);
+    submit.on('click', function(e) {
+      e.preventDefault();
+      if(validate()) {
+        $.ajax({
+          type: "POST",
+          url: "localhost:3000/php/handler.php",
+          data: form.serialize(),
+          dataType: "json"
+        }).done(function(data) {
+          if(data.success) {
+            email.val('');
+            subject.val('');
+            message.val('');
+            info.html('Message sent!').css('color', 'green').slideDown();
+          } else {
+            info.html('Could not send mail! Sorry!').css('color', 'red').slideDown();
+          }
+        });
+      }
+    });
+    
+    function validate() {
+      var valid = true;
+      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      
+      if(!regex.test(email.val())) {
+        email.css('border-color', 'red');
+        valid = false;
+      }
+      if($.trim(subject.val()) === "") {
+        subject.css('border-color', 'red');
+        valid = false;
+      }
+
+      if($.trim(name.val()) === "") {
+        name.css('border-color', 'red');
+        valid = false;
+      }
+
+      if($.trim(message.val()) === "") {
+        message.css('border-color', 'red');
+        valid = false;
+      }
+      
+      return valid;
+    }
+  
+  });

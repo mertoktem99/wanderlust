@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Event Description</title>
-    
+
     <script src="https://kit.fontawesome.com/ea3a7608ac.js" crossorigin="anonymous"></script>
     <link href="../css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap" rel="stylesheet">
     <script src="../js/connectFirebase.js" defer></script>
     <script src="../js/eventdetails.js" defer></script>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
 
@@ -19,60 +20,66 @@
 
 <body>
 
-    <header class="event-header">
-        <div>
-            <a><button id="backBtn">
-                    < Back</button> </a> </div> <div class="header-image">
-                        <img class="headerimage" src="../img/events-page.jpeg" alt="">
-        </div>
-    </header>
-
-    <main class="event-main">
-
-        <div class="event-heading">
-            <h2 class="event-name"> TOFINO SURF EVENTS 2020</h2>
-            <a href="">&starf;</a>
-            <a href="">&starf;</a>
-            <a href="">&starf;</a>
-            <a href="">&starf;</a>
-            <a href="">&star;</a>
-        </div>
-
-        <div class="event-info">
-            <div class="event-time">
-                <img src="../icons/Icon-17.png" alt="">
-                <p class="tag">Time & Date</p>
-                <p class="date">March 4-6</p>
+    <main class="event-page">
+        <header class="event-header">
+            <div>
+                <a><button id="backBtn">
+                        < Back</button> </a> </div> <div class="header-image">
+                            <img class="headerimage" src="../img/events-page.jpeg" alt="">
             </div>
-            <div class="event-price">
-                <img src="../icons/Icon-16.png" alt="">
-                <p class="tag">Price</p>
-                <p class="price">Free</p>
+        </header>
+    
+        <main class="event-main">
+    
+            <div class="event-heading">
+                <h2 class="event-name"> TOFINO SURF EVENTS 2020</h2>
+                <a href="">&starf;</a>
+                <a href="">&starf;</a>
+                <a href="">&starf;</a>
+                <a href="">&starf;</a>
+                <a href="">&star;</a>
             </div>
-            <div class="event-location">
-                <img src="../icons/Icon-18.png" alt="">
-                <p class="tag">Location</p>
-                <p class="location">Tofino, British Columbia</p>
+    
+            <div class="event-info">
+                <div class="event-time">
+                    <img src="../icons/Icon-17.png" alt="">
+                    <p class="tag">Time & Date</p>
+                    <p class="date">March 4-6</p>
+                </div>
+                <div class="event-price">
+                    <img src="../icons/Icon-16.png" alt="">
+                    <p class="tag">Price</p>
+                    <p class="price">Free</p>
+                </div>
+                <div class="event-location">
+                    <img src="../icons/Icon-18.png" alt="">
+                    <p class="tag">Location</p>
+                    <p class="location">Tofino, British Columbia</p>
+                </div>
             </div>
-        </div>
-
-
-        <div class="event-content">
-            <p class="eventdescription">
-                The Queen of the Peak is presented by Surf Sister, Long Beach Surf Shop, Pacific Sands Beach Resort,
-                Shelter Restaurant, and Billabong. Competitors and Spectators are asked to bike or carpool to all Tofino
-                Surf Events. Proceeds from this Tofino Surf Event are donated to Keep a Breast Canada.
-            </p>
-
-            <!-- <a href="EventDescription-1.html"><button id="readMoreBtn">Read More</button></a> -->
-        <div id="map"></div>
-
-            <a href="#"><button id="directionBtn">Get Directions</button></a>
-        </div>
-
+    
+    
+            <div class="event-content">
+                <p class="eventdescription">
+                    The Queen of the Peak is presented by Surf Sister, Long Beach Surf Shop, Pacific Sands Beach Resort,
+                    Shelter Restaurant, and Billabong. Competitors and Spectators are asked to bike or carpool to all Tofino
+                    Surf Events. Proceeds from this Tofino Surf Event are donated to Keep a Breast Canada.
+                </p>
+    
+                <!-- <a href="EventDescription-1.html"><button id="readMoreBtn">Read More</button></a> -->
+    
+    
+                <a><button id="directionBtn">Get Directions</button></a>
+            </div>
+    
+        </main>
     </main>
 
-<!-- 
+    <div class="map">
+        <a><button id="closeMap">Close</button></a>
+    </div>
+
+    <!-- 
     <footer class="settings-footer">
         <div class="footer-container">
             <a class="home"><img src="../icons/Icon-08.png" alt="">
@@ -86,19 +93,21 @@
             </a>
         </div>
     </footer> -->
-            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w&callback="></script>
+    
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOWiSpvUjvww_EKXfphNg87bpsgqxnG9w&callback="></script>
 
-            <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-            <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 
-            <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
 
-            <!-- Add Firebase products that you want to use -->
-            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
 
 
 </body>
