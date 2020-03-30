@@ -1,7 +1,7 @@
 
 
 const eventPage = document.querySelector('.event-page');
-const mapPage = document.querySelector('.map');
+const mapPage = document.querySelector('.map-page');
 
 mapPage.style.display = 'none';
 
@@ -103,7 +103,7 @@ directionButton = () => {
     };
 
     map = new google.maps.Map
-    (document.querySelector(".map"), mapOptions);
+    (document.querySelector('.map'), mapOptions);
 
 
     var latLong = new google.maps.LatLng(latitude, longitude);
@@ -124,7 +124,7 @@ function initMap() {
     var uluru = {lat: -25.344, lng: 131.036};
     // The map, centered at Uluru
     var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 4, center: uluru});
+        document.querySelector('.map'), {zoom: 4, center: uluru});
     // The marker, positioned at Uluru
     var marker = new google.maps.Marker({position: uluru, map: map});
   }

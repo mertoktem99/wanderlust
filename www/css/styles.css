@@ -1717,3 +1717,8 @@ hr {
     object-fit: cover;
     max-width: 100%;
 }
+
+#loading {
+    color: #F7BE00;
+    text-align: center; 
+}

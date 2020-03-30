@@ -62,7 +62,7 @@ getEventsAccordingToUserPrefs = () => {
     var openingDisplay = $(".opening-display");
     openingDisplay.empty();
     openingDisplay.append(`
-    <h1> Loading...</h1>`);
+    <h1 id="loading"> Loading...</h1>`);
 
     const currentDate = new Date();
     loadedEventItems = 0;
@@ -357,7 +357,6 @@ $('#clearFilter').click(filterOptionClicked);
 
 
 // PROFILE PAGE
-var username;
 var email;
 var password;
 var dob;
@@ -365,7 +364,6 @@ var gender;
 
 
 savePrefs = () => {
-    username = $("#retrieveUsername").val();
     email = $("#retrieveUserEmail").val();
     password = $("#retrieveUserPwd").val();
     dob = $("#retrieveUserDob").val();
@@ -381,7 +379,6 @@ addData = () => {
     docRef.get().then(function(thisDoc) {
         if (thisDoc.exists) {
             //user is already there, write only last login
-            o.username = username;
             o.email = email;
             o.password = password;
             o.dob = dob;
@@ -467,7 +464,7 @@ $('#btnLogout').click(logOutButton);
 ////////////////////////*/
 $(document).ready(function() {
     var form = $('form'),
-        name = $('#name')
+        name = $('#name'),
         email = $('#email'),
         subject = $('#subject'),
         message = $('#message'),
@@ -525,13 +522,14 @@ addContactData = () => {
     docRef.get().then(function(thisDoc) {
             //new user
             o.uid = docRef;
-            o.name = name.val();
+            o.name = $('#name').val();
             o.email = email.val();
             o.subject = subject.val();
             o.message = message.val();
 
             // Send it
             docRef.set(o).then(function(o) {
+                $('#name').val('');
                 email.val('');
                 subject.val('');
                 message.val('');

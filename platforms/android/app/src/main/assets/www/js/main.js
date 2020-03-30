@@ -284,6 +284,7 @@ home.addEventListener('click', () => {
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
+    faqPage.style.display = 'none';
 });
 
 filterBtn.addEventListener('click', () => {
@@ -302,6 +303,7 @@ filterBtn.addEventListener('click', () => {
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
+    faqPage.style.display = 'none';
 
 
     date.classList.remove('active');
@@ -316,7 +318,7 @@ filterBtn.addEventListener('click', () => {
 
     price.innerHTML = `
     <img src="../icons/Icon-04.png" alt="">
-    <p>Date</p>
+    <p>Price</p>
     `;
 
 
@@ -324,7 +326,7 @@ filterBtn.addEventListener('click', () => {
 
     locationButton.innerHTML = `
     <img src="../icons/Icon-03.png" alt="">
-    <p>Date</p>
+    <p>Location</p>
     `;
 
 });
@@ -342,7 +344,7 @@ clearFilter.addEventListener('click', () => {
 
     price.innerHTML = `
     <img src="../icons/Icon-04.png" alt="">
-    <p>Date</p>
+    <p>Price</p>
     `;
 
 
@@ -350,7 +352,7 @@ clearFilter.addEventListener('click', () => {
 
     locationButton.innerHTML = `
     <img src="../icons/Icon-03.png" alt="">
-    <p>Date</p>
+    <p>Location</p>
     `;
 })
 
@@ -381,6 +383,7 @@ categoryBtn.addEventListener('click', () => {
     profilePage.style.display = 'none';
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
+    faqPage.style.display = 'none';
 
     
 
@@ -1335,6 +1338,7 @@ profile.addEventListener('click', () => {
     settingsPage.style.display = 'none';
     categoryNav.style.display = 'none';
     contactPage.style.display = 'none';
+    faqPage.style.display = 'none';
     profilePage.classList.add('active');
 });
 
@@ -1390,6 +1394,7 @@ settings.addEventListener('click', () => {
 
     settingsPage.style.display = 'initial';
     contactPage.style.display = 'none';
+    faqPage.style.display = 'none';
 
     settingsPage.classList.add('active');
 });
@@ -1412,6 +1417,7 @@ contactBtn.addEventListener('click', () => {
 
 
 faqBtn.addEventListener('click', () => {
+    faqPage.style.display = 'initial';
     filterNav.style.display = 'none';
     header.style.display = 'none';
 
@@ -1423,7 +1429,7 @@ faqBtn.addEventListener('click', () => {
 
     settingsPage.style.display = 'none';
     contactPage.style.display = 'none';
-    faqPage.style.display = 'initial';
+    
 });
 
 
@@ -1437,3 +1443,100 @@ faqBtn.addEventListener('click', () => {
 // ***************************************************************************
 
 
+const expand1 = document.querySelector('#expand1');
+const expand2 = document.querySelector('#expand2');
+const expand3 = document.querySelector('#expand3');
+const expand4 = document.querySelector('#expand4');
+const expand5 = document.querySelector('#expand5');
+const expand6 = document.querySelector('#expand6');
+
+
+
+const answer1 = document.querySelector('.answer-1');
+const answer2 = document.querySelector('.answer-2');
+const answer3 = document.querySelector('.answer-3');
+const answer4 = document.querySelector('.answer-4');
+const answer5 = document.querySelector('.answer-5');
+const answer6 = document.querySelector('.answer-6');
+
+answer1.style.display = 'none';
+answer2.style.display = 'none';
+answer3.style.display = 'none';
+answer4.style.display = 'none';
+answer5.style.display = 'none';
+answer6.style.display = 'none';
+
+//   First Answer =====================================================================================
+expand1.addEventListener('click', () => {
+    answer1.classList.toggle('active');
+
+    if(answer1.classList.contains('active')) {
+        answer1.style.display = 'initial';
+    } else {
+        answer1.style.display = 'none';
+    }
+});
+
+//   Second Answer =====================================================================================
+
+expand2.addEventListener('click', () => {
+    answer2.classList.toggle('active');
+
+    if(answer2.classList.contains('active')) {
+        answer2.style.display = 'initial';
+    } else {
+        answer2.style.display = 'none';
+    }
+});
+
+
+//   Third Answer =====================================================================================
+
+expand3.addEventListener('click', () => {
+    answer3.classList.toggle('active');
+
+    if(answer3.classList.contains('active')) {
+        answer3.style.display = 'initial';
+    } else {
+        answer3.style.display = 'none';
+    }
+});
+
+//   Fourth Answer ====================================================================================
+
+expand4.addEventListener('click', () => {
+    answer4.classList.toggle('active');
+
+    if(answer4.classList.contains('active')) {
+        answer4.style.display = 'initial';
+    } else {
+        answer4.style.display = 'none';
+    }
+});
+
+
+//   Fifth Answer =====================================================================================
+
+expand5.addEventListener('click', () => {
+    answer5.classList.toggle('active');
+
+    if(answer5.classList.contains('active')) {
+        answer5.style.display = 'initial';
+    } else {
+        answer5.style.display = 'none';
+    }
+});
+
+
+
+//   Sixth Answer =====================================================================================
+
+expand6.addEventListener('click', () => {
+    answer6.classList.toggle('active');
+
+    if(answer6.classList.contains('active')) {
+        answer6.style.display = 'initial';
+    } else {
+        answer6.style.display = 'none';
+    }
+});
