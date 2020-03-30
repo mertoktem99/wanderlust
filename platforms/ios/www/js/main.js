@@ -104,8 +104,8 @@ function applydate() {
 };
 
 function closedate() {
+    dateFilter = new Date();
     dateOuter.classList.remove('active');
-
     
 };
 

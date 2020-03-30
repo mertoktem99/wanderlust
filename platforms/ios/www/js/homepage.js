@@ -300,7 +300,16 @@ fashionCategory = () => {
     getEventsAccordingToUserPrefs();
 }
 
-$('.travel-outdoors').click(travelCategory);
+categoryOptionClicked = () => {
+    selectedCategory = null;
+    loadEventItems = 3;
+    getEventsAccordingToUserPrefs();
+}
+
+
+
+
+$('.categoryOption').click(categoryOptionClicked);
 $('.film-media').click(filmCategory);
 $('.music').click(musicCategory);
 $('.food-drinks').click(foodCategory);
@@ -318,7 +327,6 @@ cityChanged = () => {
     getEventsAccordingToUserPrefs();
 }
 
-
 getCurrentLocation = () => {
     getMapLocation();
 
@@ -327,16 +335,14 @@ getCurrentLocation = () => {
     getEventsAccordingToUserPrefs();
 }
 
-
 filterOptionClicked = () => {
     // Filters
-    var dateFilter = new Date();
-    var priceFilterMin = 0;
-    var priceFilterMax = 999;
+    dateFilter = new Date();
+    priceFilterMin = 0;
+    priceFilterMax = 999;
     console.log(dateFilter);
     getUserPrefsData();
 }
-
 
 useYourLocation = () => {
     // Filters
@@ -345,12 +351,7 @@ useYourLocation = () => {
     getUserPrefsData();
 }
 
-
-
-
-
 $('.filterOption').click(filterOptionClicked);
-
 $('#clearFilter').click(filterOptionClicked);
 
 // END FILTERS
