@@ -106,7 +106,7 @@ function applydate() {
 function closedate() {
     dateFilter = new Date();
     dateOuter.classList.remove('active');
-    
+
 };
 
 
@@ -191,9 +191,13 @@ locationButton.addEventListener('click', locationPopUp);
 function locationPopUp() {
     locationInner.innerHTML = `
     <div class = "locationPopUp"> 
+        <div class = "location-header">
+            <img id="loc" src="../icons/Icon-14.png">
+            <p>Location</p>
+        </div>
            
         <button id="currentLocationBtn">Use Your Location</button>
-        <p></p>
+        <p class="line" ></p>
         <select id="city" name="city">
             <option value="location">Choose Location</option>
             <option value="Vancouver">Vancouver</option>
@@ -215,7 +219,9 @@ function locationPopUp() {
     cancel.addEventListener('click', () => {
         
         locationOuter.classList.remove('active');
+        getUserPrefsData();
     });
+
     const apply = document. querySelector('.locApply');
     apply.addEventListener('click', () => {
         locationButton.innerHTML = `
@@ -226,6 +232,9 @@ function locationPopUp() {
         locationButton.classList.add('active');
 
         locationOuter.classList.remove('active');
+        cityChanged();
+        getEventsAccordingToUserPrefs();
+
     });
 
     locationOuter.classList.add('active');

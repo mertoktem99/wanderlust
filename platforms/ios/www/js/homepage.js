@@ -13,11 +13,13 @@ var childCount = 1;
 var loadEventItems = 3;
 var loadedEventItems = 0;
 
+var foundAnEvent = false;
+
 
 // Filters
 var priceFilterMin = 0;
 var priceFilterMax = 999;
-var locationFilter;
+var locationFilter = null;
 var searchFilter = "";
 
 // Categories 
@@ -45,7 +47,9 @@ getUserPrefsData = () => {
             travelChoice = thisDoc.data().travel;
             foodChoice = thisDoc.data().food;
             fashionChoice = thisDoc.data().fashion;
-            locationFilter = thisDoc.data().location; // By default we are putting location filter to user's selected city from DB.
+            if (locationFilter == null) {
+                locationFilter = thisDoc.data().location; // By default we are putting location filter to user's selected city from DB.
+            }
         }
         else {
             // User prefs doesn't exist send to prefs page.
@@ -66,11 +70,10 @@ getEventsAccordingToUserPrefs = () => {
 
     const currentDate = new Date();
     loadedEventItems = 0;
-
+    foundAnEvent = false;
     db.collection("events").get().then((querySnapshot) => {
         openingDisplay.empty();
         querySnapshot.forEach((doc) => {
-
             if (loadedEventItems < loadEventItems &&
                 doc.data().date.toDate() > currentDate &&
                 doc.data().date.toDate() > dateFilter &&
@@ -79,6 +82,7 @@ getEventsAccordingToUserPrefs = () => {
                 doc.data().city == locationFilter &&
                 (`${doc.data().category}`.toUpperCase().includes(searchFilter.toUpperCase()) || `${doc.data().name}`.toUpperCase().includes(searchFilter.toUpperCase()))
                 ) {
+                    console.log("hey");
                     if (filmChoice == true && 
                         `${doc.data().category}` == "Film&Media" &&
                         (selectedCategory == null || selectedCategory == "Film") 
@@ -182,12 +186,11 @@ getEventsAccordingToUserPrefs = () => {
                                 </a>
                             </li>`);
                     }
-            // else {
-            //     openingDisplay.empty();
-            //     openingDisplay.append("<h1> Nothing to show </h1>");
-            // }
-
-        }       
+        }      
+        if (!foundAnEvent) {
+            openingDisplay.empty();
+            openingDisplay.append("<h1 id='loading'> Nothing to show </h1>");            
+        }
         var events = document.querySelectorAll(".eventitem");
         events.forEach(event => event.addEventListener('click', gotoItem ));
         })
@@ -222,6 +225,7 @@ loadMoreItems = () => {
 
 
 appendChildCount = () => {
+    foundAnEvent = true;
     loadedEventItems++;
     childCount++;
     if (childCount > 3) {
@@ -315,24 +319,19 @@ $('.music').click(musicCategory);
 $('.food-drinks').click(foodCategory);
 $('.sports-fitness').click(sportsCategory);
 $('.fashion-lifestyle').click(fashionCategory);
+$('.travel-outdoors').click(travelCategory);
+
 // END CATEGORIES
 
 // FILTERS
 
 cityChanged = () => {
     locationFilter = document.getElementById("city").value;
+
+    locationOuter.classList.remove('active');
     
-    locationOuter.classList.remove('active');
-
-    getEventsAccordingToUserPrefs();
-}
-
-getCurrentLocation = () => {
-    getMapLocation();
-
-    locationOuter.classList.remove('active');
-
-    getEventsAccordingToUserPrefs();
+    
+    //getEventsAccordingToUserPrefs();
 }
 
 filterOptionClicked = () => {
@@ -340,15 +339,13 @@ filterOptionClicked = () => {
     dateFilter = new Date();
     priceFilterMin = 0;
     priceFilterMax = 999;
-    console.log(dateFilter);
+    locationFilter = null;
     getUserPrefsData();
 }
 
 useYourLocation = () => {
     // Filters
     getMapLocation();
-
-    getUserPrefsData();
 }
 
 $('.filterOption').click(filterOptionClicked);
@@ -385,8 +382,8 @@ addData = () => {
             o.dob = dob;
             o.gender = gender;
             docRef.update(o).then(function(thisDoc) {
-                window.location.href = "frontPage.html";
-            });
+                $("#profile-output").html('Changes saved!').css('color', 'green').slideDown();
+            });               
         }
     });
 }
@@ -524,16 +521,16 @@ addContactData = () => {
             //new user
             o.uid = docRef;
             o.name = $('#name').val();
-            o.email = email.val();
-            o.subject = subject.val();
-            o.message = message.val();
+            o.email = $('#email').val();
+            o.subject = $('#subject').val();
+            o.message = $('#message').val();
 
             // Send it
             docRef.set(o).then(function(o) {
                 $('#name').val('');
-                email.val('');
-                subject.val('');
-                message.val('');
+                $('#email').val('');
+                $('#subject').val('');
+                $('#message').val('');
                 info.html('Message sent!').css('color', 'green').slideDown();
             });
         });

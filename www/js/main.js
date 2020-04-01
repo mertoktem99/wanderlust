@@ -106,7 +106,7 @@ function applydate() {
 function closedate() {
     dateFilter = new Date();
     dateOuter.classList.remove('active');
-    
+
 };
 
 
@@ -219,7 +219,9 @@ function locationPopUp() {
     cancel.addEventListener('click', () => {
         
         locationOuter.classList.remove('active');
+        getUserPrefsData();
     });
+
     const apply = document. querySelector('.locApply');
     apply.addEventListener('click', () => {
         locationButton.innerHTML = `
@@ -230,6 +232,9 @@ function locationPopUp() {
         locationButton.classList.add('active');
 
         locationOuter.classList.remove('active');
+        cityChanged();
+        getEventsAccordingToUserPrefs();
+
     });
 
     locationOuter.classList.add('active');
