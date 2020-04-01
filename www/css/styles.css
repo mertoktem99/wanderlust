@@ -276,7 +276,8 @@ button{
 
 #signupFooter {
     position: relative;
-    top: -2rem;
+    top: -5rem;
+    margin-bottom: 0;
 }
 
 /********************************************************************************************************/
@@ -336,30 +337,39 @@ button{
 }
 
 .profile-info{
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex; */
+    /* flex-flow: row wrap; */
     padding: 30px;
 }
 
 .profile-info label{
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
     font-size: 14px;
     padding: 0;
-    margin: 0;
+    /* margin: 0; */
+    display: block;
+    margin: 0 0 0.8rem 0;
 }
 
 .profile-info input{
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
     border: 0;
     border-bottom: 2px solid #D0D0D0;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-weight: bolder;
     font-size: 16px;
+    display: block;
+    margin-bottom: 2rem;;
 }
 
 
 #retrieveUserGender{
-    margin-bottom: 30px;
+    margin-bottom: 4rem;
+}
+
+#gender{
+    height: 1.5rem;
+    border: 0.5px solid #000;
 }
 
 .profile-info  button {
@@ -527,7 +537,7 @@ button{
     /* padding: 0.5rem; */
 }
 
-.datePopUp .date-header , .pricePopUp .price-header {
+.datePopUp .date-header , .pricePopUp .price-header, .locationPopUp .location-header {
     flex-basis: 100%;
     justify-content: center;
 
@@ -538,22 +548,28 @@ button{
     align-items: center;
 }
 
-.date-header, .price-header {
+.date-header, .price-header, .location-header {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
 }
 
-.date-header img , .price-header img{
+.date-header img , .price-header img, .location-header img{
     padding: 0.5rem;
     width: 15%;
     height: auto;
 }
 
-.date-header p , .price-header p{
+.location-header #loc{
+    margin-left: 3rem;
+    border-radius: 0;
+}
+
+.date-header p , .price-header p, .location-header p{
     color: white;
     font-size: 1rem;
     font-weight: bold;
     margin: 0;
+    text-transform: uppercase;
 }
 
 .date-input , .price-input {
@@ -576,7 +592,10 @@ button{
     color: black;
     background-color: #F7BE00;
     margin: 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
+
 
 .dateCancel, .priceCancel, .locCancel {
     color: white;
@@ -615,7 +634,7 @@ button{
     padding: 15px;
     font-family: "Montserrat",sans-serif;
     font-size: 1rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     margin-bottom: 2rem;
     /* justify-content: center; */
     align-items: center;
@@ -648,6 +667,15 @@ button{
     color: white;
 }
 
+
+.locationPopUp .location-header {
+    min-width: 16.5rem;
+    margin-bottom: 1rem;
+    top: -1rem;
+    position: relative;
+    height: 3.5rem;
+    margin: auto;
+}
 
 /***************************************************************/
 /******************** Preference Pop-Up ************************/
@@ -737,8 +765,8 @@ body, img{
 }
 
 .header-image img {    
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 }
 
 .header-image h2 {
@@ -783,6 +811,7 @@ ul{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom: 2px solid #2ec4b3;
+    /* margin-bottom: 2rem; */
 }
 
 .home-menu-options a{
@@ -811,7 +840,7 @@ ul{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin: 0 1.7rem 0 1.7rem;
+    margin: 1rem 1.7rem 0 1.7rem;
     padding: 0;
 }
 
@@ -849,6 +878,9 @@ ul{
     background-color: #0088fd;
 } */
 
+.opening-display {
+    margin-top: 1.5rem;
+}
 
 
 .content-child1, .content-child2, .content-child3{
@@ -923,6 +955,7 @@ ul{
     flex-flow: row;
     text-align: center;
     justify-content: space-evenly;
+    margin-top: 1rem;
 }
 
 .event-filter a{
@@ -1083,6 +1116,18 @@ li a p {
     margin: auto;
 }
 
+.fade {
+    height: 2rem;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.001) 100% );
+    position: absolute;
+    /* top: 1%; */
+    margin-top: 1.9rem;
+    margin-left: 0.36rem;
+    width: 9.95rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
 .preferences-child1 h3,
 .preferences-child2 h3,
 .preferences-child3 h3,
@@ -1091,6 +1136,7 @@ li a p {
 .preferences-child6 h3 {
     position: relative;
     color: #fff;
+    /* background: rgba(0,0,0,0.8); */
     /* background-color: #000; */
     /* background-blend-mode: hue; */
     top: 1.5rem;
@@ -1156,8 +1202,20 @@ hr {
 .location-header img {    
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
-    background: rgba(0, 0, 0, 1);
+    /* filter: brightness(70%); */
     /* position: relative; */
+}
+
+.location-fade {
+    height: 45%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.001) 100% );
+    position: absolute;
+    top: 8.5rem;
+    /* margin-top: 1.9rem; */
+    /* margin-left: 0.36rem; */
+    width: 100%;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .location-header h2 {
@@ -1198,15 +1256,21 @@ hr {
     filter: drop-shadow(0 0 0.5rem #909090);
 }
 
-.location-select p{
+.location-select p, .locationPopUp .line{
     border-bottom: 1px solid #909090;
     margin: 40px 2px;
+}
+
+.locationPopUp .line{
+    border-bottom: 1px solid #909090;
+    margin: 30px 2px;
 }
 
 #currentLocationBtn {
     flex-basis: 100%;
     background-color: #F7BE00;
     color: white;
+    margin-top: 1rem;
 }
 
 
@@ -1216,8 +1280,9 @@ hr {
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    padding: 15px;
-    width: 100%;
+    padding: 13px 12px 13px 21px;
+    width: 63%;
+    margin: auto;
     border-radius: 0.7rem;
     font-family: "Montserrat",sans-serif;
     font-size: 1rem;
@@ -1385,14 +1450,14 @@ hr {
     padding: 0.5rem;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: space-between;
     background-color: white;
     border-bottom: 1px solid #909090;
 }
 
 
-.event-time , .event-price {
-    flex-basis: 50%;
+.event-time  {
+    flex-basis: 60%;
 }
 
 .event-time , .event-price , .event-location {
@@ -1424,6 +1489,7 @@ hr {
     margin: 0.3rem  0;
     padding: 0;
 }
+
 
 .event-location {
     flex-basis: 100%;
@@ -1524,7 +1590,13 @@ hr {
     background-color: #2ec4b3;
 }
 
-.contact-message p , .faqs-message p{
+.contact-message p{
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.faqs-message p{
     padding: 0;
     margin: 0;
     font-size: 2rem;
@@ -1536,25 +1608,27 @@ hr {
 }
 
 .contact-info{
-    display: flex;
-    flex-flow: row wrap;
+    /* display: block; */
+    /* flex-flow: row wrap; */
     padding: 30px;
 }
 
 .contact-info label{
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
     font-size: 14px;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0.8rem 0;
+    display: block;
 }
 
 .contact-info input{
     flex-basis: 100%;
     border: 0;
     border-bottom: 2px solid #D0D0D0;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     font-weight: bolder;
     font-size: 16px;
+    display: block;
 }
 
 
@@ -1565,7 +1639,7 @@ hr {
     color: white;  
     margin: 0;  
     position: relative;
-    bottom: -10rem;
+    /* bottom: -10rem; */
 }
 
 #retrieveMessage {
@@ -1597,6 +1671,7 @@ hr {
 .question p{
     justify-self: flex-start;
     width: max-content;
+    font-size: 0.95rem;
 }
 
 .question a {

@@ -191,9 +191,13 @@ locationButton.addEventListener('click', locationPopUp);
 function locationPopUp() {
     locationInner.innerHTML = `
     <div class = "locationPopUp"> 
+        <div class = "location-header">
+            <img id="loc" src="../icons/Icon-14.png">
+            <p>Location</p>
+        </div>
            
         <button id="currentLocationBtn">Use Your Location</button>
-        <p></p>
+        <p class="line" ></p>
         <select id="city" name="city">
             <option value="location">Choose Location</option>
             <option value="Vancouver">Vancouver</option>
