@@ -187,13 +187,15 @@ getEventsAccordingToUserPrefs = () => {
                             </li>`);
                     }
         }      
+
+        var events = document.querySelectorAll(".eventitem");
+        events.forEach(event => event.addEventListener('click', gotoItem ));
+        })
+    }).then((querySnapshot) => {
         if (!foundAnEvent) {
             openingDisplay.empty();
             openingDisplay.append("<h1 id='loading'> Nothing to show </h1>");            
         }
-        var events = document.querySelectorAll(".eventitem");
-        events.forEach(event => event.addEventListener('click', gotoItem ));
-        })
     });
 }
 
