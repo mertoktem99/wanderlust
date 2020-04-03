@@ -82,7 +82,7 @@ getEventsAccordingToUserPrefs = () => {
                 doc.data().city == locationFilter &&
                 (`${doc.data().category}`.toUpperCase().includes(searchFilter.toUpperCase()) || `${doc.data().name}`.toUpperCase().includes(searchFilter.toUpperCase()))
                 ) {
-                    console.log("hey");
+                    
                     if (filmChoice == true && 
                         `${doc.data().category}` == "Film&Media" &&
                         (selectedCategory == null || selectedCategory == "Film") 

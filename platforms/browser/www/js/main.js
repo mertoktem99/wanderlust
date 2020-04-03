@@ -153,7 +153,7 @@ function applyPrice() {
     console.log(document.querySelector('#price').value);
     if (document.querySelector('#price').value == "Free") {
         priceFilterMin = 0;
-        priceFilterMax = 999;
+        priceFilterMax = 0;
 
     }
     else if (document.querySelector('#price').value == "Between $10-$20") {
