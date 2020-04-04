@@ -272,7 +272,7 @@ home.addEventListener('click', () => {
 
     home.innerHTML = `
     <img src="${replaceIcon1}" alt="">
-        <p>Home</p>
+        <p class="footer-text">Home</p>
     `;
 
     profile.innerHTML = `
@@ -284,6 +284,7 @@ home.addEventListener('click', () => {
     <img src="${replaceIcon3}" alt="">
         <p>Settings</p>
     `;
+
 
     header.style.display = 'initial';
     loadMoreButton.style.display = 'initial';
@@ -1327,7 +1328,7 @@ profile.addEventListener('click', () => {
 
     profile.innerHTML = `
     <img src="${replaceIcon2}" alt="">
-        <p>Profile</p>
+        <p class="footer-text">Profile</p>
     `;
 
 
@@ -1389,7 +1390,7 @@ settings.addEventListener('click', () => {
 
     settings.innerHTML = `
     <img src="${replaceIcon3}" alt="">
-        <p>Settings</p>
+        <p class="footer-text">Settings</p>
     `;
 
     filterNav.style.display = 'none';
