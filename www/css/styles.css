@@ -349,18 +349,28 @@ button{
     /* margin: 0; */
     display: block;
     margin: 0 0 0.8rem 0;
+    /* padding-top: 1rem; */
+}
+
+#profile-output{
+    padding-top: 1rem;
+    color: #2ec4b3;
+    font-weight: bold;
+    /* margin-top: 1rem; */
 }
 
 .profile-info input{
     /* flex-basis: 100%; */
     border: 0;
     width: 100%;
+    padding-bottom: 0.4rem;
     border-bottom: 2px solid #D0D0D0;
     /* margin-bottom: 20px; */
     font-weight: bolder;
     font-size: 16px;
     display: block;
-    margin-bottom: 0.6rem;    
+    margin-bottom: 1.5rem;  
+    font-family: Montserrat, sans-serif;  
 }
 
 
@@ -370,7 +380,15 @@ button{
 
 #gender{
     height: 1.5rem;
-    border: 0.5px solid #000;
+    padding-bottom: 0.4rem;;
+    font-family: Montserrat, sans-serif;
+    background-color: white;
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 0;
+    min-width: 100%;
+    border-bottom: 2px solid #d0d0d0;
 }
 
 .profile-info  button {
@@ -397,7 +415,7 @@ button{
 }
 
 .profile-footer , .settings-footer{
-    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0,.3);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0,0.15);
     padding: 0;
     margin: 0;
 }
@@ -546,7 +564,7 @@ button{
 .datePopUp .date-header , .pricePopUp .price-header, .locationPopUp .location-header {
     flex-basis: 100%;
     justify-content: center;
-
+    margin-bottom: 1rem;
     background-color: #2ec4b3;
     /* padding: 0.5rem; */
     display: flex;
@@ -560,14 +578,15 @@ button{
 }
 
 .date-header img , .price-header img, .location-header img{
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
     width: 15%;
     height: auto;
 }
 
-.location-header #loc{
+#loc{
     margin-left: 3rem;
     border-radius: 0;
+    max-width: 15%;
 }
 
 .date-header p , .price-header p, .location-header p{
@@ -587,10 +606,14 @@ button{
 .date-input input , .price-input select , .price-input select option{
     flex-basis: 100%;
     font-size: 1.1rem;
+    font-weight: 500;
     margin: 0.3rem;
     padding: 0.3rem;
-    border-radius: 0.5rem;
-    border: 2px solid black;
+    border-radius: 0.2rem;
+    /* border: 2px solid black; */
+    border: 0;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0,.15);
+    font-family: Montserrat, sans-serif;
     line-height: 1rem;
 }
 
@@ -607,6 +630,7 @@ button{
     color: white;
     background-color: #2ec4b3;
     margin: 0.3rem;
+    margin-bottom: 1.5rem;
 }
 
 .locationPopUp {
@@ -637,13 +661,16 @@ button{
     color: white;
     display: flex;
     flex-flow: row nowrap;
-    padding: 15px;
+    padding: 13px;
     font-family: "Montserrat",sans-serif;
     font-size: 1rem;
     /* margin-top: 1rem; */
     margin-bottom: 2rem;
     /* justify-content: center; */
-    align-items: center;
+    text-align-last: center;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 .locationPopUp select option:first-of-type{
@@ -986,8 +1013,8 @@ ul{
 
 .event-filter a{
     flex-basis: 30%;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0,.3);
-    padding: 10px;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0,.15);
+    /* padding: 10px; */
     margin: 10px;
     border-radius: 8px;
     font-size: 0.9rem;
@@ -1240,13 +1267,13 @@ hr {
 
 /************ Location Select Page ************/
 
-.location-header{
+.location-head{
     margin-bottom: -6rem;
 }
 
-.location-header img {    
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+.location-head img {    
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     min-width: 100% !important;
     /* margin: 0 1rem; */
     padding: 0;
@@ -1262,11 +1289,11 @@ hr {
     /* margin-top: 1.9rem; */
     /* margin-left: 0.36rem; */
     width: 100%;
-    border-bottom-right-radius: 50px;
-    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 } 
 
-.location-header h2 {
+.location-head h2 {
     color: #fff;
     font-weight: 800;
     top: -15rem;
@@ -1329,9 +1356,12 @@ hr {
     display: flex;
     flex-flow: row nowrap;
     padding: 13px 12px 13px 21px;
-    width: 63%;
+    text-align-last: center;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    width: 100%;
     margin: auto;
-    border-radius: 0.7rem;
+    border-radius: 10px;
     font-family: "Montserrat",sans-serif;
     font-size: 1rem;
 
@@ -1361,7 +1391,7 @@ hr {
     background-color: #F7BE00;
     position: relative;
     top: -6rem;
-    /* margin: 20px 0;  */
+    margin-top: 2.5rem; 
 }
 
 
@@ -1484,7 +1514,7 @@ hr {
 
 .event-heading h2{
     color: #2ec4b3;
-    margin: 0;
+    margin: 0 2rem 0 0;
     padding: 0;
 }
 
@@ -1524,9 +1554,13 @@ hr {
 }
 
 .event-time img, 
-.event-price img , 
 .event-location img{
     width: 30px;
+    height: auto;
+}
+
+.event-price img{
+    width: 38px;
     height: auto;
 }
 
@@ -1625,6 +1659,7 @@ hr {
     margin: 0;
     flex-basis: 100%;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .contact-message , .faqs-message {
@@ -1682,6 +1717,8 @@ hr {
     font-size: 16px;
     display: block;
     width: 100%;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
 }
 
 
@@ -1690,7 +1727,8 @@ hr {
     flex-basis: 100%;
     background-color: #2ec4b3;
     color: white;  
-    margin: 0;  
+    margin: 0; 
+    /* margin-top: 1.5rem;  */
     position: relative;
     /* bottom: -10rem; */
 }
@@ -1719,6 +1757,7 @@ hr {
     flex-flow: row nowrap;
     justify-content: space-between;
     border-bottom: 1px solid #909090;
+    align-items: center;
 }
 
 .question p{
