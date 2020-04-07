@@ -67,7 +67,7 @@ getEventDetails = () => {
                 document.querySelector('.event-name').innerHTML = doc.data().name;
                 document.querySelector('.date').innerHTML = TimeConverter(doc.data().date.toDate());
                 document.querySelector('.location').innerHTML = doc.data().city;
-                document.querySelector('.price').innerHTML = doc.data().price + '$';
+                document.querySelector('.price').innerHTML = '$' + doc.data().price;
                 document.querySelector('.eventdescription').innerHTML = doc.data().description;
                 latitude = doc.data().location.latitude;
                 longitude = doc.data().location.longitude;
