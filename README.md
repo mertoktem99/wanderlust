@@ -8,7 +8,7 @@ https://lnkd.in/gexD-n8
 
 
 
-The Team:
+The Team: <br />
 Arjun Dhingra - Quality Assurance <br />
 Antriksh Saini - Developer <br />
 Chloe Bui - Lead Designer <br />
