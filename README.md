@@ -9,8 +9,8 @@ https://lnkd.in/gexD-n8
 
 
 The Team:
-Arjun Dhingra - Quality Assurance
-Antriksh Saini - Developer
-Chloe Bui - Lead Designer
-Mert Oktem - Lead Developer
-Palakdeep Kaur - Project Manager
+Arjun Dhingra - Quality Assurance <br />
+Antriksh Saini - Developer <br />
+Chloe Bui - Lead Designer <br />
+Mert Oktem - Lead Developer <br />
+Palakdeep Kaur - Project Manager 
