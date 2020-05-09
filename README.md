@@ -2,7 +2,7 @@ In our 2nd semester at Langara, we had to create an app and a website in 13 week
 
 The journey to the finished product was not easy, but it was truly rewarding and satisfying to be able to see our project came to life. This definitely was a great learning experience.
 
-You can take a look at our project with the link below and We hope you will like it. Thank you!
+You can take a look at our project from the link below and We hope you will like it. Thank you!
 
 https://lnkd.in/gexD-n8
 
