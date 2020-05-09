@@ -13,4 +13,5 @@ Arjun Dhingra - Quality Assurance <br />
 Antriksh Saini - Developer <br />
 Chloe Bui - Lead Designer <br />
 Mert Oktem - Lead Developer <br />
+Bokai Hsu - Designer <br />
 Palakdeep Kaur - Project Manager 
